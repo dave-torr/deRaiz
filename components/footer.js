@@ -34,6 +34,9 @@ const Footer =()=>(
           justify-content: center;
           align-items: center;
           text-align: center;
+          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+            sans-serif;
         }
 
         .decoDivCont{
@@ -68,4 +71,4 @@ const Footer =()=>(
         }
       `}</style>
     </>
-); export {Footer};
+); export default Footer;
