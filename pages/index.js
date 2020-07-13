@@ -64,15 +64,15 @@ export default function Home() {
             muy pronto
           </h2>
           <div className="packageBenefitList" >
-            <li> Can´t get any fresher! </li>
-            <li> Plug and Play System </li>
-            <li> Harvest in 3 weeks or less! </li>
-            <li> Incredible variety of flavors to try </li>
-            <li> Unique and diverse species from Ecuador</li>
+            <li> ¿Más fresco? Imposible </li>
+            <li> Solo requiere de una conneccion elctrica </li>
+            <li> Empieza a cosechar en 3 semanas o menos! </li>
+            <li> Amplias variedades y sabores para elegir </li>
+            <li> Variedades unicas del Ecuador</li>
           </div>
         </div>
         <div className="landingOneCont container3">
-          <div className="QandAIntro" > 
+          <div className="QandAIntro" >  
           
           <div className="QandASection" > 
             <div className="QandATwo" > 
