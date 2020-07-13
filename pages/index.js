@@ -1,6 +1,5 @@
 import Head from 'next/head'
-import Link from 'next/link'
-
+import {GeneralLayout} from "../components/generalLayout.js"
 
 //LANDING ONE
 export default function Home() {
@@ -11,6 +10,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet"></link>
       </Head>
+
+      <GeneralLayout>
 
       <main>
         <div className="LandingPageOne" >
@@ -92,29 +93,9 @@ export default function Home() {
         </div> */}
       
       </main>
-      <footer>
-        <div className="footerContainer" > 
-          <br></br>
-          <br></br>
-          D´Raiz
-          <br></br>
-           Huertos Urbanos
-          <br></br>
-          <br></br>
-          Quito Ecuador
-          <br></br>
-          {`{waira.nuna}`} 
-          <br></br>
-          2020 
-          <br></br>
-          &copy;  
-        </div>
-      <div className="decoDivCont" >
-        <div className="decoDiv deco1" ></div>
-        <div className="decoDiv deco2" ></div>
-        <div className="decoDiv deco3" ></div>
-      </div>
-      </footer>
+      </GeneralLayout>
+
+
       <style jsx>{`
         .landingPageGeneral {
           width: 100%
@@ -303,48 +284,6 @@ export default function Home() {
           background-color: rgb(102, 153, 51);
         }
 
-
-        footer {
-          width: 100%;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          text-align: center;
-        }
-
-        .decoDivCont{
-          width: 100%;
-          margin-top: 3px;
-        }
-
-        .decoDiv{
-          margin-top: 1px;
-          width: 100%;
-          height: 2px;
-        }
-        .deco1{
-                background-color: rgb(179, 132, 3);
-        }
-        .deco2{
-                background-color: rgb(95, 95, 99);
-        }
-        .deco3{
-                background-color: rgb(181, 21, 0);
-        }
-
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        a {
-          color: inherit;
-          text-decoration: none;
-        }
-
         .description {
           line-height: 1.5;
           font-size: 1.5rem;
@@ -378,6 +317,8 @@ export default function Home() {
         * {
           box-sizing: border-box;
         }
+
+
       `}</style>
     </div>
   )
