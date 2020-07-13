@@ -7,6 +7,7 @@ export default function Home() {
     <div className="landingPageGeneral">
       <Head>
         <title>De Raiz Landing Page</title>
+        <meta property="og:title" content="D´Raiz Landing" />
         <link rel="icon" href="/favicon.ico" />
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet"></link>
       </Head>
