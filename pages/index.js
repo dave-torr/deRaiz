@@ -71,20 +71,25 @@ export default function Home() {
             <li> Variedades unicas del Ecuador</li>
           </div>
         </div>
-        <div className="landingOneCont container3">
+                  <br></br>
+          <br></br>
+        {/* <div className="landingOneCont container3">
           <div className="QandAIntro" >  
           
-          <div className="QandASection" > 
+          <div className="" > 
             <div className="QandATwo" > 
             Varias preguntas y respuestas del producto
             </div>
+
+                      <br></br>
+          <br></br>
             <div className="QandATwo" > 
             Oferta incial del producto
             </div>
           </div>
           </div>
 
-        </div>
+        </div> */}
       
       </main>
       <footer>
