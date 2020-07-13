@@ -1,5 +1,5 @@
 import Navbar from "./navBar.js";
-import Footer from "./Footer.js";
+import Footer from "./footer.js";
 
 const GeneralLayout =(props)=>(
     <>
