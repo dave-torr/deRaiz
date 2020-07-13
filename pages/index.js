@@ -76,6 +76,10 @@ export default function Home() {
           
           <div className="QandASection" > 
             <div className="QandATwo" > 
+            Varias preguntas y respuestas del producto
+            </div>
+            <div className="QandATwo" > 
+            Oferta incial del producto
             </div>
           </div>
           </div>
