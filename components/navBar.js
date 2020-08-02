@@ -16,23 +16,18 @@ const Navbar =()=> (
         
       <style jsx>{`
       nav{
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
+          font-family: 'Poiret One', cursive;
           position: fixed;
           justify-content: center;
           display:flex;
           top: 0px;
           width: 100%;
-          background-color: white;
           z-index: 2;
           height: 40px;
         }
         .NavLink{
           padding-top: 6px;
-          font-weight: 200;
           letter-spacing: 3px;
-          margin: unset;
           margin: 0px 18px
         }
 

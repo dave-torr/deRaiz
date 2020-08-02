@@ -3,7 +3,7 @@ import Footer from "./footer.js";
 
 const GeneralLayout =(props)=>(
     <>
-    <Navbar/>
+    {/* <Navbar/> */}
     {props.children}
     <Footer />
     </>

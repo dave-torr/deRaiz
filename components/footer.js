@@ -7,8 +7,9 @@ const Footer =()=>(
           <br></br>
           D´Raiz
           <br></br>
-           Huertos Urbanos
+           Huertos           
           <br></br>
+          -
           <br></br>
           Quito Ecuador
           <br></br>
@@ -34,9 +35,10 @@ const Footer =()=>(
           justify-content: center;
           align-items: center;
           text-align: center;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
+          font-family: 'Poiret One', cursive;
+          font-weight: 600; 
+          letter-spacing: 2px;
+          font-size: 1.1em;
         }
 
         .decoDivCont{
@@ -59,16 +61,6 @@ const Footer =()=>(
                 background-color: rgb(181, 21, 0);
         }
 
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        a {
-          color: inherit;
-          text-decoration: none;
-        }
       `}</style>
     </>
 ); export default Footer;
