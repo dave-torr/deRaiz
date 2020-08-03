@@ -12,7 +12,7 @@ return(<>
 <main>
     <img id="socialLandingLogo" alt="d´Raiz Logo Main" src="./assets/logoAndVar/fontfaceExt-blk.png" />
 
-    <div className="soMeLandingIntro"> se parte de un presente </div>
+    <div className="soMeLandingIntro"> Sé parte de un presente </div>
         <div className="SomeLandingDeco1" > </div>
         <div className="SomeLandingDeco2" > </div>
     <div className="soMeLandingIntro2"> sustentable </div>
@@ -25,11 +25,11 @@ return(<>
     </div>
     <div className="SoMeLandingBtn" >
     <a href="https://www.facebook.com/DRaizHuertos" target="_blank" rel="noopener noreferrer"> 
-    Encuentranos en Facebook </a>
+    Encuéntranos en Facebook </a>
     </div>
     <div className="SoMeLandingBtn" >
     <a href="https://www.instagram.com/draizhuertos" target="_blank" rel="noopener noreferrer"> 
-    Encuentranos en Instagram </a>
+    Encuéntranos en Instagram </a>
     </div>
     <div className="SoMeLandingBtn" >
     <a href="mailto:draiz.info@gmail.com" > Escríbenos un e-mail </a>
@@ -42,18 +42,16 @@ return(<>
 
     *{
         font-family: 'Poiret One', Cantarell, Fira Sans, Droid Sans, Helvetica Neue,            sans-serif;
-
     }
 
     a{
         text-decoration: none;
         color: black;
-
     }
 
     #socialLandingLogo{
         max-width: 28%;
-        margin-left: 32%;
+        margin-left: 36%;
         margin-top: 45px
     }
 
@@ -96,8 +94,7 @@ return(<>
     #leafDetail{
         width: 30%;
         margin-left: 35%;
-        position:fixed;
-        bottom: 0;
+
     }          
 
     .SoMeLandingBtn{

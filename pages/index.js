@@ -6,8 +6,8 @@ export default function Home() {
   return (
     <div className="landingPageGeneral">
       <Head>
-        <title>De Raiz Landing Page</title>
-        <meta property="og:title" content="D´Raiz Landing" />
+        <title>De Raiz - Huertos</title>
+        <meta property="og:title" content="D´Raiz - Huetos" />
         <link rel="icon" href="/favicon.ico" />
         <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet"/>
       </Head>
@@ -25,16 +25,16 @@ export default function Home() {
 
 <style jsx>{`
     .homeMain{
-      height: 70vh;
+      min-height: 100vh;
     }
 
     #homeGenLogo{
-      width: 44%;
-      margin-left:28%; 
+      width: 40%;
+      margin-left:30%; 
     }
 
     .homeIntroText{
-      margin: 30px;
+      margin: 21px;
       text-align: center;
       font-size: 2em;
     }
