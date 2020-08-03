@@ -20,7 +20,7 @@ return(<>
         <div className="SomeLandingDeco1" > </div>
 
     <div className="SoMeLandingBtn" >
-    <a href="https://wa.me/00593998752496" target="_blank" rel="noopener noreferrer"> 
+    <a href="https://wa.me/593998752496" target="_blank" rel="noopener noreferrer"> 
     Catálogo por WhatsApp </a>
     </div>
     <div className="SoMeLandingBtn" >
