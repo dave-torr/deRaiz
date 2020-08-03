@@ -21,7 +21,7 @@ return(<>
 
     <div className="SoMeLandingBtn" >
     <a href="https://wa.me/00593998752496" target="_blank" rel="noopener noreferrer"> 
-    Catalogo por WhatsApp </a>
+    Catálogo por WhatsApp </a>
     </div>
     <div className="SoMeLandingBtn" >
     <a href="https://www.facebook.com/DRaizHuertos" target="_blank" rel="noopener noreferrer"> 
@@ -52,8 +52,8 @@ return(<>
     }
 
     #socialLandingLogo{
-        max-width: 30%;
-        margin-left: 36%;
+        max-width: 28%;
+        margin-left: 32%;
         margin-top: 45px
     }
 
@@ -102,6 +102,7 @@ return(<>
 
     .SoMeLandingBtn{
         font-size: 1.3em;
+        font-weight: 600;
         margin: 12px 10%;
         border-left: solid 1px rgb(153,153,51);
         border-bottom: solid 1px rgb(153,153,51);
@@ -109,11 +110,16 @@ return(<>
         border-top: solid 1px rgba(153,153,51,0);
         border-bottom: solid 1px rgb(153,153,51);
         padding: 9px;
+        transition: all ease-in 0.5s;
+
     }
 
-    .SoMeLandingBtn::hover{
+    .SoMeLandingBtn:hover{
         border-right: solid 1px rgba(153,153,51,1);
         border-top: solid 1px rgba(153,153,51,1);
+        cursor: pointer;
+        transition: all ease-in 0.5s;
+        background-color: rgba(132, 226, 8, 0.493);
     } 
 
 
