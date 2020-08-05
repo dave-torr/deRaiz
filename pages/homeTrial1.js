@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import {GeneralLayout} from "../components/generalLayout.js"
+import Pixel from '../components/Pixel'
 
 let tradOne={
     "type": "Tradicional en tierra",
@@ -96,14 +97,85 @@ export default function HomeOne(){
     <link rel="icon" href="/favicon.ico" />
     <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet"/>
 </Head>
+<Pixel name='FACEBOOK_PIXEL_1' />
 
 <GeneralLayout>
   <main className="homeMain">
+    <div className="homeLogoGenContainer" >
+        <img id="vineLeftHome1" src="./assets/fillerImgs/plant-left.png" />
+        <div>
+            <img className="HomeFontFace1" alt="logo font face green" src="./assets/LogoAndVar/fontface-lghtGrn.png" />
+            <h1 className="homeTitle"> HUERTOS</h1>
+        </div>
+    </div>
 
+    <div className="homeTextOne" > 
+        <p> Tu alimentación más sana, fresca y cerca de ti </p>
+        <p> Finalmente huertos en casa </p>
+        <br></br>
+        <p> ¡diseñados para ti! </p>
+    </div>
 
+    <img className="handOffHome" alt="Handing plants off" src="./assets/fillerImgs/handoffOne.png" />
+
+    <div></div>
 
   </main>
 </GeneralLayout>
 
+    <style jsx> {`
+    h1, p {
+        font-family: 'Poiret One', cursive;
+        margin: unset;
+    }
+
+    .homeLogoGenContainer{
+        align-items: center;
+        justify-content: center;
+        margin-top: 3%;
+        margin-bottom: 3%;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .homeTitle{
+        width: 180px;
+        margin: 6px 12px;
+        letter-spacing: 9px;
+        
+    }
+
+    #vineLeftHome1{
+        height:150px;
+    }
+
+    .HomeFontFace1{
+        margin: 6px 12px;
+        width: 200px;
+    }
+
+    .homeTextOne{
+        margin: 60px 18px 40px 18px;
+        text-align: center;
+        font-size: 1.5em;
+    }
+
+    .handOffHome{
+        width: 100%;
+    }
+
+@media screen and (max-width: 600px){
+
+    .homeLogoGenContainer{
+        margin-top: 15%;
+    }
+    .HomeFontFace1{
+        width: 180px;
+    }
+}
+
+
+    `}
+    </style> 
     </>)
 }

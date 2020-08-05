@@ -1,12 +1,16 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import Pixel from '../components/Pixel'
+
 
 export default function Social() {
 return(<>
 <Head>
     <meta property="og:title" content="D'Raiz: social media landing page" />
     <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet"/>
+    
     </Head>
+    <Pixel name='FACEBOOK_PIXEL_1' />
 
 
 <main>

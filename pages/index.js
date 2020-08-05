@@ -1,16 +1,20 @@
 import Head from 'next/head'
 import {GeneralLayout} from "../components/generalLayout.js"
+import Pixel from '../components/Pixel'
+
 
 //LANDING ONE
 export default function Home() {
   return (
-    <div className="landingPageGeneral">
-      <Head>
-        <title>De Raiz - Huertos</title>
-        <meta property="og:title" content="D´Raiz - Huetos" />
-        <link rel="icon" href="/favicon.ico" />
-        <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet"/>
-      </Head>
+  <div className="landingPageGeneral">
+    <Head>
+      <title>De Raiz - Huertos</title>
+      <meta property="og:title" content="D´Raiz - Huetos" />
+      <link rel="icon" href="/favicon.ico" />
+      <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet"/>
+    </Head>
+
+<Pixel name='FACEBOOK_PIXEL_1' />
 
 <GeneralLayout>
   <main className="homeMain">
@@ -58,7 +62,6 @@ export default function Home() {
 
         * {
           font-family: 'Poiret One', cursive;
-          box-sizing: border-box;
         }
 
       `}</style>

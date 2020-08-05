@@ -1,14 +1,16 @@
+import {SocialComp} from "./socialComp"
 
 const Footer =()=>(
   <>
   <footer>
       <div className="footerContainer" > 
         <br></br>
-        <br></br>
         D´Raiz
         <br></br>
           Huertos           
         <br></br>
+        -
+        <SocialComp />
         -
         <br></br>
         Quito Ecuador
@@ -19,6 +21,7 @@ const Footer =()=>(
         <br></br>
         &copy;  
       </div>
+        <br></br>
       <div className="decoDivCont" >
           <div className="decoDiv deco1" ></div>
           <div className="decoDiv deco2" ></div>
