@@ -88,6 +88,8 @@ let kiddiTwo={
     "measurements": "45cm x 25cm",    
 }
 
+let prlxImg1="./assets/fillerImgs/farmVeggieCloseup1.jpg"
+
 export default function HomeOne(){
 
     return(<>
@@ -102,39 +104,73 @@ export default function HomeOne(){
 <GeneralLayout>
   <main className="homeMain">
     <div className="homeLogoGenContainer" >
-        <img id="vineLeftHome1" src="./assets/fillerImgs/plant-left.png" />
         <div>
             <img className="HomeFontFace1" alt="logo font face green" src="./assets/LogoAndVar/fontface-lghtGrn.png" />
             <h1 className="homeTitle"> HUERTOS</h1>
+            <img className="HomeIcon1" alt="icon green" src="./assets/LogoAndVar/icon-lightGrn.png" />
         </div>
     </div>
 
     <div className="homeTextOne" > 
-        <p> Tu alimentación más sana, fresca y cerca de ti </p>
-        <p> Finalmente huertos en casa </p>
-        <br></br>
-        <p> ¡diseñados para ti! </p>
+        <p style={{fontSize: "1.2em"}} > Tu alimentación más sana, fresca y cerca de ti </p>
+        <p style={{fontSize: "1.5em"}} > Finalmente huertos en casa </p>
+        <p style={{fontSize: "1.5em"}}> ¡diseñados para ti! </p>
+        <p style={{fontSize: "1.5em"}}> - </p>
     </div>
 
     <img className="handOffHome" alt="Handing plants off" src="./assets/fillerImgs/handoffOne.png" />
 
-    <div></div>
+    <h2 style={{ marginLeft: "9%", marginTop: "45px", }}> 
+        Agricultura a pequeña escala, simplificada </h2>
+    <div>
+        <h3 style={{marginLeft: "12%", marginRight: "30px", marginTop: "15px", }}> 
+            D´Raiz te trae sistemas para crecer tus propios vegetales en casa, sin la necesidad de tener ningún conocimiento de agricultura. Comidas más nutritivas, variadas y frescas todos los días.</h3>
+        <h3 style={{ marginLeft: "12%", marginRight: "30px", marginTop: "15px", }}> 
+            Elige entre nuestros elegantes y practicos systemas <i>hidroponicos</i>, o a <i>base de tierra,</i> encuentra el lugar ideal donde ubicar tus plantitas y ¡listo! en poco tiempo podras disfrutar de deliciosos sabores criados en casa. </h3>
+    </div> 
+    <div className="HomeProductAnchors" >
+        <h3 style={{textAlign:"center", fontSize: "1.5em",}}> 
+        Explora nuestras opciones de:
+        </h3>
+        <div className="AnchorContainer" >
+            <p className="anAnchor"> Huertos <br></br> En Tierra 
+                <div className="anchorDeco" > </div>
+                </p>
+            <p className="anAnchor" style={{margin: "0px 33px"}} > Huertos <br></br> Hidroponicos 
+                <div className="anchorDeco" > </div>
+                </p>
+            <p className="anAnchor"> Huertos <br></br> Infantiles 
+                <div className="anchorDeco" > </div>
+                </p>
+        </div>
+    </div>
+    <div className="homeParallax" style={{
+        backgroundImage:`url(${prlxImg1})`,
+        width: "100%",
+        transform: `translate(0px, 0px)`,
+        minHeight: "150px",
+        backgroundSize: "100% auto",
+        backgroundAttachment: "fixed",
+        backgroundRepeat: "no-repeat",
+        backgroundPositionY: "bottom",
+         }}>
+        </div>           
 
   </main>
 </GeneralLayout>
 
     <style jsx> {`
-    h1, p {
+    h1, h2, h3, p {
         font-family: 'Poiret One', cursive;
         margin: unset;
     }
 
     .homeLogoGenContainer{
-        align-items: center;
-        justify-content: center;
         margin-top: 3%;
         margin-bottom: 3%;
         display: flex;
+        align-items: center;
+        justify-content: center;
         flex-direction: row;
     }
 
@@ -159,9 +195,51 @@ export default function HomeOne(){
         text-align: center;
         font-size: 1.5em;
     }
+    .HomeIcon1{
+        margin: 6px 12px;
+        width: 160px;
+    }
 
     .handOffHome{
         width: 100%;
+    }
+
+    .HomeProductAnchors{
+        margin-top: 21px;
+        padding-top: 21px;
+        border-top: solid 1px rgba(102, 102, 102, 1);
+        border-bottom: solid 2px rgba(102, 153, 51, 1);
+        padding-bottom: 21px;
+    }
+
+    .AnchorContainer{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+
+    }
+
+    .anAnchor{
+        align-items: center;
+        font-size: 2em;
+        margin: 10px 10px;
+    }
+    .anAnchor:hover{
+        cursor: pointer;
+    }
+    .anAnchor:hover>.anchorDeco{
+        cursor: pointer;
+        width: 100px;
+        background-color: red;
+        transition: all ease-in 0.5s;
+    }
+
+    .anchorDeco{
+        transition: all ease-in 1s;
+        height:2px;
+        width: 12px;
+        background-color: red;
     }
 
 @media screen and (max-width: 600px){
@@ -171,6 +249,17 @@ export default function HomeOne(){
     }
     .HomeFontFace1{
         width: 180px;
+    }
+    .homeTextOne{
+        margin: 40px 18px 35px 18px;
+        text-align: center;
+        font-size: 1.5em;
+    }
+
+    .AnchorContainer{
+        flex-direction: column;
+        align-items: start;
+        padding-left: 33px;
     }
 }
 
