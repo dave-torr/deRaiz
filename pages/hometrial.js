@@ -88,7 +88,7 @@ let kiddiTwo={
     "measurements": "45cm x 25cm",    
 }
 
-let prlxImg1="./assets/fillerImgs/farmVeggieCloseup1.jpg"
+let prlxImg1="./assets/fillerImgs/farmVeggieCloseupOne.jpg"
 
 export default function HomeOne(){
 
