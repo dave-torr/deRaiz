@@ -105,9 +105,9 @@ export default function HomeOne(){
   <main className="homeMain">
     <div className="homeLogoGenContainer" >
         <div>
-            <img className="HomeFontFace1" alt="logo font face green" src="./assets/logoAndVar/fontface-lghtGrn.png" />
+            <img className="homeFontFace-one" alt="logo font face green" src="./assets/logoAndVar/fontface-lghtGrn.png" />
             <h1 className="homeTitle"> HUERTOS</h1>
-            <img className="HomeIcon1" alt="icon green" src="./assets/logoAndVar/icon-lightGrn.png" />
+            <img className="homeIcon-one" alt="icon green" src="./assets/logoAndVar/icon-lightGrn.png" />
         </div>
     </div>
 
@@ -128,7 +128,7 @@ export default function HomeOne(){
         <h3 style={{ marginLeft: "12%", marginRight: "30px", marginTop: "15px", }}> 
             Elige entre nuestros elegantes y practicos systemas <i>hidroponicos</i>, o a <i>base de tierra,</i> encuentra el lugar ideal donde ubicar tus plantitas y ¡listo! en poco tiempo podras disfrutar de deliciosos sabores criados en casa. </h3>
     </div> 
-    <div className="HomeProductAnchors" >
+    <div className="homeProductAnchors" >
         <h3 style={{textAlign:"center", fontSize: "1.5em",}}> 
         Explora nuestras opciones de:
         </h3>
@@ -182,10 +182,10 @@ export default function HomeOne(){
     }
 
     #vineLeftHome1{
-        height:150px;
+        height: 150px;
     }
 
-    .HomeFontFace1{
+    .homeFontFace-one{
         margin: 6px 12px;
         width: 200px;
     }
@@ -195,7 +195,7 @@ export default function HomeOne(){
         text-align: center;
         font-size: 1.5em;
     }
-    .HomeIcon1{
+    .homeIcon-one{
         margin: 6px 12px;
         width: 160px;
     }
@@ -204,7 +204,7 @@ export default function HomeOne(){
         width: 100%;
     }
 
-    .HomeProductAnchors{
+    .homeProductAnchors{
         margin-top: 21px;
         padding-top: 21px;
         border-top: solid 1px rgba(102, 102, 102, 1);
@@ -217,7 +217,6 @@ export default function HomeOne(){
         align-items: center;
         justify-content: center;
         flex-direction: row;
-
     }
 
     .anAnchor{
@@ -237,7 +236,7 @@ export default function HomeOne(){
 
     .anchorDeco{
         transition: all ease-in 1s;
-        height:2px;
+        height: 2px;
         width: 12px;
         background-color: red;
     }
@@ -247,7 +246,7 @@ export default function HomeOne(){
     .homeLogoGenContainer{
         margin-top: 15%;
     }
-    .HomeFontFace1{
+    .homeFontFace-one{
         width: 180px;
     }
     .homeTextOne{
