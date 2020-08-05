@@ -105,22 +105,22 @@ export default function HomeOne(){
   <main className="homeMain">
     <div className="homeLogoGenContainer" >
         <div>
-            <img className="HomeFontFace1" alt="logo font face green" src="./assets/LogoAndVar/fontface-lghtGrn.png" />
+            <img className="HomeFontFace1" alt="logo font face green" src="./assets/logoAndVar/fontface-lghtGrn.png" />
             <h1 className="homeTitle"> HUERTOS</h1>
-            <img className="HomeIcon1" alt="icon green" src="./assets/LogoAndVar/icon-lightGrn.png" />
+            <img className="HomeIcon1" alt="icon green" src="./assets/logoAndVar/icon-lightGrn.png" />
         </div>
     </div>
 
     <div className="homeTextOne" > 
-        <p style={{fontSize: "1.2em"}} > Tu alimentación más sana, fresca y cerca de ti </p>
-        <p style={{fontSize: "1.5em"}} > Finalmente huertos en casa </p>
+        <p style={{fontSize: "1.2em"}}> Tu alimentación más sana, fresca y cerca de ti </p>
+        <p style={{fontSize: "1.5em"}}> Finalmente huertos en casa </p>
         <p style={{fontSize: "1.5em"}}> ¡diseñados para ti! </p>
         <p style={{fontSize: "1.5em"}}> - </p>
     </div>
 
     <img className="handOffHome" alt="Handing plants off" src="./assets/fillerImgs/handoffOne.png" />
 
-    <h2 style={{ marginLeft: "9%", marginTop: "45px", }}> 
+    <h2 style={{ marginLeft: "9%", marginTop: "45px" }}> 
         Agricultura a pequeña escala, simplificada </h2>
     <div>
         <h3 style={{marginLeft: "12%", marginRight: "30px", marginTop: "15px", }}> 
@@ -132,11 +132,11 @@ export default function HomeOne(){
         <h3 style={{textAlign:"center", fontSize: "1.5em",}}> 
         Explora nuestras opciones de:
         </h3>
-        <div className="AnchorContainer" >
+        <div className="anchorContainer" >
             <p className="anAnchor"> Huertos <br></br> En Tierra 
                 <div className="anchorDeco" > </div>
                 </p>
-            <p className="anAnchor" style={{margin: "0px 33px"}} > Huertos <br></br> Hidroponicos 
+            <p className="anAnchor"> Huertos <br></br> Hidroponicos 
                 <div className="anchorDeco" > </div>
                 </p>
             <p className="anAnchor"> Huertos <br></br> Infantiles 
@@ -212,7 +212,7 @@ export default function HomeOne(){
         padding-bottom: 21px;
     }
 
-    .AnchorContainer{
+    .anchorContainer{
         display: flex;
         align-items: center;
         justify-content: center;
@@ -223,7 +223,7 @@ export default function HomeOne(){
     .anAnchor{
         align-items: center;
         font-size: 2em;
-        margin: 10px 10px;
+        margin: 10px 33px;
     }
     .anAnchor:hover{
         cursor: pointer;
@@ -256,7 +256,7 @@ export default function HomeOne(){
         font-size: 1.5em;
     }
 
-    .AnchorContainer{
+    .anchorContainer{
         flex-direction: column;
         align-items: start;
         padding-left: 33px;
