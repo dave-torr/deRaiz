@@ -2,6 +2,7 @@ import Head from 'next/head'
 import {GeneralLayout} from "../components/generalLayout.js"
 import Pixel from '../components/Pixel'
 
+
 let tradOne={
     "type": "Tradicional en tierra",
     "name": "Mini-Huerto",
@@ -88,12 +89,30 @@ let kiddiTwo={
     "measurements": "45cm x 25cm",    
 }
 
+
+
 let prlxImg1="./assets/fillerImgs/farmVeggieCloseupOne.jpg"
 
-export default function HomeOne(){
 
+export default function HomeOne(){
     return(<>
 <Head>
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=UA-166263603-2"
+  />
+
+  <script
+    dangerouslySetInnerHTML={{
+      __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-166263603-2');
+        `,
+    }}
+  />
+
     <title>De Raiz - Huertos</title>
     <meta property="og:title" content="D´Raiz - Huetos" />
     <link rel="icon" href="/favicon.ico" />
@@ -126,41 +145,60 @@ export default function HomeOne(){
         <h3 style={{marginLeft: "12%", marginRight: "30px", marginTop: "15px", }}> 
             D´Raiz te trae sistemas para crecer tus propios vegetales en casa, sin la necesidad de tener ningún conocimiento de agricultura. Comidas más nutritivas, variadas y frescas todos los días.</h3>
         <h3 style={{ marginLeft: "12%", marginRight: "30px", marginTop: "15px", }}> 
-            Elige entre nuestros elegantes y practicos systemas <i>hidroponicos</i>, o a <i>base de tierra,</i> encuentra el lugar ideal donde ubicar tus plantitas y ¡listo! en poco tiempo podras disfrutar de deliciosos sabores criados en casa. </h3>
+            Elige entre nuestros elegantes y prácticos sistemas <i> hidropónicos </i>  o a <i>  base de tierra.</i>  Encuentra el lugar ideal donde ubicar tus plantitas y ¡listo! en poco tiempo podrás disfrutar de deliciosos sabores criados en casa. </h3>
     </div> 
     <div className="homeProductAnchors" >
-        <h3 style={{textAlign:"center", fontSize: "1.5em",}}> 
+        <h3 style={{textAlign:"center", fontSize: "1.5em" }}> 
         Explora nuestras opciones de:
         </h3>
-        <div className="anchorContainer" >
-            <p className="anAnchor"> Huertos <br></br> En Tierra 
-                <div className="anchorDeco" > </div>
-                </p>
-            <p className="anAnchor"> Huertos <br></br> Hidroponicos 
-                <div className="anchorDeco" > </div>
-                </p>
-            <p className="anAnchor"> Huertos <br></br> Infantiles 
-                <div className="anchorDeco" > </div>
-                </p>
-        </div>
     </div>
+        <div className="anchorContainer" style={{textAlign:"center", display: "flex", justifyContent:"center", }}>
+            <div className="anchor" onClick={()=>{
+                let AnchorHidro = document.getElementById("hidroAnchor");
+                AnchorHidro.scrollIntoView({behavior: "smooth"});
+            }}> Huertos <br></br> Hidroponicos 
+                <div className="anchorDeco" > </div>
+                </div>
+            <div className="anchor" onClick={()=>{
+                let AnchorTerra = document.getElementById("terraAnchor");
+                AnchorTerra.scrollIntoView({behavior: "smooth"});
+            }}> Huertos <br></br> En Tierra  
+                <div className="anchorDeco" > </div>
+                </div>
+            <div className="anchor"onClick={()=>{
+                let AnchorTerra = document.getElementById("kiddiAnchor");
+                AnchorTerra.scrollIntoView({behavior: "smooth"});
+            }}>Huertos <br></br> Infantiles 
+                <div className="anchorDeco" > </div>
+                </div>
+        </div>
+
     <div className="homeParallax" style={{
         backgroundImage:`url(${prlxImg1})`,
         width: "100%",
         transform: `translate(0px, 0px)`,
-        minHeight: "150px",
+        minHeight: "180px",
         backgroundSize: "100% auto",
         backgroundAttachment: "fixed",
         backgroundRepeat: "no-repeat",
-        backgroundPositionY: "bottom",
+        backgroundPositionY: "center"
          }}>
         </div>           
 
+    <div className="productBar hidro" > 
+        <h2 style={{margin: "21px" }} id="hidroAnchor" > Huertos Hidroponicos </h2>
+    </div>
+    <div className="productBar tierra" > 
+        <h2 style={{margin: "21px" }} id="terraAnchor" > Huertos en Tierra </h2>
+    </div>
+    <div className="productBar infantiles" > 
+        <h2 style={{margin: "21px" }} id="kiddiAnchor"> Huertos infantiles </h2>
+    </div>
   </main>
 </GeneralLayout>
 
     <style jsx> {`
-    h1, h2, h3, p {
+    h1, h2, h3, p, .anchor {
         font-family: 'Poiret One', cursive;
         margin: unset;
     }
@@ -178,7 +216,6 @@ export default function HomeOne(){
         width: 180px;
         margin: 6px 12px;
         letter-spacing: 9px;
-        
     }
 
     #vineLeftHome1{
@@ -208,26 +245,38 @@ export default function HomeOne(){
         margin-top: 21px;
         padding-top: 21px;
         border-top: solid 1px rgba(102, 102, 102, 1);
-        border-bottom: solid 2px rgba(102, 153, 51, 1);
         padding-bottom: 21px;
     }
 
-    .anchorContainer{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: row;
-    }
+.anchorContainer{
+    border-bottom: solid 2px green;
+}
 
-    .anAnchor{
+    .anchor{
         align-items: center;
         font-size: 2em;
         margin: 10px 33px;
     }
-    .anAnchor:hover{
+    .anchor:hover{
         cursor: pointer;
+        font-weight: 600;
     }
-    .anAnchor:hover>.anchorDeco{
+    .anchor:hover > .anchorDeco{
+        cursor: pointer;
+        width: 100px;
+        background-color: red;
+        transition: all ease-in 0.5s;
+    }
+    .anchor2{
+        align-items: center;
+        font-size: 2em;
+        margin: 10px 33px;
+    }
+    .anchor2:hover{
+        cursor: pointer;
+        font-weight: 600;
+    }
+    .anchor2:hover > .anchorDeco{
         cursor: pointer;
         width: 100px;
         background-color: red;
@@ -239,6 +288,10 @@ export default function HomeOne(){
         height: 2px;
         width: 12px;
         background-color: red;
+    }
+
+    .productBar{
+        height: 210px;
     }
 
 @media screen and (max-width: 600px){
@@ -255,10 +308,12 @@ export default function HomeOne(){
         font-size: 1.5em;
     }
 
-    .anchorContainer{
-        flex-direction: column;
-        align-items: start;
-        padding-left: 33px;
+    .anchor{
+        margin: 10px 15px;
+        }
+    .anchor2{
+        margin: 10px 55px;
+
     }
 }
 

@@ -8,6 +8,7 @@ export default function Home() {
   return (
   <div className="landingPageGeneral">
     <Head>
+    
       <title>De Raiz - Huertos</title>
       <meta property="og:title" content="D´Raiz - Huetos" />
       <link rel="icon" href="/favicon.ico" />

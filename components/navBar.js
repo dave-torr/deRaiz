@@ -1,46 +1,36 @@
-import Link from 'next/link'
-
 const Navbar =()=> (
   <>
-        <nav>
-          <Link href="/" as="/" >
-          <h3 className="NavLink"> Landing</h3>
-          </Link>
-          <Link href="/v2" as="/v2" >
-          <h3 className="NavLink"> tipologia.1 </h3>
-          </Link>
-          <Link href="/v3" as="/v3" >
-          <h3 className="NavLink"> tipologia.2</h3>
-          </Link>
-        </nav>
-        
-      <style jsx>{`
-      nav{
-          font-family: 'Poiret One', cursive;
-          position: fixed;
-          justify-content: center;
-          display:flex;
-          top: 0px;
-          width: 100%;
-          z-index: 2;
-          height: 40px;
-        }
-        .NavLink{
-          padding-top: 6px;
-          letter-spacing: 3px;
-          margin: 0px 18px
-        }
+  <nav>
+    <a style={{color: "black" }} href="./assets/pdfs/draizCatalog.pdf" download>
+    <p style={{fontWeight: "600", margin: "unset", marginTop: "6px" }}> 
+    ¡Descarga nuestro catálogo en P F D aqui!
+    </p>
+    </a>
+  </nav>
+    
+    <br></br>
+    <br></br>
+  <style jsx>{`
+  nav{
+      font-family: 'Poiret One', cursive;
+      position: fixed;
+      justify-content: center;
+      display:flex;
+      top: 0px;
+      width: 100%;
+      z-index: 2;
+      height: 30px;
+      background-color: rgb(153, 153, 102);
+      box-shadow: 3px 3px 10px rgba(114, 112, 112, 0.986);
+    }
 
-        .NavLink:hover{
-          cursor: pointer;
-        }
 
-        h3{
-          font-size: 1em
-        }
+    h3{
+      font-size: 1em
+    }
 
-        
-        `}</style>
+    
+    `}</style>
 
 
   </>
