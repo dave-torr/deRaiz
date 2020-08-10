@@ -18,13 +18,21 @@ const Navbar =()=> (
       display:flex;
       top: 0px;
       width: 100%;
+      letter-spacing: 1px;
       z-index: 2;
       height: 30px;
       background-color: rgb(153, 153, 102);
       box-shadow: 3px 3px 10px rgba(114, 112, 112, 0.986);
     }
 
+    a{
+      text-decoration: none;
+    }
 
+    a:hover{
+      text-decoration: underline;
+      cursor: pointer;
+    }
     h3{
       font-size: 1em
     }

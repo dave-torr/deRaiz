@@ -2,10 +2,10 @@ import Head from 'next/head'
 import {GeneralLayout} from "../components/generalLayout.js"
 import Pixel from '../components/Pixel'
 
-
+//Prodcut Info
 let tradOne={
     "type": "Tradicional en tierra",
-    "name": "Mini-Huerto",
+    "name": "Mini-Huerto Piramidal",
     "price": 15,
     "details": [
         "3 plantitas (pueden ser especies variadas)",
@@ -17,7 +17,7 @@ let tradOne={
 }
 let tradTwo={
     "type": "Tradicional en tierra",
-    "name": "Mini-Huerto",
+    "name": "Mini-Huerto Piramidal Grande",
     "price": 25,
     "details": [
         "6 plantitas de la misma especie",
@@ -29,7 +29,7 @@ let tradTwo={
 }
 let tradThree={
     "type": "Tradicional en tierra",
-    "name": "Mini-Huerto",
+    "name": "Mini-Huerto Colgante",
     "price": 18,
     "details": [
         "3 plantitas (pueden ser especies variadas)",
@@ -40,17 +40,20 @@ let tradThree={
 }
 let hydroOne={
     "type": "Hydrophonic",
-    "name": "Tubular",
+    "name": "Huerto Tubular",
     "price": 35,
+    "color": ["blanco", "madera", "negro" ],
     "details": [
         "Sistema estacionario de mecha", 
         "4 plantitas de la misma especie",
         "Nutrientes y agua sin cloro",
         "Sistema modular",
-        "Sistema colgante o para mesón",
+        "Diseño colgante o para mesón",
         ],
     "measurements": "40cm x 20cm x 20cm",    
 }
+let hydroOneImg = "./assets/productImgs/tubular1.png"
+
 let hydroTwo={
     "type": "Hydrophonic",
     "name": "Circulatorio",
@@ -64,6 +67,8 @@ let hydroTwo={
         ],
     "measurements": "40cm x 20cm x 20cm",    
 }
+let hydroTwoImg = "./assets/productImgs/squaredOne.png"
+
 let kiddiOne={
     "type": "Huerto Infantil",
     "name": "Mi primer huerto",
@@ -95,33 +100,107 @@ let prlxImg1="./assets/fillerImgs/farmVeggieCloseupOne.jpg"
 
 
 export default function HomeOne(){
+
+    const ProdDisplayer =(eachProduct, prodImg)=>{
+    let eachProdFeatures = eachProduct.details.map((eachItem)=>
+        <li style={{marginTop:"10px"}}> {eachItem} </li>
+        );
     return(<>
-<Head>
-  <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=UA-166263603-2"
-  />
+        <div className="generalProdContainer" 
+            id={eachProduct.name} > 
+            <div className="prodImgCont" > 
+            {prodImg&&
+            <img src={prodImg} className="eachProdPic" />
+            }
+            </div>
 
-  <script
-    dangerouslySetInnerHTML={{
-      __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'UA-166263603-2');
-        `,
-    }}
-  />
+            <div className="prodDetailCont" >  
+                <h3 className="eachProdName" > {eachProduct.name} </h3>
+                <div className="featureList" > {eachProdFeatures} </div>
+            </div>
+        </div>
+    <style jsx> {`
 
-    <title>De Raiz - Huertos</title>
-    <meta property="og:title" content="D´Raiz - Huetos" />
-    <link rel="icon" href="/favicon.ico" />
-    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet"/>
-</Head>
-<Pixel name='FACEBOOK_PIXEL_1' />
+    .generalProdContainer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        min-width: 95vw;
+        margin-bottom: 21px;
+    }
+    
+    .prodImgCont{
+        display: flex;
+        align-items: center;
+    }
+
+    .eachProdPic{
+        max-width: 40vw;
+        margin: 30px;
+    }
+    .prodDetailCont{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+    .eachProdName{
+        margin: 18px;
+        font-size: 1.8em;
+        letter-spacing: 1px;
+    }
+
+    @media screen and (max-width: 600px){
+        .generalProdContainer{
+            flex-direction: column;
+            align-items: center;
+
+        }
+        .eachProdPic{
+            max-width: 70vw;
+            margin: 18px;
+
+        }
+    }
+
+    `}</style> 
+        </>)
+    }
+
+    const homeHead=()=>{
+        return(<> 
+        <Head>
+        <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=UA-166263603-2"
+        />
+
+        <script
+            dangerouslySetInnerHTML={{
+            __html: `
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', 'UA-166263603-2');
+                `,
+            }}
+        />
+
+            <title>De Raiz - Huertos</title>
+            <meta property="og:title" content="D´Raiz - Huetos" />
+            <link rel="icon" href="/favicon.ico" />
+            <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet"/>
+        </Head>
+        <Pixel name='FACEBOOK_PIXEL_1' />
+        </>)
+    }
+
+    return(<>
+    {homeHead()}
 
 <GeneralLayout>
   <main className="homeMain">
+
     <div className="homeLogoGenContainer" >
         <div>
             <img className="homeFontFace-one" alt="logo font face green" src="./assets/logoAndVar/fontface-lghtGrn.png" />
@@ -140,13 +219,14 @@ export default function HomeOne(){
     <img className="handOffHome" alt="Handing plants off" src="./assets/fillerImgs/handoffOne.png" />
 
     <h2 style={{ marginLeft: "9%", marginTop: "45px" }}> 
-        Agricultura a pequeña escala, simplificada </h2>
+        Agricultura a pequeña escala: simplificada </h2>
     <div>
         <h3 style={{marginLeft: "12%", marginRight: "30px", marginTop: "15px", }}> 
-            D´Raiz te trae sistemas para crecer tus propios vegetales en casa, sin la necesidad de tener ningún conocimiento de agricultura. Comidas más nutritivas, variadas y frescas todos los días.</h3>
+            D´Raiz te trae sistemas para crecer tus propios vegetales en casa, sin la necesidad de tener ningún conocimiento de agricultura. <br></br> Comidas más nutritivas, variadas y frescas todos los días.</h3>
         <h3 style={{ marginLeft: "12%", marginRight: "30px", marginTop: "15px", }}> 
-            Elige entre nuestros elegantes y prácticos sistemas <i> hidropónicos </i>  o a <i>  base de tierra.</i>  Encuentra el lugar ideal donde ubicar tus plantitas y ¡listo! en poco tiempo podrás disfrutar de deliciosos sabores criados en casa. </h3>
+            Elegantes y prácticos sistemas <i> hidropónicos </i>  o a <i>  base de tierra.</i>  Encuentra el lugar ideal y ¡listo! en poco tiempo podrás disfrutar de deliciosos sabores criados en casa. </h3>
     </div> 
+
     <div className="homeProductAnchors" >
         <h3 style={{textAlign:"center", fontSize: "1.5em" }}> 
         Explora nuestras opciones de:
@@ -185,22 +265,32 @@ export default function HomeOne(){
          }}>
         </div>           
 
-    <div className="productBar hidro" > 
-        <h2 style={{margin: "21px" }} id="hidroAnchor" > Huertos Hidroponicos </h2>
+    <div className="productBar" > 
+        <h2 style={{margin: "21px"}} className="prodBarTitle" id="hidroAnchor" > Huertos Hidroponicos: </h2>
+        <div  style={{display: "flex", overflowX: "scroll",} }  >
+        {ProdDisplayer(hydroOne, hydroOneImg)};
+        {ProdDisplayer(hydroTwo, hydroTwoImg)};
+        </div>
+
     </div>
-    <div className="productBar tierra" > 
-        <h2 style={{margin: "21px" }} id="terraAnchor" > Huertos en Tierra </h2>
+    <div className="productBar" > 
+        <h2 style={{margin: "21px" }} className="prodBarTitle" id="terraAnchor" > Huertos en Tierra: </h2>
     </div>
-    <div className="productBar infantiles" > 
-        <h2 style={{margin: "21px" }} id="kiddiAnchor"> Huertos infantiles </h2>
+    <div className="productBar" > 
+        <h2 style={{margin: "21px" }} className="prodBarTitle" id="kiddiAnchor"> Huertos infantiles: </h2>
     </div>
   </main>
+
+
+
+
 </GeneralLayout>
 
     <style jsx> {`
-    h1, h2, h3, p, .anchor {
-        font-family: 'Poiret One', cursive;
+
+    *{
         margin: unset;
+        font-family: 'Poiret One', cursive;
     }
 
     .homeLogoGenContainer{
@@ -248,9 +338,10 @@ export default function HomeOne(){
         padding-bottom: 21px;
     }
 
-.anchorContainer{
-    border-bottom: solid 2px green;
-}
+    .anchorContainer{
+        border-bottom: solid 2px green;
+
+    }
 
     .anchor{
         align-items: center;
@@ -267,21 +358,7 @@ export default function HomeOne(){
         background-color: red;
         transition: all ease-in 0.5s;
     }
-    .anchor2{
-        align-items: center;
-        font-size: 2em;
-        margin: 10px 33px;
-    }
-    .anchor2:hover{
-        cursor: pointer;
-        font-weight: 600;
-    }
-    .anchor2:hover > .anchorDeco{
-        cursor: pointer;
-        width: 100px;
-        background-color: red;
-        transition: all ease-in 0.5s;
-    }
+
 
     .anchorDeco{
         transition: all ease-in 1s;
@@ -291,7 +368,13 @@ export default function HomeOne(){
     }
 
     .productBar{
-        height: 210px;
+        min-height: 100px;
+        border-bottom: solid 2px rgb(75, 204, 15);
+    }
+
+    .prodBarTitle{
+        font-weight: 400;
+        font-size: 2em;
     }
 
 @media screen and (max-width: 600px){
@@ -310,15 +393,17 @@ export default function HomeOne(){
 
     .anchor{
         margin: 10px 15px;
+        font-size: 1.3em;
         }
-    .anchor2{
-        margin: 10px 55px;
 
+    .prodBarTitle{
+        font-weight: 400;
+        font-size: 1.5em;
     }
+
 }
 
 
-    `}
-    </style> 
+    `}</style> 
     </>)
 }
