@@ -4,19 +4,21 @@ import Pixel from '../components/Pixel'
 
 //Prodcut Info
 let tradOne={
-    "type": "Tradicional en tierra",
+    "type": "Tradicional en Tierra",
     "name": "Mini-Huerto Piramidal",
     "price": 15,
     "details": [
-        "3 plantitas (pueden ser especies variadas)",
+        "3 plantitas (especies variadas)",
         "Diseño simple y elegante",
         "Ideal para mesón",
         "Disponible en varios colores"
         ],
     "measurements": "40cm x 20cm x 20cm",    
 }
+let tradOneImg = "./assets/productImgs/piramidSmall.png"
+
 let tradTwo={
-    "type": "Tradicional en tierra",
+    "type": "Tradicional en Tierra",
     "name": "Mini-Huerto Piramidal Grande",
     "price": 25,
     "details": [
@@ -27,6 +29,8 @@ let tradTwo={
         ],
     "measurements": "40cm x 20cm x 20cm",    
 }
+let tradTwoImg = "./assets/productImgs/piramidLarge.png"
+
 let tradThree={
     "type": "Tradicional en tierra",
     "name": "Mini-Huerto Colgante",
@@ -38,6 +42,8 @@ let tradThree={
         ],
     "measurements": "40cm x 20cm x 20cm",    
 }
+let tradThreeImg = "./assets/productImgs/hangingOne.png"
+
 let hydroOne={
     "type": "Hydrophonic",
     "name": "Huerto Tubular",
@@ -71,7 +77,7 @@ let hydroTwoImg = "./assets/productImgs/squaredOne.png"
 
 let kiddiOne={
     "type": "Huerto Infantil",
-    "name": "Mi primer huerto",
+    "name": "Mi Primer Huerto",
     "price": 15,
     "details": [
         "2 plantitas", 
@@ -83,7 +89,7 @@ let kiddiOne={
 }
 let kiddiTwo={
     "type": "Huerto Infantil",
-    "name": "Mi primer huerto",
+    "name": "Mi Primer Huerto",
     "price": 18,
     "details": [
         "5 plantitas", 
@@ -93,6 +99,7 @@ let kiddiTwo={
         ],
     "measurements": "45cm x 25cm",    
 }
+let kiddiOneImg = "./assets/productImgs/kiddiOne.png"
 
 
 
@@ -102,8 +109,8 @@ let prlxImg1="./assets/fillerImgs/farmVeggieCloseupOne.jpg"
 export default function HomeOne(){
 
     const ProdDisplayer =(eachProduct, prodImg)=>{
-    let eachProdFeatures = eachProduct.details.map((eachItem)=>
-        <li style={{marginTop:"10px"}}> {eachItem} </li>
+    let eachProdFeatures = eachProduct.details.map((eachItem, i)=>
+        <li style={{fontSize: "1.2em", marginTop:"10px", width:"100%" }} key={i}> {eachItem} </li>
         );
     return(<>
         <div className="generalProdContainer" 
@@ -117,16 +124,34 @@ export default function HomeOne(){
             <div className="prodDetailCont" >  
                 <h3 className="eachProdName" > {eachProduct.name} </h3>
                 <div className="featureList" > {eachProdFeatures} </div>
+                <div className="prodPrice" > {eachProduct.price} .- USD </div>
+                <div className="eachProdCallToAction" 
+                style={{fontSize:"1.5em", textAlign: "center", borderTop: "dashed 1px green", marginTop: "9px", paddingTop: "3px" }} > Me interesa!  
+                </div>
+                <div style={{display:"flex", justifyContent:"center", textAlign:"center", marginTop:"6px"}}>
+                    <div className="CTA1"> <a href="https://wa.me/593998752496" target="_blank" rel="noopener noreferrer">
+                        Pedir por <br></br>WhatsApp </a></div>
+                    <div className="CTA2" > <a href="mailto:draiz.info@gmail.com" > 
+                        Pedir por <br></br> Correo Electronico </a></div>
+                </div>
             </div>
         </div>
     <style jsx> {`
+    a{
+        text-decoration: none;
+        color: unset;
+    }
 
     .generalProdContainer{
         display: flex;
         flex-direction: row;
         justify-content: space-around;
         min-width: 95vw;
+        padding-bottom: 6px;
         margin-bottom: 21px;
+        border-left: solid 1px grey;
+        border-right: solid 1px grey;
+        border-bottom: solid 1px grey;
     }
     
     .prodImgCont{
@@ -135,8 +160,8 @@ export default function HomeOne(){
     }
 
     .eachProdPic{
-        max-width: 40vw;
-        margin: 30px;
+        width: 40vw;
+        margin-top: 30px;
     }
     .prodDetailCont{
         display: flex;
@@ -150,6 +175,30 @@ export default function HomeOne(){
         letter-spacing: 1px;
     }
 
+    .prodPrice{
+        font-size: 2.5em;
+        text-align: center;
+        margin-top: 21px;
+    }
+
+    .featureList{
+        margin: unset;
+        padding: unset;
+        padding-left: 12px;
+    }
+
+    .CTA1{
+        background-color: rgb(51, 102, 51);
+        color: white;
+        padding: 3px 21px
+    }
+    .CTA2{
+        background-color: rgb(204, 204, 102);
+        color: black;
+        font-weight: 800;
+        padding: 3px 21px
+    }
+
     @media screen and (max-width: 600px){
         .generalProdContainer{
             flex-direction: column;
@@ -157,8 +206,8 @@ export default function HomeOne(){
 
         }
         .eachProdPic{
-            max-width: 70vw;
-            margin: 18px;
+            width: 70vw;
+            margin: 12px;
 
         }
     }
@@ -266,18 +315,31 @@ export default function HomeOne(){
         </div>           
 
     <div className="productBar" > 
-        <h2 style={{margin: "21px"}} className="prodBarTitle" id="hidroAnchor" > Huertos Hidroponicos: </h2>
+        <h2 className="prodBarTitle" id="hidroAnchor" > Huertos Hidroponicos: </h2>
         <div  style={{display: "flex", overflowX: "scroll",} }  >
         {ProdDisplayer(hydroOne, hydroOneImg)};
         {ProdDisplayer(hydroTwo, hydroTwoImg)};
         </div>
-
+        <p style={{textAlign: "center", fontSize: "1.3em"}} >
+        <i>&#8640; desplaza para más opciones: &#8640;</i> </p>
     </div>
     <div className="productBar" > 
-        <h2 style={{margin: "21px" }} className="prodBarTitle" id="terraAnchor" > Huertos en Tierra: </h2>
+        <h2 className="prodBarTitle" id="terraAnchor" > Huertos en Tierra: </h2>
+        <div  style={{display: "flex", overflowX: "scroll",} }  >
+        {ProdDisplayer(tradOne, tradOneImg)};
+        {ProdDisplayer(tradTwo, tradTwoImg)};
+        {ProdDisplayer(tradThree, tradThreeImg)};
+        </div>
+        <p style={{textAlign: "center", fontSize: "1.3em"}} >
+        <i>&#8640; desplaza para más opciones: &#8640;</i> </p>
     </div>
     <div className="productBar" > 
-        <h2 style={{margin: "21px" }} className="prodBarTitle" id="kiddiAnchor"> Huertos infantiles: </h2>
+        <h2 className="prodBarTitle" id="kiddiAnchor"> Huertos Infantiles: </h2>
+        <div   >
+        {ProdDisplayer(kiddiOne, kiddiOneImg)};
+        </div>
+        {/* <p style={{textAlign: "center", fontSize: "1.3em"}} >
+        <i>&#8640; desplaza para más opciones:: &#8640;</i> </p> */}
     </div>
   </main>
 
@@ -368,13 +430,15 @@ export default function HomeOne(){
     }
 
     .productBar{
-        min-height: 100px;
-        border-bottom: solid 2px rgb(75, 204, 15);
+        border-bottom: solid 1px rgba(51, 102, 51, 0.8);
     }
 
     .prodBarTitle{
+        margin-top: 25px;
+        padding-bottom: 9px;
         font-weight: 400;
         font-size: 2em;
+        border-bottom: dotted 2px grey;
     }
 
 @media screen and (max-width: 600px){
@@ -397,8 +461,8 @@ export default function HomeOne(){
         }
 
     .prodBarTitle{
-        font-weight: 400;
-        font-size: 1.5em;
+        font-size: 1.8em;
+        
     }
 
 }
