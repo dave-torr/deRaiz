@@ -7,6 +7,21 @@ export default function Social() {
 return(<>
 <Head>
     <meta property="og:title" content="D'Raiz: social media landing page" />
+    <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=UA-166263603-2"
+        />
+
+    <script
+        dangerouslySetInnerHTML={{
+        __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'UA-166263603-2');
+            `,
+        }}
+    />
     <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet"/>
     
     </Head>

@@ -164,7 +164,7 @@ export default function Home(){
             <title>De Raíz - Huertos</title>
             <meta property="og:title" content="D´Raíz - Huetos" />
             <link rel="icon" href="/favicon.ico" />
-            <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet"/>
+
         </Head>
         <Pixel name='FACEBOOK_PIXEL_1' />
         </>)
