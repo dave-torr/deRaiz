@@ -342,10 +342,6 @@ export default function HomeOne(){
         <i>&#8640; desplaza para más opciones:: &#8640;</i> </p> */}
     </div>
   </main>
-
-
-
-
 </GeneralLayout>
 
     <style jsx> {`

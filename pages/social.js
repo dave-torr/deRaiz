@@ -45,7 +45,7 @@ return(<>
 <style jsx>{`
 
     *{
-        font-family: 'Poiret One', Cantarell, Fira Sans, Droid Sans, Helvetica Neue,            sans-serif;
+        font-family: 'Poiret One', Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     }
 
     a{

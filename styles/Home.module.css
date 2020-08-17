@@ -1,0 +1,182 @@
+    .homeLogoGenContainer{
+        margin-top: 3%;
+        margin-bottom: 3%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+    }
+
+    .homeTitle{
+        width: 180px;
+        margin: 6px 12px;
+        letter-spacing: 9px;
+    }
+
+    #vineLeftHome1{
+        height: 150px;
+    }
+
+    .homeFontFaceOne{
+        margin: 6px 12px;
+        width: 200px;
+    }
+
+    .homeTextOne{
+        margin: 60px 18px 40px 18px;
+        text-align: center;
+        font-size: 1.5em;
+    }
+    .homeIconOne{
+        margin: 6px 12px;
+        width: 160px;
+    }
+
+    .handOffHome{
+        width: 100%;
+    }
+
+    .homeProductAnchors{
+        margin-top: 21px;
+        padding-top: 21px;
+        border-top: solid 1px rgba(102, 102, 102, 1);
+        padding-bottom: 21px;
+    }
+
+    .anchorContainer{
+        border-bottom: solid 2px green;
+
+    }
+
+    .anchor{
+        align-items: center;
+        font-size: 2em;
+        margin: 10px 33px;
+    }
+    .anchor:hover{
+        cursor: pointer;
+        font-weight: 600;
+    }
+    .anchor:hover > .anchorDeco{
+        cursor: pointer;
+        width: 100px;
+        background-color: red;
+        transition: all ease-in 0.5s;
+    }
+
+
+    .anchorDeco{
+        transition: all ease-in 1s;
+        height: 2px;
+        width: 12px;
+        background-color: red;
+    }
+
+    .productBar{
+        border-bottom: solid 1px rgba(51, 102, 51, 0.8);
+    }
+
+    .prodBarTitle{
+        margin-top: 25px;
+        padding-left: 25px;
+        padding-bottom: 9px;
+        font-weight: 400;
+        font-size: 2em;
+        border-bottom: dotted 2px grey;
+    }
+    .prodImgCont{
+        display: flex;
+        align-items: center;
+    }
+
+    .generalProdContainer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        min-width: 95vw;
+        padding-bottom: 6px;
+        margin-bottom: 21px;
+        border-left: solid 1px grey;
+        border-right: solid 1px grey;
+        border-bottom: solid 1px grey;
+    }
+
+    .eachProdPic{
+        width: 40vw;
+        margin-top: 30px;
+    }
+    .prodDetailCont{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+    .eachProdName{
+        margin: 18px;
+        font-size: 1.8em;
+        letter-spacing: 1px;
+    }
+
+    .prodPrice{
+        font-size: 2.5em;
+        text-align: center;
+        margin-top: 21px;
+    }
+
+    .featureList{
+        margin: unset;
+        padding: unset;
+        padding-left: 12px;
+    }
+
+    .CTA1{
+        background-color: rgb(51, 102, 51);
+        color: white;
+        padding: 3px 21px
+    }
+    .CTA2{
+        background-color: rgb(204, 204, 102);
+        color: black;
+        font-weight: 800;
+        padding: 3px 21px
+    }
+
+    .closingDiv{
+        text-align: center;
+    }
+
+@media screen and (max-width: 600px){
+
+    .homeLogoGenContainer{
+        margin-top: 15%;
+    }
+    .homeFontFaceOne{
+        width: 180px;
+    }
+    .homeTextOne{
+        margin: 40px 18px 35px 18px;
+        text-align: center;
+        font-size: 1.5em;
+    }
+
+    .anchor{
+        margin: 10px 15px;
+        font-size: 1.3em;
+    }
+
+    .prodBarTitle{
+        font-size: 1.8em;
+    }
+
+    .generalProdContainer{
+        flex-direction: column;
+        align-items: center;
+
+    }
+    .eachProdPic{
+        width: 70vw;
+        margin: 12px;
+
+    }
+
+}
