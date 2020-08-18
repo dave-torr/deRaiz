@@ -12,14 +12,7 @@ const Footer =()=>(
         -
         <SocialComp />
         -
-        <br></br>
-        Quito Ecuador
-        <br></br>
-        {`{waira.nuna}`} 
-        <br></br>
-        2020 
-        <br></br>
-        &copy;  
+      <div > {"© 2020"} <br></br>{"made with <3 by:"} <br></br> {"{ waira.nuna }"} </div>
       </div>
         <br></br>
       <div className="decoDivCont" >

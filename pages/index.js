@@ -196,9 +196,9 @@ export default function Home(){
     <h2 style={{ marginLeft: "9%", marginTop: "45px", fontSize:"2.5em", fontWeight: "200" }}> 
         Agricultura a pequeña escala: simplificada </h2>
     <div>
-        <h3 style={{marginLeft: "12%", marginRight: "30px", marginTop: "15px", }}> 
+        <h3 style={{marginLeft: "12%", marginRight: "30px", marginTop: "15px", fontWeight: "400" }}> 
             D´Raíz te trae sistemas para crecer tus propios vegetales en casa, sin la necesidad de tener ningún conocimiento de agricultura. <br></br> Comidas más nutritivas, variadas y frescas todos los días.</h3>
-        <h3 style={{ marginLeft: "12%", marginRight: "30px", marginTop: "15px", }}> 
+        <h3 style={{ marginLeft: "12%", marginRight: "30px", marginTop: "15px", fontWeight: "200"}}> 
             Elegantes y prácticos sistemas <i> hidropónicos </i>  o a <i>  base de tierra.</i>  Encuentra el lugar ideal y ¡listo! en poco tiempo podrás disfrutar de deliciosos sabores criados en casa. </h3>
     </div> 
 

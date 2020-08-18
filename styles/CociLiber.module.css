@@ -1,0 +1,31 @@
+.CociLiberIntroCont{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 21px;
+}
+
+.cLIntroTitle{
+    text-transform: uppercase;
+    font-weight: 200;
+    font-size: 5em;
+    letter-spacing: 3px;
+    margin-left: 21px;
+    margin-right: 21px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border-left: solid 1px grey;
+    border-right: solid 1px grey;
+}
+
+.cLIntroImg{
+    height: 180px;
+}
+
+.clIntroSub{
+    font-size: 1.8em;
+    margin-left: 21px;
+    text-align: center;
+}
+
