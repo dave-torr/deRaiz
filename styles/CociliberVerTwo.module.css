@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+
 .CociLiberIntroCont{
     display: flex;
     flex-direction: row;
@@ -31,6 +33,8 @@
 
 .RecipieGenCont{
     border: solid 1px olive;
+    position: relative;
+    z-index: 0;
     margin-top: 100px;
     width: 70%;
     margin-left: 15%;
@@ -91,8 +95,6 @@
     display: none;
 }
 
-
-
 .eachPlant{
     width: 110px;
     font-weight: 600;
@@ -113,8 +115,86 @@
     cursor: pointer;
 }
 
+.recipieCont{
+    transform: translateY(-35px);
+    border-top: solid 2px grey;
+}
+
+.recipieGuide{
+    margin-top: 21px;
+}
+
 .aRecipie{
-    
+    overflow-x: hidden;
+    width: 75%;
+    background-color: rgb(39, 42, 51);
+    transform: translate(30px, -25px);
+    margin-left: 15%;
+    position: relative;
+    z-index: 1;
+    box-shadow: -1px 7px 10px rgba(0, 0, 0, 0.328);
+    text-align: center;
+
+}
+
+.aRecipieTitle{
+    text-align: center;
+    font-family: 'Amatic SC', sans-serif;
+    color: whitesmoke;
+    text-transform: uppercase;
+    font-size: 3em;
+}
+
+.recipieImg{
+    height: 270px;
+}
+
+.recipieGrid{
+    text-align: start;
+    padding: 12px;
+    color: whitesmoke;
+    display: grid;
+    justify-content: space-around;
+    grid-template-areas: 
+    "MainPlant MainPlant"
+    "gridTime gridPortion"
+    "gridIngredients gridIngredients"
+    "gridSteps gridSteps";
+}
+
+.gridMainPlant{
+    text-align: center;
+    font-size: 1.7em;
+    grid-area: MainPlant;
+    margin-bottom: 21px;
+
+}
+.gridTime{
+    grid-area: gridTime;
+    font-size: 1.5em;
+}
+.gridPortionSize{
+    grid-area: gridPortion;
+    font-size: 1.5em;
+}
+
+.gridcookingSteps{
+    grid-area: gridSteps;
+    margin-bottom: 12px;
+}
+.visibleSteps{display: inherit;}
+.hiddenSteps{display: none;}
+
+.gridIngredients{
+    grid-area: gridIngredients;
+    margin-top: 21px;
+    margin-bottom: 21px;
+}
+.visibleIngredients{ display: inherit; }
+.hiddenIngredients{ display: none; }
+
+.eachRecipieStep{
+    margin-top: 12px;
 }
 
 @media screen and (max-width: 600px){
@@ -124,6 +204,9 @@
     }
 
     .cLIntroSubtitle{
+        font-size: 1.4em;
+    }
+    .gridIngredientTitle{
         font-size: 1.4em;
     }
 
@@ -140,6 +223,13 @@
         margin-top: 80px;
         width: 90%;
         margin-left: 5%;
+    }
+
+    .aRecipie{
+        margin-left: 3%;
+        width: 93%;
+        transform: translate(15px, -21px);
+
     }
 
 }
