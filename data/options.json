@@ -1,0 +1,31 @@
+[
+    {
+        "plantType": "hortalizas",
+        "description": "Hortalizas de Hoja",
+        "options": [
+            "Lechuga roja", 
+            "Lechuga repollo", 
+            "Rúcola", 
+            "Acelga", 
+            "Apio", 
+            "Perejil Crespo", 
+            "Espinaca", 
+            "Radicho"
+        ] 
+    },
+    {
+        "plantType": "aromáticas",
+        "description": "Plantas Aromáticas",
+        "options": [
+            "Hierbabuena", 
+            "Toronjil", 
+            "Cedrón", 
+            "Romero", 
+            "Romillo", 
+            "Menta", 
+            "Oregano", 
+            "Manzanilla"
+        ] 
+
+    }
+]
