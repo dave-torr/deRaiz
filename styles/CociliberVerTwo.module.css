@@ -51,12 +51,34 @@
     transform: translateY(-45px);
     min-height: 50px;
     width: 100%;
+    margin-bottom: 12px;
 }
 
 .plantCatTitle{
+    margin-bottom: 12px;
     font-size: 1.5em;
     text-transform: uppercase;
+    margin-left: 6px;
     
+}
+
+.EachPlantSelector{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.HiddenEachPlant{
+    display: none;
+}
+
+
+
+.eachPlant{
+    width: 110px;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin: 9px;
 }
 
 @media screen and (max-width: 600px){
