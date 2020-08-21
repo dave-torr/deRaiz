@@ -9,9 +9,7 @@ let fontfaceblk =  "./assets/logoAndVar/fontface-blk.png";
 import varieties from "../data/options.json";
 
 export default function CociliberVerTwo(props){
-
-    console.log("varieties", varieties)
-    
+   
     const [pickedVeggie, setPickedVeggie] = useState("rucola")
     const [visDiv, setVisDiv] = useState(styles.EachPlantSelector)
     const [visDiv2, setVisDiv2] = useState(styles.HiddenEachPlant)
@@ -20,14 +18,20 @@ export default function CociliberVerTwo(props){
 
     const recipieSec =(variety, visController)=>{
         let eachPlant = variety.options.map((eachItem)=>
-            <p className={styles.eachPlant} >  {eachItem}  </p> )
+            <p className={styles.eachPlant} onClick={()=> setPickedVeggie(eachItem) }>  {eachItem}  </p> )
 
         return(
             <div className={styles.plantCatContainer} >
-                <div className={styles.plantCatTitle} > {variety.description} </div>
-                <p id={variety.plantType} onClick={()=> collapseController(variety) } > collapse </p> 
-                <div className={visController}>
-                 {eachPlant}
+                <div className={styles.plantCatTitle} onClick={()=>         
+                    collapseController(variety) }> 
+                    {variety.description} </div>
+                <p className={styles.collapseBtn} onClick={()=>         
+                    collapseController(variety) } > 
+                    {visController===styles.EachPlantSelector ? 
+                    <> colapsar </> : <> expandir </>} 
+                    </p> 
+                <div className={visController}  >
+                {eachPlant}
                 </div> 
             </div>
         )
@@ -35,14 +39,12 @@ export default function CociliberVerTwo(props){
 
     const collapseController =(eachVariaty)=>{
         if (eachVariaty.plantType === "hortalizas" ){
-            console.log( "Horta BIATCH")
             if(visDiv===styles.EachPlantSelector){
                 setVisDiv(styles.HiddenEachPlant)
             } else if (visDiv===styles.HiddenEachPlant){
                 setVisDiv(styles.EachPlantSelector)
             }
         } else if (eachVariaty.plantType === "aromáticas"){
-            console.log( "Aroma of Christ Church")
             if(visDiv2===styles.EachPlantSelector){
                 setVisDiv2(styles.HiddenEachPlant)
             } else if (visDiv2===styles.HiddenEachPlant){
@@ -51,7 +53,13 @@ export default function CociliberVerTwo(props){
         }
     }
 
-
+    const recipieDisplayer =()=>{
+        return(
+            <>
+            <div className={styles.aRecipie} > </div>
+            </>
+        )
+    }
 
 
 return(
@@ -64,9 +72,10 @@ return(
             </div>
             <div className={styles.RecipieGenCont} > 
                 <img src={fontfaceblk} className={styles.iconBlk} />
+                <div className={styles.pickedVeggie} > {pickedVeggie} </div>
                 
 
-
+            <h3 className={styles.PickerTitle} > Selecciona un tipo de Planta:</h3>
                 {recipieSec(varieties[0], visDiv ) }
                 {recipieSec(varieties[1], visDiv2 ) }
             

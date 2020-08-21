@@ -47,6 +47,25 @@
     margin: 15px;
 }
 
+.pickedVeggie::before{
+    display: block;
+    content: "selección:";
+    font-size: 0.5em;
+    font-weight: 600;
+}
+.pickedVeggie{
+    transform: translateY(-65px);
+    text-transform: uppercase;
+    text-align: end;
+    padding-right: 21px;
+    font-size: 2em;
+    border-bottom: solid 2px grey;
+}
+
+.PickerTitle{
+    transform: translateY(-45px);
+}
+
 .plantCatContainer{
     transform: translateY(-45px);
     min-height: 50px;
@@ -55,11 +74,11 @@
 }
 
 .plantCatTitle{
+    margin-top: 12px;
     margin-bottom: 12px;
     font-size: 1.5em;
     text-transform: uppercase;
-    margin-left: 6px;
-    
+    margin-left: 6px; 
 }
 
 .EachPlantSelector{
@@ -78,7 +97,24 @@
     width: 110px;
     font-weight: 600;
     text-transform: capitalize;
-    margin: 9px;
+    margin: 6px 9px;
+}
+
+.collapseBtn{
+    width: fit-content;
+    margin: unset;
+    margin-left: 21px;
+    transition: all ease-in 1s;
+}
+
+.collapseBtn:hover{
+    font-weight: 600;
+    transition: all ease-in 0.5s;
+    cursor: pointer;
+}
+
+.aRecipie{
+    
 }
 
 @media screen and (max-width: 600px){
