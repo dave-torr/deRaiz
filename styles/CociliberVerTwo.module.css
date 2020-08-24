@@ -90,28 +90,42 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    font-size: 1.1em;
 }
+
+.eachPlant:hover > .plantSelectorDeco{
+    background-color: green;
+}
+
+.plantSelectorDeco{
+    height: 2px;
+    width: 120px;
+    background-color: rgb(8, 187, 187);
+}
+
 .HiddenEachPlant{
     display: none;
 }
 
 .eachPlant{
-    width: 110px;
+    width: 130px;
     font-weight: 600;
     text-transform: capitalize;
-    margin: 6px 9px;
+    margin: 6px 12px;
+}
+
+.eachPlant:hover{
+    cursor: pointer;
 }
 
 .collapseBtn{
     width: fit-content;
     margin: unset;
     margin-left: 21px;
-    transition: all ease-in 1s;
 }
 
 .collapseBtn:hover{
     font-weight: 600;
-    transition: all ease-in 0.5s;
     cursor: pointer;
 }
 
@@ -120,7 +134,7 @@
     border-top: solid 2px grey;
 }
 
-.recipieGuide{
+.recipieGuideTite{
     margin-top: 21px;
 }
 
@@ -132,63 +146,73 @@
     margin-left: 15%;
     position: relative;
     z-index: 1;
-    box-shadow: -1px 7px 10px rgba(0, 0, 0, 0.328);
+    border: solid 3px rgb(214, 0, 0);
+    box-shadow: -6px 7px 10px rgba(0, 0, 0, 0.328);
     text-align: center;
-
 }
 
-.aRecipieTitle{
+.recipieDeco{
     text-align: center;
-    font-family: 'Amatic SC', sans-serif;
     color: whitesmoke;
-    text-transform: uppercase;
-    font-size: 3em;
-}
-
-.recipieImg{
-    height: 270px;
+    font-size: 4em;
 }
 
 .recipieGrid{
     text-align: start;
-    padding: 12px;
     color: whitesmoke;
     display: grid;
-    justify-content: space-around;
-    grid-template-areas: 
-    "MainPlant MainPlant"
-    "gridTime gridPortion"
-    "gridIngredients gridIngredients"
-    "gridSteps gridSteps";
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+    "recipieTitle recipieTitle recipieTitle recipieTitle"
+    "MainPlant MainPlant MainPlant recipieImg"
+    "gridTime . gridPortion recipieImg"
+    "gridIngredients gridIngredients gridSteps gridSteps";
 }
 
-.gridMainPlant{
+.aRecipieTitle{
     text-align: center;
+    color: whitesmoke;
+    font-size: 4em;
+    font-family: 'Amatic SC', sans-serif;
+    text-transform: uppercase;
+    grid-area: recipieTitle;
+}
+
+.recipieImg{
+    grid-area: recipieImg;
+    height: 270px;
+}
+.gridMainPlant{
+    text-align: end;
     font-size: 1.7em;
     grid-area: MainPlant;
     margin-bottom: 21px;
+    margin-right: 21px;
 
 }
 .gridTime{
     grid-area: gridTime;
     font-size: 1.5em;
+    text-align: center;
 }
 .gridPortionSize{
     grid-area: gridPortion;
+    text-align: center;
     font-size: 1.5em;
 }
 
 .gridcookingSteps{
     grid-area: gridSteps;
-    margin-bottom: 12px;
+    margin: 21px 12px;
+    font-size: 1.2em;
 }
 .visibleSteps{display: inherit;}
 .hiddenSteps{display: none;}
 
 .gridIngredients{
     grid-area: gridIngredients;
-    margin-top: 21px;
-    margin-bottom: 21px;
+    margin: 21px 12px;
+    font-size: 1.3em;
 }
 .visibleIngredients{ display: inherit; }
 .hiddenIngredients{ display: none; }
@@ -196,6 +220,13 @@
 .eachRecipieStep{
     margin-top: 12px;
 }
+
+.nextRecipie{
+    margin: 21px 0px;
+    color: whitesmoke;
+    border-top: dotted 2px whitesmoke;
+}
+
 
 @media screen and (max-width: 600px){
 
@@ -208,6 +239,7 @@
     }
     .gridIngredientTitle{
         font-size: 1.4em;
+        letter-spacing: 3px;
     }
 
     .CociLiberIntroCont{
@@ -229,7 +261,26 @@
         margin-left: 3%;
         width: 93%;
         transform: translate(15px, -21px);
+    }
 
+    .recipieGrid{
+        text-align: start;
+        padding: 12px;
+        color: whitesmoke;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+        "recipieTitle recipieTitle"
+        "recipieImg recipieImg" 
+        "MainPlant MainPlant"
+        "gridTime gridPortion"
+        "gridIngredients gridIngredients"
+        "gridSteps gridSteps";
+    }
+
+    .aRecipieTitle{
+
+        font-size: 3em;
     }
 
 }

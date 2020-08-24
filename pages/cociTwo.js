@@ -8,33 +8,26 @@ let fontfaceblk =  "./assets/logoAndVar/fontface-blk.png";
 let pizzaRucola =  "./assets/recipies/rucolaPizza.jpg";
 
 import varieties from "../data/options.json";
-
-let recipie1 ={
-    "recipieTitle": "Rucola & Prosciutto Pizza",
-    "mainPlant": "Rucola",
-    "cookingTime": 45,
-    "yield": "4 - 6",
-    "ingredients": ["Varios manojos de Rucola recien cosechada en tu huerto", "1 Masa de Pizza redonda", "2 cucharas de aceite de oliva", "1/2 tasa de pasta de tomate", "1.5 tasas de queso mozarella rayado", "8 cortes delgados de prosciutto" ],
-    "steps": [
-        "If you have a pizza stone, place it on a rack in the middle of the oven. Heat the oven to 550°F (or maximum oven temperature) for at least 30 minutes.", 
-        "If transferring the pizza to a stone in the oven, assemble on a well-floured peel or cutting board. Otherwise, assemble on the surface you will be cooking on (parchment paper, baking sheet, etc.). Working with one piece of dough at a time, roll or stretch it into a 10- to 12-inch circle. Brush the edges of the dough with 1 tablespoon of olive oil. Spread half of the tomato sauce over the rest of the dough. Sprinkle with about a 1/4 of the cheese. Lay 4 prosciutto slices so they are evenly covering the dough. Sprinkle with another 1/4 of the cheese.", 
-        "Bake the pizza until edges are lightly browned and cheese is bubbly and browned in spots, about 6 minutes at 550°F. Remove from oven to a cutting board, scatter half of the arugula over the top, and cut and serve immediately. Repeat with the remaining dough and toppings."
-        ],
-}
+import recipieBook from "../data/cociLiber.json";
 
 export default function CociliberVerTwo(props){
    
     const [pickedVeggie, setPickedVeggie] = useState("rucola")
+    const [pickedRecipie, setPickedRecipie] = useState(recipieBook.rucolaPizza)
     const [visDiv, setVisDiv] = useState(styles.HiddenEachPlant)
     const [visDiv2, setVisDiv2] = useState(styles.HiddenEachPlant)
     const [recipieStepsVis, setrecipieStepsVis] = useState(styles.hiddenSteps)
     const [recipieIngredVis, setrecipieIngredVis] = useState(styles.hiddenIngredients)
 
-
+    console.log(recipieBook)
 
     const recipieSec =(variety, visController)=>{
-        let eachPlant = variety.options.map((eachItem, i)=>
-            <p key={i} className={styles.eachPlant} onClick={()=> setPickedVeggie(eachItem) }>  {eachItem}  </p> )
+        let eachPlant = variety.options.map((eachItem, i)=> <>
+
+            <p key={i} className={styles.eachPlant} onClick={()=> setPickedVeggie(eachItem) }>  {eachItem} 
+            <div className={styles.plantSelectorDeco}></div> </p>
+             
+            </>)
 
         return(
             <div className={styles.plantCatContainer} >
@@ -76,15 +69,15 @@ export default function CociliberVerTwo(props){
         let recipieIngredients = recipie.ingredients.map((elements, i)=>
         <li key={i} className={styles.eachRecipieIngredient } > {elements} </li> )
 
-
         return(
             <>
             <div className={styles.aRecipie}> 
-                <div className={styles.aRecipieTitle} > 
-                    &#9753; <br></br> {recipie.recipieTitle}
-                </div>
-            <img src={pizzaRucola} className={styles.recipieImg} />
+            <div className={styles.recipieDeco}> &#9753; </div>
             <div className={styles.recipieGrid} >
+                <div className={styles.aRecipieTitle} > 
+                     {recipie.recipieTitle}
+                </div>
+            <img src={recipie.img} alt={recipie.imgAlt} className={styles.recipieImg} />
 
                 <div className={styles.gridMainPlant} > 
                     Delicias con {recipie.mainPlant} 
@@ -104,28 +97,35 @@ export default function CociliberVerTwo(props){
                         } else if (visIngredients===styles.hiddenIngredients){
                             setrecipieIngredVis(styles.visibleIngredients)
                         } }}>  
-                        I N G R E D I E N T E S:
-                    </div>
+                        INGREDIENTES: <br></br>
                     {visIngredients===styles.hiddenIngredients ? 
                         <> expandir</> : <> colapsar </>} 
+                    </div>
                     <ul className={visIngredients} >
                             {recipieIngredients}
                             </ul>
                     </div>
 
-                <div className={styles.gridcookingSteps} onClick={()=>{
+                <div className={styles.gridcookingSteps} >
+                <div 
+                className={styles.gridIngredientTitle}
+                onClick={()=>{
                     if(recipieStepsVis===styles.visibleSteps){
                         setrecipieStepsVis(styles.hiddenSteps)
                     } else if (recipieStepsVis===styles.hiddenSteps){
                         setrecipieStepsVis(styles.visibleSteps)
                     } }}> 
-                    P A S O S:
+                    PASOS:
                     <br></br>
                     {visSteps===styles.hiddenSteps ? 
                     <> expandir</> : <> colapsar </>} 
+                </div> 
                     <ol className={visSteps}> {recipieSteps} </ol>
                 </div>
-            </div> 
+            </div>
+
+            <div className={styles.nextRecipie} > Cucu </div>
+
             </div> 
             </>
         )
@@ -144,16 +144,18 @@ return(
                 <img src={fontfaceblk} className={styles.iconBlk} />
                 <div className={styles.pickedVeggie} > {pickedVeggie} </div>
                 
-
+            <h2 className={styles.PickerTitle}>Paso 1:</h2>
             <h3 className={styles.PickerTitle} > Selecciona un tipo de Planta:</h3>
                 {recipieSec(varieties[0], visDiv ) }
                 {recipieSec(varieties[1], visDiv2 ) }
             
             <div className={styles.recipieCont} > 
+
+            <h2 className={styles.recipieGuideTite} > Paso 2:</h2>            
             <h3 className={styles.recipieGuide} > Prueba una deliciosa receta:</h3>            
             </div>
             </div>
-            {recipieDisplayer(recipie1, recipieStepsVis, recipieIngredVis)}
+            {recipieDisplayer(pickedRecipie, recipieStepsVis, recipieIngredVis)}
         </div>
     </GeneralLayout>
     </>

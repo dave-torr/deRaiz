@@ -1,0 +1,17 @@
+{    
+    "rucolaPizza": {
+        "recipieTitle": "Rucola & Prosciutto Pizza",
+        "img": "./assets/recipies/rucolaPizza.jpg",
+        "imgAlt": "Rucola Pizza!",
+        "mainPlant": "Rucola",
+        "cookingTime": 45,
+        "yield": "4 - 6",
+        "ingredients": 
+            ["Varios manojos de Rucola recien cosechada en tu huerto", "1 Masa de Pizza redonda", "2 cucharas de aceite de oliva", "1/2 tasa de pasta de tomate", "1.5 tasas de queso mozarella rayado", "8 cortes delgados de prosciutto" ],
+        "steps": [
+            "If you have a pizza stone, place it on a rack in the middle of the oven. Heat the oven to 550°F (or maximum oven temperature) for at least 30 minutes.", 
+            "If transferring the pizza to a stone in the oven, assemble on a well-floured peel or cutting board. Otherwise, assemble on the surface you will be cooking on (parchment paper, baking sheet, etc.). Working with one piece of dough at a time, roll or stretch it into a 10- to 12-inch circle. Brush the edges of the dough with 1 tablespoon of olive oil. Spread half of the tomato sauce over the rest of the dough. Sprinkle with about a 1/4 of the cheese. Lay 4 prosciutto slices so they are evenly covering the dough. Sprinkle with another 1/4 of the cheese.", 
+            "Bake the pizza until edges are lightly browned and cheese is bubbly and browned in spots, about 6 minutes at 550°F. Remove from oven to a cutting board, scatter half of the arugula over the top, and cut and serve immediately. Repeat with the remaining dough and toppings."
+            ]
+        }
+    }
