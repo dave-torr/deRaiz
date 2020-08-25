@@ -10,6 +10,11 @@
     width: 100%;
 }
 
+    .IconOne{
+        margin: 6px 12px;
+        width: 160px;
+    }
+
 .cLIntroTitle{
     display: flex;
     flex-direction: row;
@@ -142,8 +147,6 @@
     overflow-x: hidden;
     width: 75%;
     background-color: rgb(39, 42, 51);
-    transform: translate(30px, -25px);
-    margin-left: 15%;
     position: relative;
     z-index: 1;
     border: solid 3px rgb(214, 0, 0);
@@ -159,13 +162,15 @@
 
 .recipieGrid{
     text-align: start;
+    align-items: center;
+    justify-content: center;
     color: whitesmoke;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-areas:
     "recipieTitle recipieTitle recipieTitle recipieTitle"
-    "MainPlant MainPlant MainPlant recipieImg"
-    "gridTime . gridPortion recipieImg"
+    "MainPlant MainPlant recipieImg recipieImg"
+    "gridTime gridPortion recipieImg recipieImg"
     "gridIngredients gridIngredients gridSteps gridSteps";
 }
 
@@ -180,7 +185,8 @@
 
 .recipieImg{
     grid-area: recipieImg;
-    height: 270px;
+    height: 300px;
+    margin-left: 5%;
 }
 .gridMainPlant{
     text-align: end;
@@ -227,8 +233,30 @@
     border-top: dotted 2px whitesmoke;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+    .arrowDeco{
+        animation: arrowDecoBounce infinite 1.5s linear;
+        animation-direction: alternate; 
+
+
+    }
+}
+
+@keyframes arrowDecoBounce {
+  from {
+    transform: translateY(00px);
+  }
+  to {
+    transform: translateY(15px);
+  }
+}
 
 @media screen and (max-width: 600px){
+
+    .CociLiberIntroCont{
+        margin-top: 25vh;
+        margin-bottom: 40vh;
+    }
 
     .cLIntroTitle{
         font-size: 4em;
@@ -258,14 +286,13 @@
     }
 
     .aRecipie{
-        margin-left: 3%;
-        width: 93%;
-        transform: translate(15px, -21px);
+        width: 92%;
+        margin-left: 4%;
+        transform: translateY(-10px);
     }
 
     .recipieGrid{
         text-align: start;
-        padding: 12px;
         color: whitesmoke;
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -279,8 +306,13 @@
     }
 
     .aRecipieTitle{
-
         font-size: 3em;
+    }
+
+    .recipieImg{
+        grid-area: recipieImg;
+        height: 260px;
+        margin: unset;
     }
 
 }

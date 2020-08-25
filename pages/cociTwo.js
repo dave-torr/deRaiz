@@ -13,7 +13,7 @@ import recipieBook from "../data/cociLiber.json";
 export default function CociliberVerTwo(props){
    
     const [pickedVeggie, setPickedVeggie] = useState("rucola")
-    const [pickedRecipie, setPickedRecipie] = useState(recipieBook.rucolaPizza)
+    const [pickedRecipie, setPickedRecipie] = useState(recipieBook[0])
     const [visDiv, setVisDiv] = useState(styles.HiddenEachPlant)
     const [visDiv2, setVisDiv2] = useState(styles.HiddenEachPlant)
     const [recipieStepsVis, setrecipieStepsVis] = useState(styles.hiddenSteps)
@@ -26,7 +26,6 @@ export default function CociliberVerTwo(props){
 
             <p key={i} className={styles.eachPlant} onClick={()=> setPickedVeggie(eachItem) }>  {eachItem} 
             <div className={styles.plantSelectorDeco}></div> </p>
-             
             </>)
 
         return(
@@ -124,21 +123,38 @@ export default function CociliberVerTwo(props){
                 </div>
             </div>
 
-            <div className={styles.nextRecipie} > Cucu </div>
+            <div className={styles.nextRecipie} > 
+                {additionalRecipies()}
+                </div>
 
             </div> 
             </>
         )
     }
 
+    const additionalRecipies =()=>{
+
+
+        return(
+            <>
+            Cucu
+            </>
+        )
+
+    }
 
 return(
     <>
     <GeneralLayout>
         <div style={{minHeight: "80vh"}} > 
             <div className={styles.CociLiberIntroCont} >
+                <img className={styles.IconOne} alt="icon green" src="./assets/logoAndVar/icon-lightGrn.png" />
                 <div className={styles.cLIntroTitle} > Coci <p style={{fontSize:"0.5em"}} > &#9752; </p> Liber </div>
-                <div className={styles.cLIntroSubtitle} > Deliciosos sabores <br></br> preparados con tus plantas <br></br> criadas en casa. <br></br> </div>
+                <div className={styles.cLIntroSubtitle} > Deliciosos sabores <br></br> preparados con tus plantas <br></br> criadas en casa. <br></br> 
+                <p className={styles.arrowDeco}>
+                &#8609; 
+                </p>
+                </div>
             </div>
             <div className={styles.RecipieGenCont} > 
                 <img src={fontfaceblk} className={styles.iconBlk} />
