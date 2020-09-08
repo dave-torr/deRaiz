@@ -5,7 +5,6 @@ import {GeneralLayout} from "../components/generalLayout.js"
 import Pixel from '../components/Pixel'
 
 let fontfaceblk =  "./assets/logoAndVar/fontface-blk.png";
-let pizzaRucola =  "./assets/recipies/rucolaPizza.jpg";
 
 import varieties from "../data/options.json";
 import recipieBook from "../data/cociLiber.json";
@@ -160,15 +159,13 @@ return(
                 <img src={fontfaceblk} className={styles.iconBlk} />
                 <div className={styles.pickedVeggie} > {pickedVeggie} </div>
                 
-            <h2 className={styles.PickerTitle}>Paso 1:</h2>
-            <h3 className={styles.PickerTitle} > Selecciona un tipo de Planta:</h3>
+            <h2 className={styles.PickerTitle}>Indice:</h2>
+
                 {recipieSec(varieties[0], visDiv ) }
                 {recipieSec(varieties[1], visDiv2 ) }
             
             <div className={styles.recipieCont} > 
-
-            <h2 className={styles.recipieGuideTite} > Paso 2:</h2>            
-            <h3 className={styles.recipieGuide} > Prueba una deliciosa receta:</h3>            
+                <h2 className={styles.recipieGuideTite} > Prueba una deliciosa receta</h2>                      
             </div>
             </div>
             {recipieDisplayer(pickedRecipie, recipieStepsVis, recipieIngredVis)}

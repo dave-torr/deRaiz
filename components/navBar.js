@@ -1,7 +1,8 @@
 const Navbar =()=> (
   <>
   <nav>
-    <a style={{color: "black" }} href="./assets/pdfs/draizCatalog.pdf" download>
+    <a style={{color: "black" }} href="./assets/pdfs/sepCatalog.pdf" 
+    download>
     <p style={{fontWeight: "600", margin: "unset", marginTop: "6px" }}> 
     ¡Descarga nuestro catálogo en P F D aqui!
     </p>
