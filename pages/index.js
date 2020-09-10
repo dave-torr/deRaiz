@@ -174,11 +174,13 @@ export default function Home(){
     {homeHead()}
 
 <GeneralLayout>
+            <p style={{textAlign: "center", fontSize: "2em", color: "cromson", fontWeight: "600" }}> Catálogo actualizado!! </p>
+            <br></br>
+            <br></br>
   <main className="homeMain">
 
     <div className={styles.homeLogoGenContainer} >
         <div>
-            Catálogo actualizado!!
             <img className={styles.homeFontFaceOne} alt="logo font face green" src="./assets/logoAndVar/fontface-lghtGrn.png" />
             <h1 className={styles.homeTitle}> HUERTOS</h1>
             <img className={styles.homeIconOne} alt="icon green" src="./assets/logoAndVar/icon-lightGrn.png" />
