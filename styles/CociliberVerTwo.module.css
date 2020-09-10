@@ -10,10 +10,10 @@
     width: 100%;
 }
 
-    .IconOne{
-        margin: 6px 12px;
-        width: 160px;
-    }
+.IconOne{
+    margin: 6px 12px;
+    width: 160px;
+}
 
 .cLIntroTitle{
     display: flex;
@@ -235,10 +235,8 @@
 
 @media (prefers-reduced-motion: no-preference) {
     .arrowDeco{
-        animation: arrowDecoBounce infinite 1.5s linear;
+        animation: arrowDecoBounce infinite 1s linear;
         animation-direction: alternate; 
-
-
     }
 }
 
@@ -247,7 +245,7 @@
     transform: translateY(00px);
   }
   to {
-    transform: translateY(15px);
+    transform: translateY(25px);
   }
 }
 
