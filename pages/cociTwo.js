@@ -18,8 +18,39 @@ export default function CociliberVerTwo(props){
     const [recipieStepsVis, setrecipieStepsVis] = useState(styles.hiddenSteps)
     const [recipieIngredVis, setrecipieIngredVis] = useState(styles.hiddenIngredients)
 
-    console.log(recipieBook)
+    //console.log(recipieBook)
 
+    const IntroSec=()=>{
+        return(
+            <>
+            <div className={styles.CociLiberIntroCont} >
+                <img className={styles.IconOne} alt="icon green" src="./assets/logoAndVar/icon-lightGrn.png" />
+                    <div className={styles.cLIntroTitle} > Coci <p style={{fontSize:"0.5em"}} > &#9752; </p> Liber </div>
+                    <div className={styles.cLIntroSubtitle} > Deliciosos sabores <br></br> preparados con tus plantas <br></br> criadas en casa. <br></br> 
+                    <p className={styles.arrowDeco}>
+                    &#8609; 
+                    </p>
+                </div>
+            </div>
+            </>
+        )
+    }
+    const recipiePicker=()=>{
+        return(
+            <>
+            <div className={styles.RecipieGenCont} > 
+                <img src={fontfaceblk} className={styles.iconBlk} />
+                <div className={styles.pickedVeggie} > {pickedVeggie} </div>
+            <h2 className={styles.PickerTitle}>Indice:</h2>
+                {recipieSec(varieties[0], visDiv ) }
+                {recipieSec(varieties[1], visDiv2 ) }
+                <div className={styles.recipieCont} > 
+                    <h2 className={styles.recipieGuideTite} > Prueba una deliciosa receta</h2>                      
+                </div>
+            </div>
+            </>
+        )
+    }
     const recipieSec =(variety, visController)=>{
         let eachPlant = variety.options.map((eachItem, i)=> <>
 
@@ -146,29 +177,9 @@ return(
     <>
     <GeneralLayout>
         <div style={{minHeight: "80vh"}} > 
-            <div className={styles.CociLiberIntroCont} >
-                <img className={styles.IconOne} alt="icon green" src="./assets/logoAndVar/icon-lightGrn.png" />
-                <div className={styles.cLIntroTitle} > Coci <p style={{fontSize:"0.5em"}} > &#9752; </p> Liber </div>
-                <div className={styles.cLIntroSubtitle} > Deliciosos sabores <br></br> preparados con tus plantas <br></br> criadas en casa. <br></br> 
-                <p className={styles.arrowDeco}>
-                &#8609; 
-                </p>
-                </div>
-            </div>
-            <div className={styles.RecipieGenCont} > 
-                <img src={fontfaceblk} className={styles.iconBlk} />
-                <div className={styles.pickedVeggie} > {pickedVeggie} </div>
-                
-            <h2 className={styles.PickerTitle}>Indice:</h2>
-
-                {recipieSec(varieties[0], visDiv ) }
-                {recipieSec(varieties[1], visDiv2 ) }
-            
-            <div className={styles.recipieCont} > 
-                <h2 className={styles.recipieGuideTite} > Prueba una deliciosa receta</h2>                      
-            </div>
-            </div>
-            {recipieDisplayer(pickedRecipie, recipieStepsVis, recipieIngredVis)}
+        {IntroSec()}
+        {recipiePicker()}
+        {recipieDisplayer(pickedRecipie, recipieStepsVis, recipieIngredVis)}
         </div>
     </GeneralLayout>
     </>

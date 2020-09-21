@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+
+.IntroCont{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 21px;
+    margin-bottom: 21px;
+    width: 100%;
+}
+
+.IconOne{
+    margin: 6px 12px;
+    width: 160px;
+}
+
+.IntroTitle{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: 200;
+    font-size: 5em;
+    letter-spacing: 4px;
+    padding-left: 21px;
+    padding-right: 15px;
+    border-top: solid 1px grey;
+    border-bottom: solid 1px grey;
+}
+
+.IntroSubtitle{
+    border-left: solid 1px grey;
+    margin-left: 21px;
+    padding-left: 21px;
+    font-size: 1.8em;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .arrowDeco{
+        animation: arrowDecoBounce infinite 1s linear;
+        animation-direction: alternate; 
+    }
+}
+
+@keyframes arrowDecoBounce {
+  from {
+    transform: translateY(00px);
+  }
+  to {
+    transform: translateY(25px);
+  }
+}
+
+@media screen and (max-width: 600px){
+    .IntroCont{
+        flex-direction: column;
+    }
+
+    .IntroTitle{
+        font-size: 4em;
+    }
+
+    .IntroSubtitle{
+        font-size: 1.4em;
+        margin-top: 21px;
+        margin-left: 0px;
+        text-align: center;
+        border-left: none;
+    }
+
+}

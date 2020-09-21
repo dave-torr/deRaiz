@@ -8,7 +8,7 @@ import Pixel from '../components/Pixel'
 let tradOne={
     "type": "Tradicional en Tierra",
     "name": "Mini-Huerto Piramidal",
-    "price": 15,
+    "price": 18,
     "details": [
         "3 plantitas (especies variadas)",
         "Diseño simple y elegante",
@@ -22,7 +22,7 @@ let tradOneImg = "./assets/productImgs/piramidSmall.png"
 let tradTwo={
     "type": "Tradicional en Tierra",
     "name": "Mini-Huerto Piramidal Grande",
-    "price": 25,
+    "price": 28,
     "details": [
         "6 plantitas de la misma especie",
         "Diseño simple y elegante",
@@ -45,6 +45,19 @@ let tradThree={
     "measurements": "40cm x 20cm x 20cm",    
 }
 let tradThreeImg = "./assets/productImgs/hangingOne.png"
+
+let tradFour={
+    "type": "Tradicional en tierra",
+    "name": "Mini-Huerto Colgante",
+    "price": 28,
+    "details": [
+        "3 plantitas (pueden ser especies variadas)",
+        "Elegante sistema colgante",
+        "Uso eficiente de espacio"
+        ],
+    "measurements": "24cm x 75cm x 20cm",    
+}
+let tradFourImg = "./assets/productImgs/hangingOne.png"
 
 let hydroOne={
     "type": "Hydrophonic",
