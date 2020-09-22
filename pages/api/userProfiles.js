@@ -2,7 +2,7 @@ import nextConnect from 'next-connect';
 import normalizeEmail from 'validator/lib/normalizeEmail';
 import bcrypt from 'bcrypt';
 import isEmail from 'validator/lib/isEmail';
-import middleware from '../../middleware/dRaizMiddleware';
+import middleware from '../../middleware/middleware';
 import { extractUser } from '../../utils/userHelper';
 
 const handler = nextConnect();
