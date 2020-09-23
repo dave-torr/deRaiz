@@ -1,12 +1,15 @@
 import nextConnect from 'next-connect';
 import normalizeEmail from 'validator/lib/normalizeEmail';
 import bcrypt from 'bcrypt';
-import isEmail from 'validator/lib/isEmail';
 import dRaizMiddleware from '../../middlewares/middleware';
+import isEmail from 'validator/lib/isEmail';
 import { extractUser } from '../../utils/userHelper';
 
 const handler = nextConnect();
 handler.use(dRaizMiddleware);
+
+//All relevant user stuff is made to pass through userProfiles API, using POST for signup, GET for login, DELETE, for Logout, and PATCH to update.
+handler.get(async (req, res) => res.json({ user: extractUser(req) }));
 
 handler.post(async (req, res) => {
   const { name, password } = req.body;
@@ -41,6 +44,7 @@ handler.post(async (req, res) => {
       signUpStream: "website",
       alias: null,
       subscription: null,
+      forumPosts: [],
        })
     .then(({ ops }) => ops[0]);
   req.logIn(user, (err) => {

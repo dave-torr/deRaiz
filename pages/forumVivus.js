@@ -1,11 +1,15 @@
 //Forum
 //Tags, and filtered Q&A, initial question deposit, comments and 
+//TEMPORATY TESTS FOR NAV BAR:
+import {Nav2} from "./../components/navBar"
 
 import styles from "./../styles/forumVivus.module.css"
-
-
+import { useUser } from "../utils/userHook"
 
 export default function ForumVivus(){
+    const [user, { mutate }] = useUser();
+
+console.log(user)
 
     const IntroSec=()=>{
         return(
@@ -27,8 +31,8 @@ export default function ForumVivus(){
 
     return(
         <>
+        <Nav2/>
         <div style={{minHeight: "80vh"}} >
-
             {IntroSec()}
         </div> 
         </>

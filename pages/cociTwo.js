@@ -54,8 +54,8 @@ export default function CociliberVerTwo(props){
     const recipieSec =(variety, visController)=>{
         let eachPlant = variety.options.map((eachItem, i)=> <>
 
-            <p key={i} className={styles.eachPlant} onClick={()=> setPickedVeggie(eachItem) }>  {eachItem} 
-            <div className={styles.plantSelectorDeco}></div> </p>
+            <p key={i} className={styles.eachPlant} onClick={()=> setPickedVeggie(eachItem) }>  {eachItem} </p>
+            <div className={styles.plantSelectorDeco}></div> 
             </>)
 
         return(

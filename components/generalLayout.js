@@ -1,4 +1,4 @@
-import Navbar from "./navBar.js";
+import {Navbar} from "./navBar.js";
 import Footer from "./footer.js";
 
 

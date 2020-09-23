@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useUser } from "../../utils/userHook"
 import { CircularProgress } from '@material-ui/core';
 
+import styles from "./../../styles/components/misc.module.css"
+
 function LogIn(){
     const [errorMsg, setErrorMsg] = useState('');
     const [user, { mutate }] = useUser();
@@ -12,14 +14,14 @@ function LogIn(){
         setLogginIn(true)
 
         const body = {
-        email: e.currentTarget.email.value,
-        password: e.currentTarget.password.value,
-        };
+            email: e.currentTarget.email.value,
+            password: e.currentTarget.password.value,
+            };
         const res = await fetch('/api/userAuth', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body),
-        });
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(body),
+            });
         if (res.status === 200) {
         const userObj = await res.json();
         mutate(userObj);
@@ -34,34 +36,38 @@ function LogIn(){
             return(
                 <>
                 <h2>Sign in</h2>
-                <form onSubmit={(e)=> onSubmit(e)}>
-                    {errorMsg ? <p style={{ color: 'red' }}>{errorMsg}</p> : null}
-                    <label htmlFor="email">
+                <form className={styles.SignInForm} onSubmit={(e)=> onSubmit(e)}>
+                    {errorMsg ? <p className={styles.SignInError}>{errorMsg}</p> : null}
+                    <label htmlFor="email"                         
+                    className={styles.SignInLabel} >
                     <input
                         id="email"
                         type="email"
                         name="email"
                         placeholder="Email address"
+                        className={styles.SignInField}
                     />
                     </label>
-                    <label htmlFor="password">
+                    <label htmlFor="password"
+                    className={styles.SignInLabel} >
                     <input
                         id="password"
                         type="password"
                         name="password"
                         placeholder="Password"
+                        className={styles.SignInField}
                     />
                     </label>
-                    <input type="submit"/>
+                    <input type="submit" className={styles.SignInBTN} />
                 </form>
                 </>
             )
         } else if( user ){
             return(
                 <>
-                Hello Leo! 
-                <br></br>
-                {user.name}
+                <p className={styles.userDisplayer} > 
+                Hola {user.name}! </p>
+                <div className={styles.profileBtn} > Mi perfil </div>
                 </>
             )
         }
@@ -73,7 +79,6 @@ function LogIn(){
             <><CircularProgress/></>}
             {logginIn===false&&
             <>{LogIn()}</>}
-            {LogIn()}
         </>
     )
 

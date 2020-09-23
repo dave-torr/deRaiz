@@ -1,4 +1,5 @@
 import { useUser } from "../../utils/userHook"
+import styles from "./../../styles/components/misc.module.css"
 
 function LogOut(){
 const [user, { mutate }] = useUser();
@@ -7,7 +8,9 @@ const [user, { mutate }] = useUser();
     const LogOut=()=>{
         return(
             <>
-                <button onClick={()=>handleLogout()} > LOG OUT  </button>
+                {user&&<>
+                <button className={styles.logOutBTN} onClick={()=>handleLogout()} > 
+                LOG OUT </button> </>}
             </>
         )
     }

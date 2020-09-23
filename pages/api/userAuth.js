@@ -7,6 +7,7 @@ const handler = nextConnect();
 
 handler.use(dRaizMiddleware);
 
+//All relevant user stuff is made to pass through userProfiles API, using POST for signup, GET for login, DELETE, for Logout, and PATCH to update.
 handler.post(passport.authenticate("local"), (req, res) =>{
     res.json({ user: extractUser(req.user)})
 });

@@ -1,4 +1,9 @@
-const Navbar =()=> (
+import {LogIn} from "./userAuth/signIn"
+import {LogOut} from "./userAuth/signOut"
+import styles from "./../styles/components/navBar.module.css"
+
+const Navbar =()=> {
+  return(
   <>
   <nav>
     <a style={{color: "black" }} href="./assets/pdfs/sepCatalog.pdf" 
@@ -40,9 +45,22 @@ const Navbar =()=> (
 
     
     `}</style>
-
-
   </>
-)
+  )
+};
 
-export default Navbar
+export {Navbar};
+
+
+let logoGreen = "./assets/logoAndVar/fontface-lghtGrn.png";
+
+function Nav2(){
+  return(
+    <>
+      <div className={styles.NaviTwoGenCont} >
+        <LogIn/>
+        <LogOut/>
+      </div>
+    </>
+  )
+}; export {Nav2};
