@@ -2,11 +2,11 @@ import nextConnect from 'next-connect';
 import normalizeEmail from 'validator/lib/normalizeEmail';
 import bcrypt from 'bcrypt';
 import isEmail from 'validator/lib/isEmail';
-import middleware from '../../middleware/middleware';
+import dRaizMiddleware from '../../middlewares/middleware';
 import { extractUser } from '../../utils/userHelper';
 
 const handler = nextConnect();
-handler.use(middleware);
+handler.use(dRaizMiddleware);
 
 handler.post(async (req, res) => {
   const { name, password } = req.body;

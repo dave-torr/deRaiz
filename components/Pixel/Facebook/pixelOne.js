@@ -1,6 +1,8 @@
 import React from 'react'
 
-export default () => 
+
+const FACEBOOK_PIXEL_1 = () => {
+  return(
   <React.Fragment>
     <script dangerouslySetInnerHTML={{ __html: `!function(f,b,e,v,n,t,s)
       {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -18,3 +20,5 @@ export default () =>
         />` }}
     />
   </React.Fragment>
+  )
+}; export default FACEBOOK_PIXEL_1
