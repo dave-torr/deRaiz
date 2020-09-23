@@ -20,14 +20,28 @@ handler.post(async (req, res) => {
     return;
   }
   // check if email existed
-  if ((await req.db.collection('users').countDocuments({ email })) > 0) {
+  if ((await req.db.collection('users')
+    .countDocuments({ email })) > 0) {
     res.status(403).send('The email has already been used.');
     return
   }
   const hashedPassword = await bcrypt.hash(password, 10);
   const user = await req.db
     .collection('users')
-    .insertOne({ email, password: hashedPassword, name })
+    .insertOne({ 
+      email, 
+      password: hashedPassword, 
+      name,
+      savedRecipies: [],
+      products: [],
+      savedPublications: [],
+      likedPublications: [],
+      userType: null,
+      profilePic: null,
+      signUpStream: "website",
+      alias: null,
+      subscription: null,
+       })
     .then(({ ops }) => ops[0]);
   req.logIn(user, (err) => {
     if (err) throw err;

@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Router from 'next/router';
-import { useUser } from "./../utils/userHook"
+import { useUser } from "../utils/userHook"
 import { CircularProgress } from '@material-ui/core';
 
 
@@ -17,7 +17,7 @@ export default function Signup(){
     //     if (user) Router.replace('/');
     // }, [user]);
 
-    // 
+//USER STATE API is continually called and when signed in, sent to home. will this alwas happen when using the userHook?  
     const handleSubmit = async (e) => {
         e.preventDefault();
         setProsStat("process")
@@ -25,6 +25,12 @@ export default function Signup(){
             email: e.currentTarget.email.value,
             name: e.currentTarget.name.value,
             password: e.currentTarget.password.value,
+            savedPublications:  [],
+            likedPublications:  [],
+            userType:  null,
+            profilePic:  null,
+            signUpStream: "website",
+
             };
         const res = await fetch('/api/userProfiles', {
             method: 'POST',

@@ -2,9 +2,9 @@ export function extractUser(req) {
   if (!req.user) return null;
   // take only needed user fields to avoid sensitive ones (such as password)
   const {
-    name, alias, email, userType, profilePic, recipies, subscription, products, 
+        name, alias, email, savedRecipies, products, savedPublications, likedPublications, userType, profilePic, subscription, 
   } = req.user;
   return {
-    name, alias, email, userType, profilePic, recipies, subscription, products, 
+    name, alias, email, savedRecipies, products, savedPublications, likedPublications, userType, profilePic, subscription, 
   };
 }
