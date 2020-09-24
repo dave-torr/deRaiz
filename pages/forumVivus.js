@@ -32,7 +32,7 @@ console.log(user)
     return(
         <>
         <Nav2/>
-        <div style={{minHeight: "80vh"}} >
+        <div style={{minHeight: "140vh"}} >
             {IntroSec()}
         </div> 
         </>

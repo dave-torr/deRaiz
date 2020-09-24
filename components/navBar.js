@@ -1,6 +1,8 @@
-import {LogIn} from "./userAuth/signIn"
-import {LogOut} from "./userAuth/signOut"
+import {LogInOut} from "./userAuth/signIn"
 import styles from "./../styles/components/navBar.module.css"
+import { Popover } from '@material-ui/core';
+import { useUser } from "../utils/userHook"
+
 
 const Navbar =()=> {
   return(
@@ -50,16 +52,47 @@ const Navbar =()=> {
 };
 
 export {Navbar};
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+
 
 
 let logoGreen = "./assets/logoAndVar/fontface-lghtGrn.png";
 
 function Nav2(){
+  const [user, { mutate }] = useUser();
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const handleClick = (event) => {setAnchorEl(event.currentTarget)};
+  const handleClose = () => {setAnchorEl(null)};
+
+  const open = Boolean(anchorEl);
+  const id = open ? 'simple-popover' : undefined;
+
   return(
     <>
       <div className={styles.NaviTwoGenCont} >
-        <LogIn/>
-        <LogOut/>
+        <div className={styles.AuthBtn}
+          onClick={handleClick}>
+          {user?
+          <> Hola {user.name} </>
+          : <> Iniciar Sesión </> }
+        </div>
+      <Popover
+        id={id}
+        open={open}
+        anchorEl={anchorEl}
+        onClose={handleClose}
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'right',
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'right',
+        }}
+       >
+        <LogInOut/>
+      </Popover>
       </div>
     </>
   )

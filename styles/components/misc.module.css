@@ -1,27 +1,73 @@
+.signInGenCont{
+    width: fit-content;
+    border: solid 2px rgba(128, 128, 0, 0);    
+    transition: all ease 1s;
+}
+
+.signInGenCont:hover{
+    transition: all ease 1s;
+    border: solid 2px olive;    
+}
+
 .SignInForm{
-
+    display: flex;
+    flex-direction: column;
+    border: none;
 }
 
-.SignInLabel{
-
-}
 
 .SignInField{
-
+    font-weight: 700;
+    letter-spacing: 2px;
+    border: none;
+    border-right: solid 2px black;
+    border-bottom: solid 2px black;
+    margin: 6px;
 }
 
 .SignInError{
-
+    color: red;
+    font-weight: 700;
+    width: 180px;
+    letter-spacing: 2px;
 }
 
 .SignInBTN{
-
+    text-align: start;
+    font-weight: 700;
+    letter-spacing: 2px;
+    border: none;
+    border-right: solid 2px black;
+    border-bottom: solid 2px black;
+    margin: 6px;
 }
 
 .logOutBTN{
 
+    margin: 3px;
+    font-size: 1.2em;
+}
+.logOutBTN:hover{
+    cursor: pointer;
 }
 
 .userDisplayer{
-    
+    display: flex;
+    flex-direction: column;
+}
+
+.popoverBtn{
+    margin: 4px 6px;
+    font-weight: 600;
+    padding: 3px;
+    border-bottom: solid 1px black;
+    border-top: solid 1px rgba(0, 0, 0, 0);
+    border-right: solid 1px rgba(0, 0, 0, 0);
+    border-left: solid 1px rgba(0, 0, 0, 0);
+}
+
+.popoverBtn:hover{
+    cursor: pointer;
+    transition: all ease 1s;
+    border: solid 1px black;
 }

@@ -4,7 +4,7 @@ import { CircularProgress } from '@material-ui/core';
 
 import styles from "./../../styles/components/misc.module.css"
 
-function LogIn(){
+function LogInOut(){
     const [errorMsg, setErrorMsg] = useState('');
     const [user, { mutate }] = useUser();
     const [logginIn, setLogginIn] = useState(false);  
@@ -22,7 +22,11 @@ function LogIn(){
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(body),
             });
-        if (res.status === 200) {
+        console.log(res)
+        if (res.status === 401){
+        setLogginIn(false)
+        setErrorMsg('Email o clave incorrecta. Por favor inténtalo otra vez!')
+        } else if (res.status === 200) {
         const userObj = await res.json();
         mutate(userObj);
         setLogginIn(false)
@@ -30,12 +34,19 @@ function LogIn(){
         setErrorMsg('Incorrect username or password. Try again!');
         }
     }
+    const handleLogout= async ()=>{
+        await fetch("/api/userAuth", {
+            method: "DELETE",
+            });
+        mutate(null)
+    }
 
     const LogIn=()=>{
         if(!user){
             return(
                 <>
-                <h2>Sign in</h2>
+                <div className={styles.signInGenCont} >
+                <h2>Iniciar Sesión</h2>
                 <form className={styles.SignInForm} onSubmit={(e)=> onSubmit(e)}>
                     {errorMsg ? <p className={styles.SignInError}>{errorMsg}</p> : null}
                     <label htmlFor="email"                         
@@ -44,7 +55,7 @@ function LogIn(){
                         id="email"
                         type="email"
                         name="email"
-                        placeholder="Email address"
+                        placeholder="Email"
                         className={styles.SignInField}
                     />
                     </label>
@@ -58,28 +69,46 @@ function LogIn(){
                         className={styles.SignInField}
                     />
                     </label>
-                    <input type="submit" className={styles.SignInBTN} />
+                    <input type="submit" value="Ingresar!" className={styles.SignInBTN} />
                 </form>
+                </div>
                 </>
             )
         } else if( user ){
             return(
                 <>
-                <p className={styles.userDisplayer} > 
-                Hola {user.name}! </p>
-                <div className={styles.profileBtn} > Mi perfil </div>
+                {/* add a few options: profile link, editar opciones, logout */}
+                <div className={styles.userDisplayer} >
+                <div className={styles.popoverBtn} > Mi perfil </div>
+                <div className={styles.popoverBtn} > Opciones de Usuario </div>
+                <div className={styles.popoverBtn} > Reporta un problema </div>
+                {LogOut()}
+                </div>
                 </>
             )
         }
     }
 
+    const LogOut=()=>{
+        return(
+            <>
+                {user&&<>
+                <button className={styles.logOutBTN} onClick={()=>handleLogout()} > 
+                Cerrar Sesión </button> </>}
+            </>
+        )
+    }
+
     return(
         <>
+            <div style={{overflow: "none"}} >
             {logginIn===true&&
             <><CircularProgress/></>}
             {logginIn===false&&
             <>{LogIn()}</>}
+            </div>
+
         </>
     )
 
-}; export { LogIn }
+}; export { LogInOut }

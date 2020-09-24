@@ -25,5 +25,18 @@
     } */
 
     .NaviTwoGenCont{
+      top: 0px;
+      position: fixed;
+      justify-content: center;
+      border: solid 2px rgba(128, 128, 0, 0);
+      padding: 6px;
+    }
+    .NaviTwoGenCont:hover{
+      border: solid 2px olive;
+      transition: all ease 1s;
+      cursor: pointer;
+    }
 
+    .AuthBtn{
+      font-weight: 600;
     }

@@ -3,6 +3,7 @@ import dRaizMiddleware from '../../middlewares/middleware';
 import nextConnect from 'next-connect';
 import passport from "../../utils/passport"
 
+
 const handler = nextConnect();
 
 handler.use(dRaizMiddleware);
