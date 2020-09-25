@@ -26,8 +26,11 @@ import { useState } from "react"
 export default function ForumVivus(){
     const [user, { mutate }] = useUser();
     const [displayedPosts, setDisplayedPosts ] = useState(samplePosts);
+    const [postFilter, setPostFilter]= useState("latest");
+    const [postSort, setPostSort]= useState("postTimestamp");    
     
     console.log(displayedPosts)
+
 
     const IntroSec=()=>{
         return(
@@ -47,7 +50,13 @@ export default function ForumVivus(){
         )
     }
 
+    let postType;
     const ForumContainer=()=>{
+        // if(samplePosts){
+        //     if(postFilter){
+
+        //     }
+        // }
 
         let postsDisplay= displayedPosts.map((eachPost)=>
             <APost
@@ -62,12 +71,42 @@ export default function ForumVivus(){
             </>
         )
     }
+    const PostPicker=()=>{
+        let recentPosts=styles.postPickers
+        let lovedPosts=styles.postPickers
+        let themePosts=styles.postPickers
+        if(postFilter==="latest"){
+            recentPosts=styles.postPickersActive
+        } else if (postFilter==="loved"){
+            lovedPosts=styles.postPickersActive
+        } else if (postFilter==="theme"){
+            themePosts=styles.postPickersActive
+        }
+
+        return(
+            <>
+            <div className={styles.postPickerContainer}>
+                <div className={recentPosts} 
+                    onClick={()=> setPostFilter("latest")}> 
+                Más Recientes </div>
+                <div className={lovedPosts} 
+                    onClick={()=> setPostFilter("loved")}> 
+                Más Apreciadas </div>
+                <div className={themePosts} 
+                    onClick={()=> setPostFilter("theme")}> 
+                
+                Temas </div>
+            </div>
+            </>
+        )
+    }
 
     return(
         <>
         <Nav2/>
         <div style={{minHeight: "140vh"}} >
             {IntroSec()}
+            {PostPicker()}
             {ForumContainer()}
         </div> 
         </>

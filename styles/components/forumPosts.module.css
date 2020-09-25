@@ -1,5 +1,4 @@
 .postGenCont{
-    border: solid 1px crimson;
     width: 90vw;
     height: fit-content;
     margin-bottom: 33px;
@@ -17,9 +16,12 @@
     width: 20%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     text-align: center;
+    border-right: dashed 1px black;
+    border-top: dashed 1px black;
+    border-bottom: dashed 1px black;
 }
 
 .postName{
@@ -30,5 +32,9 @@
     font-size: 1.3em;
 }
 .postCompTags{
-    
+    margin: 0px 21px;
+    text-align: end;
+}
+.postBody{
+    word-wrap: normal;
 }
