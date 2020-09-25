@@ -4,7 +4,12 @@
     margin-bottom: 33px;
     display: flex;
     flex-direction: row;
+    transition: all ease 0.7s;
+
     }
+.postGenCont:hover{
+    box-shadow: 6px 7px 10px rgba(0, 0, 0, 0.328);
+}    
 
 .postContent{
     padding: 12px;
@@ -36,5 +41,42 @@
     text-align: end;
 }
 .postBody{
-    word-wrap: normal;
+    padding-bottom: 21px;
 }
+.postDeco{
+    margin: 15px 20%;
+    width: 60%;
+    height: 1px;
+    background-color: olive;
+    transition: all ease 0.7s;
+}
+.postDeco2{
+    margin: 9px 30%;
+    width: 40%;
+    height: 1px;
+    background-color: rgb(128, 45, 0);
+    transition: all ease 0.7s;
+}
+
+.postContent:hover > .postDeco {
+    margin: 15px 10%;
+    width: 80%;
+}
+.postContent:hover > .postDeco2 {
+    margin: 9px 20%;
+    width: 60%;
+    transition-property: width, margin;
+    transition-delay: 0.2s;
+}
+
+
+.postBodyContent{
+    white-space: pre-wrap;
+    width: 80;
+    font-weight: 600;
+    word-wrap: break-word;
+    text-align: justify;
+    letter-spacing: 1px;
+}
+
+

@@ -28,9 +28,9 @@ export default function ForumVivus(){
     const [displayedPosts, setDisplayedPosts ] = useState(samplePosts);
     const [postFilter, setPostFilter]= useState("latest");
     const [postSort, setPostSort]= useState("postTimestamp");    
+    const [postTheme, setPostTheme]= useState("Huerto en Tierra");    
     
-    console.log(displayedPosts)
-
+console.log(postTheme)
 
     const IntroSec=()=>{
         return(
@@ -101,12 +101,35 @@ export default function ForumVivus(){
         )
     }
 
+    const themeDisplayer=()=>{
+    if(postFilter==="theme"){
+        let eachTheme=forumTags.map((eachTag, i)=>
+        <> <option key={i} value={eachTag} > {eachTag} </option> </>)
+        return(
+            <>
+            <div className={styles.themePickerCont} >
+                <div className={styles.pickerText} >
+                    Escoge tu tema de interés:
+                    </div>
+                <select className={styles.themePicker} 
+                onChange={(e)=>{
+                    setPostTheme(e.target.value)
+                }}>
+                    {eachTheme}
+                    </select>
+            </div>
+            </>
+            )
+        }
+    }
+
     return(
         <>
         <Nav2/>
         <div style={{minHeight: "140vh"}} >
             {IntroSec()}
             {PostPicker()}
+            {themeDisplayer()}
             {ForumContainer()}
         </div> 
         </>

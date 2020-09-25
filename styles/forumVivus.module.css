@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
 
 .IntroCont{
     display: flex;
@@ -94,6 +93,39 @@
     background-color: rgb(90, 90, 90);
     text-transform: uppercase;
     font-size: 1.5em;
+}
+
+.themePickerCont{
+    border-top: solid 2px black;
+    padding-top: 21px;
+    padding-bottom: 21px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: rgb(123, 128, 128);
+}
+
+.pickerText{    
+    color: whitesmoke;
+    font-size: 1.5em;
+    margin-right: 12px;
+}
+
+.themePicker{
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.3em;
+    width: fit-content;
+
+}
+
+
+.hiddenComments{
+    display: none;
+}
+
+.displayedComments{
+    display: inherit;
 }
 
 @media screen and (max-width: 1800px){
