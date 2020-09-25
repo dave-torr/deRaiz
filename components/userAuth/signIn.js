@@ -79,6 +79,7 @@ function LogInOut(){
                 <>
                 {/* add a few options: profile link, editar opciones, logout */}
                 <div className={styles.userDisplayer} >
+                <div className={styles.alias} > {user.name} </div>
                 <div className={styles.popoverBtn} > Mi perfil </div>
                 <div className={styles.popoverBtn} > Opciones de Usuario </div>
                 <div className={styles.popoverBtn} > Reporta un problema </div>

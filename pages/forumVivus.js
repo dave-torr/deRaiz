@@ -2,14 +2,32 @@
 //Tags, and filtered Q&A, initial question deposit, comments and 
 //TEMPORATY TESTS FOR NAV BAR:
 import {Nav2} from "./../components/navBar"
+import {APost} from "./../components/forum/postSkeleton"
 
 import styles from "./../styles/forumVivus.module.css"
 import { useUser } from "../utils/userHook"
 
+let forumTags=[
+    "Huerto en Tierra",
+    "Huerto Hidropónico",
+    "Hortalizas",
+    "Frutales",
+    "Plagas y Enfermedades",
+    "Practicas Agroecológicas",
+    "Sustratos",
+    "Soluciones Hidropónicas",
+    "Abono Orgánico",
+    "Macetas y áreas de crecimiento"
+    ]
+
+import samplePosts from "./../data/forum.json";
+import { useState } from "react"
+
 export default function ForumVivus(){
     const [user, { mutate }] = useUser();
-
-console.log(user)
+    const [displayedPosts, setDisplayedPosts ] = useState(samplePosts);
+    
+    console.log(displayedPosts)
 
     const IntroSec=()=>{
         return(
@@ -29,11 +47,28 @@ console.log(user)
         )
     }
 
+    const ForumContainer=()=>{
+
+        let postsDisplay= displayedPosts.map((eachPost)=>
+            <APost
+                aPost={eachPost}
+                />)
+
+        return(
+            <>
+                <div className={styles.forumGenContainer} >
+                {postsDisplay}
+                </div>
+            </>
+        )
+    }
+
     return(
         <>
         <Nav2/>
         <div style={{minHeight: "140vh"}} >
             {IntroSec()}
+            {ForumContainer()}
         </div> 
         </>
     )

@@ -56,6 +56,17 @@
     flex-direction: column;
 }
 
+.alias{
+    margin: 4px 6px;
+    font-weight: 600;
+    font-size: 1.5em;
+    margin-bottom: 12px;
+    padding: 3px;
+    border-bottom: solid 3px rgb(58, 123, 5);
+    border-top: solid 1px rgba(0, 0, 0, 0);
+    border-right: solid 1px rgba(0, 0, 0, 0);
+    border-left: solid 1px rgba(0, 0, 0, 0);
+}
 .popoverBtn{
     margin: 4px 6px;
     font-weight: 600;

@@ -74,23 +74,22 @@ function Nav2(){
         <div className={styles.AuthBtn}
           onClick={handleClick}>
           {user?
-          <> Hola {user.name} </>
+          <> Hola {user.alias} </>
           : <> Iniciar Sesión </> }
         </div>
       <Popover
-        id={id}
-        open={open}
-        anchorEl={anchorEl}
-        onClose={handleClose}
-        anchorOrigin={{
-          vertical: 'bottom',
-          horizontal: 'right',
-        }}
-        transformOrigin={{
-          vertical: 'top',
-          horizontal: 'right',
-        }}
-       >
+          id={id}
+          open={open}
+          anchorEl={anchorEl}
+          onClose={handleClose}
+          anchorOrigin={{
+            vertical: 'bottom',
+            horizontal: 'right',
+          }}
+          transformOrigin={{
+            vertical: 'top',
+            horizontal: 'right',
+          }} >
         <LogInOut/>
       </Popover>
       </div>
