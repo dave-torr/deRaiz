@@ -19,6 +19,8 @@ function APost(props){
         <>
         <div className={styles.postGenCont} >
             <div className={styles.postContent}>
+
+                <div className={styles.postHead} >
                 <div className={styles.mainTag} >
                     {postContent.mainTag}
                     </div>
@@ -29,7 +31,9 @@ function APost(props){
                     Etiquetas Adicionales:
                     <br></br>
                     {complimetnaryTags}
-                </div>
+                    </div>
+                    </div>
+
                 <div className={styles.postDeco}></div>
                 <div className={styles.postDeco2}></div>
                 <div className={styles.postBody} >
@@ -38,9 +42,20 @@ function APost(props){
                     </pre>
                 </div>
                 <div className={styles.commentCont} >
+                    <div className={styles.commentExpander} 
+                        onClick={()=>{
+                            if(visDiv===styles.hiddenComments){
+                                setVisDiv(styles.displayedComments)
+                            } else if (visDiv===styles.displayedComments){
+                                setVisDiv(styles.hiddenComments)
+                            }
+                        }}>
                     {visDiv===styles.hiddenComments?
-                    <> Ver Cometarios! </> :
-                    <> Colapsar cometarios! </>}
+                        <> 
+                        Ver Cometarios! 
+                        </> :
+                        <> Colapsar cometarios! </>}
+                        </div>
                     <div className={visDiv} >
                         {PostComments} 
                         </div>

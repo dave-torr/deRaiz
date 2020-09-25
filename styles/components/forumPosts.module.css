@@ -14,7 +14,18 @@
 .postContent{
     padding: 12px;
     width: 80%;
-    background-color: whitesmoke;
+    transition: all ease 0.7s;
+    background-color: rgba(245, 245, 245, 0.905);
+}
+.postContent:hover{
+    padding: 12px;
+    width: 80%;
+    background-color: rgb(255, 255, 255);
+}
+
+.postHead{
+    background-color: white;
+    padding: 9px;
 }
 
 .postUtils{
@@ -30,11 +41,12 @@
 }
 
 .postName{
-    font-size: 1.7em;
+    font-size: 1.8em;
     font-weight: 600;
+    letter-spacing: 2px;
 }
 .mainTag{
-    font-size: 1.3em;
+    font-size: 1.4em;
 }
 .postCompTags{
     margin: 0px 21px;
@@ -79,4 +91,28 @@
     letter-spacing: 1px;
 }
 
+.hiddenComments{
+    display: none;
+}
 
+.displayedComments{
+    display: inherit;
+    margin-top: 21px;
+    margin-bottom: 21px;
+}
+
+.commentExpander{
+    font-size: 1.5em;
+}
+
+.commentExpander:hover{cursor: pointer;}
+
+.commentName{
+    font-size: 1.2em;
+    margin-left: 33px;
+    font-weight: 600;
+}
+
+.commentContent{
+    margin: 2% 6%;
+}
