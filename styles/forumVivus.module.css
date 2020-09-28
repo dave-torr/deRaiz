@@ -154,5 +154,16 @@
         font-size: 1em;
         width: 30%;
     }
+    .themePickerCont{
+        flex-direction: column;
+
+    }
+
+    .themePicker{
+        width: 100%;
+        text-align: center;
+        font-size: 1.1em;
+        word-wrap: normal;
+    }
 }
 
