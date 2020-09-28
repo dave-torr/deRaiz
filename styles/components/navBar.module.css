@@ -36,13 +36,16 @@
     .AuthBtn:hover{
       cursor: pointer;
       border: solid 2px olive;
-      margin-right: 3px;
+      color: black;
+      background-color: white;
     }
 
     .AuthBtn{
-      margin-right: 3px;
+      color: white;
+      margin-right: 21px;
       transition: all ease 1s;
       border: solid 2px rgba(128, 128, 0, 0);
-      font-weight: 600;
+      background-color: olive;
       padding: 6px;
+      font-size: 1.1em;
     }

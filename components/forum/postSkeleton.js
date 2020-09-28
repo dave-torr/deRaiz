@@ -1,5 +1,5 @@
-import { StepLabel } from "@material-ui/core"
 import { useState } from "react"
+import {UserCommentModal} from "./forumDialogues"
 import styles from "./../../styles/components/forumPosts.module.css"
 function APost(props){
     const [visDiv, setVisDiv]=useState(styles.hiddenComments);
@@ -31,7 +31,6 @@ function APost(props){
         <>
         <div className={styles.postGenCont} >
             <div className={styles.postContent}>
-
                 <div className={styles.postHead} >
                 <div className={styles.mainTag} >
                     {postContent.mainTag}
@@ -62,8 +61,7 @@ function APost(props){
                     }}}>
                     {fullPost===postContent.postBody?
                     <> Colapsar publicación </>:
-                    <> Ver Publicación Completa! </>}
-                    
+                    <> Ver Publicación Completa! </>}  
                 </div>
                 <div className={styles.commentCont} >
                     <div className={styles.commentExpander} 
@@ -82,9 +80,9 @@ function APost(props){
                         {PostComments} 
                         </div>
                     <div className={styles.addCommentBTN} 
-                    onClick={()=>{
-                        {commentUserInput()}
-                    }}> 
+                        onClick={()=>{
+                            {commentUserInput()}
+                        }}> 
                     Añadir Comentario! </div>    
                 </div>
             </div>

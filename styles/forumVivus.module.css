@@ -125,7 +125,7 @@
     }
 
     .IntroTitle{
-        font-size: 4em;
+        font-size: 2em;
     }
 
     .IntroSubtitle{
@@ -137,3 +137,22 @@
     }
 
 }
+
+@media screen and (max-width: 600px){
+    .IconOne{
+        width: 40vw;
+    }
+
+    .postPickers{
+        font-size: 1em;
+        width: 30%;
+        padding: 4px 12px;    
+
+    }
+    .postPickersActive{
+        padding: 4px 12px;    
+        font-size: 1em;
+        width: 30%;
+    }
+}
+

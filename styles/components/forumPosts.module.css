@@ -5,8 +5,8 @@
     display: flex;
     flex-direction: row;
     transition: all ease 0.7s;
+}
 
-    }
 .postGenCont:hover{
     box-shadow: 6px 7px 10px rgba(0, 0, 0, 0.328);
 }    
@@ -81,9 +81,7 @@
 }
 
 .bodyExpander{
-    border-bottom: solid 2px rgb(187, 134, 0);
-    border-right: solid 2px rgb(187, 134, 0);
-    padding: 6px;
+    padding: 4px 6px;
     width: 220px;
     font-size: 1.2em;
     transition: all ease 0.5s;
@@ -95,9 +93,7 @@
 }
 
 .commentTrigger{
-    border-bottom: solid 2px olive;
-    border-right: solid 2px olive;
-    padding: 6px;
+    padding: 4px 6px;
     width: 220px;
 
 }
@@ -113,7 +109,6 @@
 }
 
 .commentExpander{
-    margin-top: 9px;
     font-size: 1.2em;
     width: 234px;
     transition: all ease 0.5s;
@@ -126,12 +121,9 @@
 
 .addCommentBTN{
     transition: all ease 0.5s;
-    margin-top: 9px;
-    padding: 6px;
+    padding: 4px 6px;
     font-size: 1.2em;
     width: 220px;
-    border-bottom: solid 2px rgb(3, 65, 181);
-    border-right: solid 2px rgb(3, 65, 181);
 }
 .addCommentBTN:hover{
     cursor: pointer;
@@ -155,13 +147,41 @@
     justify-content: space-around;
     align-items: center;
     text-align: center;
+    font-weight: 600;
     border-right: dashed 1px black;
     border-top: dashed 1px black;
     border-bottom: dashed 1px black;
+    border-left: none;
     transition: all ease-out 0.7s;
 }
 
 .postUtils:hover{
-    font-weight: 600;
     font-size: 1.2em;
+}
+
+@media screen and (max-width: 700px){
+
+    .postGenCont{
+            flex-direction: column-reverse;
+
+    }
+
+    .postContent{
+        width: 97%;
+    }
+    .postContent:hover{
+        width: 96%;
+    }
+
+    .postUtils{
+        border-right: dashed 1px black;
+        border-top: dashed 1px black;
+        border-left: dashed 1px black;
+        border-bottom: none;
+        flex-direction: row;
+        width: 100%;
+
+    }
+
+
 }
