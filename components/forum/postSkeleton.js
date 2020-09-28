@@ -6,6 +6,9 @@ function APost(props){
 
     let postContent= props.aPost
     let complimetnaryTags = postContent.supplementaryTags.map((elems)=><>| {elems} |</>)
+
+    let reducedPost = postContent.postBody.toString().slice(0, 150)
+    const [fullPost, setfullPost]=useState(reducedPost);
     let PostComments = postContent.postComments.map((elems)=>
         <> 
             <div>
@@ -15,6 +18,15 @@ function APost(props){
                    {elems.comment} </p>
             </div>
         </>)
+
+    const commentUserInput=()=>{
+        if(props.user){
+            //excecute user input
+        } else {
+            // execute sign in / sign up popover
+        }
+    }
+
     return(
         <>
         <div className={styles.postGenCont} >
@@ -38,8 +50,20 @@ function APost(props){
                 <div className={styles.postDeco2}></div>
                 <div className={styles.postBody} >
                 <pre className={styles.postBodyContent} >
-                    {postContent.postBody}
+                    {fullPost} {fullPost===reducedPost&&<> . . . </>}                    
                     </pre>
+                </div>
+                <div className={styles.bodyExpander} 
+                onClick={()=>{
+                    if(fullPost===postContent.postBody){
+                        setfullPost(reducedPost) 
+                    } else if (fullPost===reducedPost){
+                        setfullPost(postContent.postBody) 
+                    }}}>
+                    {fullPost===postContent.postBody?
+                    <> Colapsar publicación </>:
+                    <> Ver Publicación Completa! </>}
+                    
                 </div>
                 <div className={styles.commentCont} >
                     <div className={styles.commentExpander} 
@@ -48,17 +72,20 @@ function APost(props){
                                 setVisDiv(styles.displayedComments)
                             } else if (visDiv===styles.displayedComments){
                                 setVisDiv(styles.hiddenComments)
-                            }
-                        }}>
-                    {visDiv===styles.hiddenComments?
-                        <> 
-                        Ver Cometarios! 
-                        </> :
+                            }}}>
+                        <div className={styles.commentTrigger}>
+                        {visDiv===styles.hiddenComments?
+                        <> Ver Cometarios! </> :
                         <> Colapsar cometarios! </>}
-                        </div>
+                        </div> </div>
                     <div className={visDiv} >
                         {PostComments} 
                         </div>
+                    <div className={styles.addCommentBTN} 
+                    onClick={()=>{
+                        {commentUserInput()}
+                    }}> 
+                    Añadir Comentario! </div>    
                 </div>
             </div>
             <div className={styles.postUtils} >
@@ -67,7 +94,7 @@ function APost(props){
                 <div className={styles.postSaveBtn} > 
                     save <br></br> content </div>
                 <div className={styles.postCommentCount} > 
-                    {postContent.postComments.length} <br></br> comments </div>
+                    {postContent.postComments.length} <br></br> commentarios </div>
             </div>
         </div>
         </>

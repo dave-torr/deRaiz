@@ -30,8 +30,6 @@ export default function ForumVivus(){
     const [postSort, setPostSort]= useState("postTimestamp");    
     const [postTheme, setPostTheme]= useState("Huerto en Tierra");    
     
-console.log(postTheme)
-
     const IntroSec=()=>{
         return(
             <>
@@ -61,6 +59,7 @@ console.log(postTheme)
         let postsDisplay= displayedPosts.map((eachPost)=>
             <APost
                 aPost={eachPost}
+                user={user}
                 />)
 
         return(
