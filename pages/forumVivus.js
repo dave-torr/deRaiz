@@ -56,11 +56,14 @@ export default function ForumVivus(){
         //     }
         // }
 
-        let postsDisplay= displayedPosts.map((eachPost)=>
+        let postsDisplay= displayedPosts.map((eachPost, i)=>
+        <div key={i} >
             <APost
                 aPost={eachPost}
                 user={user}
-                />)
+                /> 
+                </div>
+                )
 
         return(
             <>

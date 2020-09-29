@@ -49,7 +49,7 @@ function LogInOut(){
                 <h2>Iniciar Sesión</h2>
                 <form className={styles.SignInForm} onSubmit={(e)=> onSubmit(e)}>
                     {errorMsg ? <p className={styles.SignInError}>{errorMsg}</p> : null}
-                    <label htmlFor="email"                         
+                    <label htmlFor="email"                       
                     className={styles.SignInLabel} >
                     <input
                         id="email"

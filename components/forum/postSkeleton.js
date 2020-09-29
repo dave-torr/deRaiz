@@ -5,13 +5,13 @@ function APost(props){
     const [visDiv, setVisDiv]=useState(styles.hiddenComments);
 
     let postContent= props.aPost
-    let complimetnaryTags = postContent.supplementaryTags.map((elems)=><>| {elems} |</>)
+    let complimetnaryTags = postContent.supplementaryTags.map((elems, i)=><div key={i} >| {elems} |</div>)
 
     let reducedPost = postContent.postBody.toString().slice(0, 150)
     const [fullPost, setfullPost]=useState(reducedPost);
-    let PostComments = postContent.postComments.map((elems)=>
+    let PostComments = postContent.postComments.map((elems, i)=>
         <> 
-            <div>
+            <div key={i} >
                 <p className={styles.commentName} >
                    {elems.user} </p>
                 <p className={styles.commentContent} >
@@ -19,9 +19,10 @@ function APost(props){
             </div>
         </>)
 
+    const [modalOpen, setModalOpen]= useState(false)
     const commentUserInput=()=>{
         if(props.user){
-            //excecute user input
+            setModalOpen(true);
         } else {
             // execute sign in / sign up popover
         }
@@ -44,7 +45,6 @@ function APost(props){
                     {complimetnaryTags}
                     </div>
                     </div>
-
                 <div className={styles.postDeco}></div>
                 <div className={styles.postDeco2}></div>
                 <div className={styles.postBody} >
@@ -83,7 +83,13 @@ function APost(props){
                         onClick={()=>{
                             {commentUserInput()}
                         }}> 
-                    Añadir Comentario! </div>    
+                    Añadir Comentario! </div>
+                    <UserCommentModal
+                        user={props.user}
+                        modalOpen={modalOpen}
+                        setModalOpen={setModalOpen}
+                        postTitle={postContent.postName}
+                    />    
                 </div>
             </div>
             <div className={styles.postUtils} >

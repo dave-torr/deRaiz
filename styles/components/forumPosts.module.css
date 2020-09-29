@@ -148,37 +148,29 @@
     align-items: center;
     text-align: center;
     font-weight: 600;
-    border-right: dashed 1px black;
-    border-top: dashed 1px black;
-    border-bottom: dashed 1px black;
-    border-left: none;
+    border: dashed 1px black;
+    background-color: white;
     transition: all ease-out 0.7s;
-}
-
-.postUtils:hover{
-    font-size: 1.2em;
 }
 
 @media screen and (max-width: 700px){
 
     .postGenCont{
-            flex-direction: column-reverse;
-
+        flex-direction: column-reverse;
     }
 
     .postContent{
-        width: 97%;
+        width: 99%;
     }
     .postContent:hover{
-        width: 96%;
+        width: 99%;
     }
 
     .postUtils{
-        border-right: dashed 1px black;
-        border-top: dashed 1px black;
-        border-left: dashed 1px black;
-        border-bottom: none;
+        border: dashed 1px black;
+
         flex-direction: row;
+        padding: 6px;
         width: 100%;
 
     }

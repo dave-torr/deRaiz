@@ -1,0 +1,42 @@
+.dialogue1Title{
+    margin: 15px;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+.dialogueExplainer{
+    border: solid 1px olive;
+    padding: 2% 4%;
+}
+
+.inputOne{
+    width: 80%;
+    margin: 3% 10%;
+}
+.postSubraTitle{
+    margin-top: 5%;
+    font-weight: 600;
+    font-size: 1.3em;
+
+}
+.postTitle{
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.dialogueOneBtn{
+    margin: 21px 15px;
+    border: solid 2px olive;
+    padding: 6px;
+    font-weight: 600;
+}
+.dialogueOneBtn:hover{
+    cursor: pointer;
+}
+
+
+.modalTwoBtns{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
