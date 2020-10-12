@@ -40,3 +40,44 @@
     flex-direction: row;
     justify-content: flex-end;
 }
+
+/* SIGN IN MODAL */
+/* SIGN IN MODAL */
+
+.signInGenCont{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.SignInForm{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+}
+
+.registerOrSign{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.registerDiv{
+    text-align: center;
+}
+.dialoguetwoBtn{
+    border: solid 2px olive;
+    font-weight: 600;
+    margin-top: 21px;
+}
+.separatorDeco{
+    height: 50px;
+    width: 2px;
+    background-color: olive;
+    margin: 21px;
+}

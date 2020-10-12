@@ -1,8 +1,8 @@
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
-import { useState } from 'react';
 import { CircularProgress } from '@material-ui/core';
+import { useState } from 'react';
 
 
 import styles from "./../../styles/components/forumDalogues.module.css"

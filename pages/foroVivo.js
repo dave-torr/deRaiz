@@ -1,11 +1,13 @@
 //Forum
 //Tags, and filtered Q&A, initial question deposit, comments and 
 //TEMPORATY TESTS FOR NAV BAR:
-import {Nav2} from "./../components/navBar"
-import {APost} from "./../components/forum/postSkeleton"
-
-import styles from "./../styles/forumVivus.module.css"
+import { useState } from "react"
 import { useUser } from "../utils/userHook"
+import {Nav2} from "../components/navBar"
+import {APost} from "../components/forum/postSkeleton"
+import {AddForumPost} from "../components/forum/addPost"
+import {SignInPopTwo} from "../components/userAuth/signInPopver"
+import styles from "./../styles/forumVivus.module.css"
 
 let forumTags=[
     "Huerto en Tierra",
@@ -20,8 +22,7 @@ let forumTags=[
     "Macetas y áreas de crecimiento"
     ]
 
-import samplePosts from "./../data/forum.json";
-import { useState } from "react"
+import samplePosts from "../data/forum.json";
 
 export default function ForumVivus(){
     const [user, { mutate }] = useUser();
@@ -29,13 +30,15 @@ export default function ForumVivus(){
     const [postFilter, setPostFilter]= useState("latest");
     const [postSort, setPostSort]= useState("postTimestamp");    
     const [postTheme, setPostTheme]= useState("Huerto en Tierra");    
-    
+    const [addPostController, setAddPostController]=useState(false)
+
+
     const IntroSec=()=>{
         return(
             <>
             <div className={styles.IntroCont} >
                 <img className={styles.IconOne} alt="icon green" src="./assets/logoAndVar/icon-lightGrn.png" />
-                    <div className={styles.IntroTitle} > FORUM <p style={{fontSize:"0.5em"}} > &#9752; </p> VIVUS </div>
+                    <div className={styles.IntroTitle} > FORO <p style={{fontSize:"0.5em"}} > &#9752; </p> VIVO </div>
                     <div className={styles.IntroSubtitle} > 
                     Tu espacio de discusión <br></br> 
                     aprendizaje, e ideas <br></br> de tus huertos en casa <br></br> 
@@ -104,23 +107,51 @@ export default function ForumVivus(){
     }
 
     const themeDisplayer=()=>{
-    if(postFilter==="theme"){
         let eachTheme=forumTags.map((eachTag, i)=>
         <> <option key={i} value={eachTag} > {eachTag} </option> </>)
+    return(
+        <>
+        <div className={styles.themePickerCont} >
+            <div className={styles.pickerText} >
+                Escoge tu tema de interés:
+                </div>
+            <select className={styles.themePicker} 
+            onChange={(e)=>{
+                setPostTheme(e.target.value)
+            }}>
+                {eachTheme}
+                </select>
+        </div>
+        </>
+        )
+    }
+
+    const AddPostModal=()=>{
         return(
             <>
-            <div className={styles.themePickerCont} >
-                <div className={styles.pickerText} >
-                    Escoge tu tema de interés:
-                    </div>
-                <select className={styles.themePicker} 
-                onChange={(e)=>{
-                    setPostTheme(e.target.value)
-                }}>
-                    {eachTheme}
-                    </select>
-            </div>
+            <AddForumPost 
+                addPostController={addPostController}
+                setAddPostController={setAddPostController}
+                user={user}
+                themeDisplayer={themeDisplayer}
+                />
             </>
+        )
+    }
+
+    const addPostBtn=()=>{
+        if(user){
+            return(
+                <div className={styles.addPostBtn}
+                onClick={()=>{setAddPostController(true)}}
+                > Añadir nuevo foro </div>
+            )
+        } else if (!user){
+            return(
+            <div className={styles.addPostBtn2}>
+                Para dejar un comentario, inicia una sesion!
+                {/* login/signUp popover */}
+            </div>
             )
         }
     }
@@ -131,8 +162,13 @@ export default function ForumVivus(){
         <div style={{minHeight: "140vh"}} >
             {IntroSec()}
             {PostPicker()}
+            {postFilter==="theme"&&
+            <>
             {themeDisplayer()}
+            </>}
             {ForumContainer()}
+            {AddPostModal()}
+            {addPostBtn()}
         </div> 
         </>
     )

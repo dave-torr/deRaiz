@@ -8,11 +8,12 @@ function LogInOut(){
     const [errorMsg, setErrorMsg] = useState('');
     const [user, { mutate }] = useUser();
     const [logginIn, setLogginIn] = useState(false);  
+    const [messUpCount, setmessUpCount]= useState(0);
+
 
     const onSubmit = async (e)=>{
         e.preventDefault();
         setLogginIn(true)
-
         const body = {
             email: e.currentTarget.email.value,
             password: e.currentTarget.password.value,
@@ -22,16 +23,16 @@ function LogInOut(){
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(body),
             });
-        console.log(res)
         if (res.status === 401){
-        setLogginIn(false)
-        setErrorMsg('Email o clave incorrecta. Por favor inténtalo otra vez!')
+            setLogginIn(false)
+            setmessUpCount(messUpCount+1)
+            setErrorMsg('Email o clave incorrecta. Por favor inténtalo otra vez!')
         } else if (res.status === 200) {
-        const userObj = await res.json();
-        mutate(userObj);
-        setLogginIn(false)
+            const userObj = await res.json();
+            mutate(userObj);
+            setLogginIn(false)
         } else {
-        setErrorMsg('Incorrect username or password. Try again!');
+            setErrorMsg('Incorrect username or password. Try again!')
         }
     }
     const handleLogout= async ()=>{
@@ -58,6 +59,7 @@ function LogInOut(){
                         placeholder="Email"
                         className={styles.SignInField}
                     />
+                    {console.log(messUpCount)}
                     </label>
                     <label htmlFor="password"
                     className={styles.SignInLabel} >
@@ -100,13 +102,23 @@ function LogInOut(){
         )
     }
 
+    const resetPassword=()=>{
+        //when mess up count surpasses 5, offer to reset password
+    }
+
     return(
         <>
             <div style={{overflow: "none"}} >
             {logginIn===true&&
-            <><CircularProgress/></>}
+            <div style={{width: "130px", height: "120px", textAlign: "center"}} ><CircularProgress/></div>}
             {logginIn===false&&
-            <>{LogIn()}</>}
+            <>
+                {messUpCount<6&&
+                <> 
+                {LogIn()}
+                </>}
+                
+                </>}
             </div>
 
         </>

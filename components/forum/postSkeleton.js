@@ -1,6 +1,9 @@
 import { useState } from "react"
-import {UserCommentModal} from "./forumDialogues"
+import {UserCommentModal} from "./addComment"
+import {SignInPopover} from "./../userAuth/signInPopver"
 import styles from "./../../styles/components/forumPosts.module.css"
+
+
 function APost(props){
     const [visDiv, setVisDiv]=useState(styles.hiddenComments);
 
@@ -20,11 +23,12 @@ function APost(props){
         </>)
 
     const [modalOpen, setModalOpen]= useState(false)
+    const [signInModal, setSignInModal]= useState(false)
     const commentUserInput=()=>{
         if(props.user){
             setModalOpen(true);
         } else {
-            // execute sign in / sign up popover
+            setSignInModal(true);
         }
     }
 
@@ -40,7 +44,9 @@ function APost(props){
                     {postContent.postName}
                     </div>
                 <div className={styles.postCompTags} >
+                <strong>
                     Etiquetas Adicionales:
+                </strong>
                     <br></br>
                     {complimetnaryTags}
                     </div>
@@ -89,7 +95,12 @@ function APost(props){
                         modalOpen={modalOpen}
                         setModalOpen={setModalOpen}
                         postTitle={postContent.postName}
-                    />    
+                    /> 
+                    <SignInPopover
+                        signInModal={signInModal}
+                        setModalOpen={setModalOpen}
+                        setSignInModal={setSignInModal}
+                    />
                 </div>
             </div>
             <div className={styles.postUtils} >

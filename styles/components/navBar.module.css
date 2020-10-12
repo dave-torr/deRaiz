@@ -42,10 +42,12 @@
 
     .AuthBtn{
       color: white;
-      margin-right: 21px;
+      margin-right: 22px;
+      padding: 6px 0px;
       transition: all ease 1s;
       border: solid 2px rgba(128, 128, 0, 0);
       background-color: olive;
-      padding: 6px;
       font-size: 1.1em;
+      width: 110px;
+      text-align: center;
     }

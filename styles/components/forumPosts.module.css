@@ -15,26 +15,34 @@
     padding: 12px;
     width: 80%;
     transition: all ease 0.7s;
-    background-color: rgba(245, 245, 245, 0.905);
+    background-color: whitesmoke;
 }
 .postContent:hover{
     padding: 12px;
     width: 80%;
     background-color: rgb(255, 255, 255);
 }
+.postContent:hover > .postHead{
+    box-shadow: 6px 7px 10px rgba(0, 0, 0, 0);
+}
 
 .postHead{
+    transition: all ease 0.7s;
     background-color: white;
     padding: 9px;
+    box-shadow: 6px 7px 10px rgba(0, 0, 0, 0.328);
 }
 
+
+
 .postName{
-    font-size: 1.8em;
+    font-size: 2em;
     font-weight: 600;
     letter-spacing: 2px;
+    margin: 15px 9px;
 }
 .mainTag{
-    font-size: 1.4em;
+    font-size: 1.6em;
 }
 .postCompTags{
     font-size: 1.2em;
@@ -95,7 +103,6 @@
 .commentTrigger{
     padding: 4px 6px;
     width: 220px;
-
 }
 
 .hiddenComments{
@@ -148,13 +155,14 @@
     align-items: center;
     text-align: center;
     font-weight: 600;
-    border: dashed 1px black;
+    border-left: dotted 2px black;
     background-color: white;
     transition: all ease-out 0.7s;
 }
 
-@media screen and (max-width: 700px){
 
+
+@media screen and (max-width: 700px){
     .postGenCont{
         flex-direction: column-reverse;
     }
@@ -168,12 +176,8 @@
 
     .postUtils{
         border: dashed 1px black;
-
         flex-direction: row;
         padding: 6px;
         width: 100%;
-
     }
-
-
 }

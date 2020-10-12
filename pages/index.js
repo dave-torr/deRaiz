@@ -263,7 +263,7 @@ export default function Home(){
         {ProdDisplayer(hydroTwo, hydroTwoImg)};
         </div>
         <p style={{textAlign: "center", fontSize: "1.3em"}} >
-        <i>&#8640; desplaza para más opciones: &#8640;</i> </p>
+        <i>&#8640; desplaza para más opciones: &#8640;</i> </p>
     </div>
     <div className={styles.productBar} > 
         <h2 className={styles.prodBarTitle} id="terraAnchor" > Huertos en Tierra: </h2>
@@ -273,7 +273,7 @@ export default function Home(){
         {ProdDisplayer(tradThree, tradThreeImg)};
         </div>
         <p style={{textAlign: "center", fontSize: "1.3em"}} >
-        <i>&#8640; desplaza para más opciones: &#8640;</i> </p>
+        <i>&#8640; desplaza para más opciones: &#8640;</i> </p>
     </div>
     <div className={styles.productBar} > 
         <h2 className={styles.prodBarTitle} id="kiddiAnchor"> Huertos Infantiles: </h2>
@@ -281,7 +281,7 @@ export default function Home(){
         {ProdDisplayer(kiddiOne, kiddiOneImg)};
         </div>
         {/* <p style={{textAlign: "center", fontSize: "1.3em"}} >
-        <i>&#8640; desplaza para más opciones:: &#8640;</i> </p> */}
+        <i>&#8640; desplaza para más opciones:: &#8640;</i> </p> */}
     </div>
 
     <div className={styles.closingDiv} >
