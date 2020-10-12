@@ -8,7 +8,7 @@ function LogInOut(){
     const [errorMsg, setErrorMsg] = useState('');
     const [user, { mutate }] = useUser();
     const [logginIn, setLogginIn] = useState(false);  
-    const [messUpCount, setmessUpCount]= useState(0);
+    const [messUpCount, setmessUpCount]= useState(6);
 
 
     const onSubmit = async (e)=>{
@@ -104,6 +104,16 @@ function LogInOut(){
 
     const resetPassword=()=>{
         //when mess up count surpasses 5, offer to reset password
+        return(
+            <> 
+            <div className={styles.passwordForget} >
+            
+            Olvidaste tu clave? <br></br>
+            ¡No hay problema! <br></br>
+            Cambia tu clave AQUI <br></br>
+            </div>
+            </>
+        )
     }
 
     return(
@@ -113,10 +123,9 @@ function LogInOut(){
             <div style={{width: "130px", height: "120px", textAlign: "center"}} ><CircularProgress/></div>}
             {logginIn===false&&
             <>
-                {messUpCount<6&&
-                <> 
-                {LogIn()}
-                </>}
+                {messUpCount<6?
+                <>{LogIn()} </>: 
+                <>{resetPassword()} </>}
                 
                 </>}
             </div>

@@ -1,9 +1,9 @@
 //user sign up form, photoupload, and functionality to store recipies, and apply for "verification" as thought leader, 
 
 import React, { useState, useEffect } from 'react';
-import Router from 'next/router';
 import { useUser } from "../utils/userHook"
-import { CircularProgress } from '@material-ui/core';
+import { CircularProgress, Fab } from '@material-ui/core';
+import styles from "../styles/registerUser.module.css"
 
 
 export default function Signup(){
@@ -57,43 +57,62 @@ export default function Signup(){
         )
     }
 
-    const SignUpForm=()=>{
+    const UserStepOne=()=>{
         return(
         <>
         <div>
-            <h2>Sign up</h2>
+            <img 
+                className={styles.logoGreen}
+                src="./assets/logoAndVar/fontfaceExt-lghtGrn.png"
+                alt="D´Raiz Icon"
+                />
+            <h2 className={styles.signupIntro} >
+                Bienvenido a la comunidad digital D´Raiz!</h2>
+            <div className={styles.signupIntroText} > 
+                Primero, registramos tu nombre <br></br> y correo electronico </div>
             <form onSubmit={(e)=>handleSubmit(e)}>
-            {errorMsg ? <p style={{ color: 'red' }}>{errorMsg}</p> : null}
-            <label htmlFor="name">
+                {errorMsg ? <p style={{ color: 'red' }}>{errorMsg}</p> : null}
+            <div className={styles.formElement} >
+                <label className={styles.formLabels} htmlFor="name"> Nombre </label>
                 <input
+                className={styles.inputElement}
                 id="name"
                 name="name"
                 type="text"
-                placeholder="Your name"
+                placeholder="Tu Nombre"
                 />
-            </label>
-            <label htmlFor="email">
+                </div>
+            <div className={styles.formElement} >
+                <label className={styles.formLabels} htmlFor="email"> Correo Electronico </label>
                 <input
+                className={styles.inputElement}
                 id="email"
                 name="email"
                 type="email"
-                placeholder="Email address"
+                placeholder="Email"
                 />
+                </div>
+            <div className={styles.formElement} >
+            <label className={styles.formLabels} htmlFor="password"> Genera Tu Clave Secreta
             </label>
-            <label htmlFor="password">
                 <input
+                className={styles.inputElement}
                 id="password"
                 name="password"
                 type="password"
-                placeholder="Create a password"
+                placeholder="Clave"
                 />
-            </label>
-            <button type="submit">Sign up</button>
+                </div>
+            <button className={styles.submitBTN} type="submit">Sign up</button>
             </form>
         </div>
         </>             
         )
     }
+
+
+
+
 
     return(
         <>
@@ -101,7 +120,13 @@ export default function Signup(){
             <> {userDisplay()} </>
             :
             <> {processStatus==="void"&&
-            <> {SignUpForm()} </>}
+            <> 
+            <div className={styles.generalSignpCont} >
+            {UserStepOne()} 
+
+            
+            </div>
+            </>}
             {processStatus==="process"&&
             <> <CircularProgress/> </>} 
             </>}

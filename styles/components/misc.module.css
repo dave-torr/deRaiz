@@ -51,6 +51,10 @@
     cursor: pointer;
 }
 
+.passwordForget{
+    padding: 9px;
+}
+
 .userDisplayer{
     display: flex;
     flex-direction: column;

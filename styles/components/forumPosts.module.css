@@ -1,5 +1,5 @@
 .postGenCont{
-    width: 90vw;
+    width: 60vw;
     height: fit-content;
     margin-bottom: 33px;
     display: flex;
@@ -161,14 +161,21 @@
 }
 
 
+@media screen and (max-width: 1200px){
+    .postGenCont{
+        width: 80vw;
+    }
+}
 
 @media screen and (max-width: 700px){
     .postGenCont{
         flex-direction: column-reverse;
+        width: 90vw;
     }
 
     .postContent{
-        width: 99%;
+        width: 100%;
+        padding: 0;
     }
     .postContent:hover{
         width: 99%;
@@ -177,7 +184,7 @@
     .postUtils{
         border: dashed 1px black;
         flex-direction: row;
-        padding: 6px;
+        padding: 0px;
         width: 100%;
     }
 }
