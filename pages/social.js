@@ -25,7 +25,7 @@ return(<>
     <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet"/>
     
     </Head>
-    <Pixel name='FACEBOOK_PIXEL_1' />
+    {/* <Pixel name='FACEBOOK_PIXEL_1' /> */}
 
 
 <main>

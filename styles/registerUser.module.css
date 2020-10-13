@@ -1,3 +1,11 @@
+.StepOneGenCont{
+    border-bottom: solid 2px black;
+    border-right: solid 2px black;
+    padding-right: 25px;
+    padding-left: 25px;
+    box-shadow: 6px 7px 10px rgba(0, 0, 0, 0.328);
+}
+
 .inputElement{
     border: none;
     border-left: solid 1px black;
@@ -46,7 +54,7 @@
 }
 .imageFiller{
     width: 220px;
-    translate: ;
+    transform: translate(65px, 53px) ;
 }
 
 
@@ -54,6 +62,14 @@
     text-align: end;
 }
 .signupIntroText{
+    font-size: 1.2em;
     margin-top: 21px;
     text-align: end;
+}
+
+.StepTwoGenCont{}
+
+.additionalUserDetailsGenCont{
+    display: flex;
+    flex-direction: column;
 }

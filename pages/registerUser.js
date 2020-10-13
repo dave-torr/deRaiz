@@ -4,10 +4,10 @@ import React, { useState, useEffect } from 'react';
 import { useUser } from "../utils/userHook"
 import { CircularProgress, Fab } from '@material-ui/core';
 import styles from "../styles/registerUser.module.css"
-
+import {RegistrationDetails} from "./../components/userAuth/userRegDetails"
 
 export default function Signup(){
-    const [profileStep, setProfileStep] = useState("one")
+    const [profileStep, setProfileStep] = useState("two")
     const [user, { mutate }] = useUser();
     const [errorMsg, setErrorMsg] = useState('');
     const [processStatus, setProsStat ]=useState("void")
@@ -60,7 +60,7 @@ export default function Signup(){
     const UserStepOne=()=>{
         return(
         <>
-        <div >
+        <div className={styles.StepOneGenCont}>
             <img 
                 className={styles.logoGreen}
                 src="./assets/logoAndVar/fontfaceExt-lghtGrn.png"
@@ -120,19 +120,20 @@ export default function Signup(){
     const UserStepTwo=()=>{
         return(
             <>
+                <div className={styles.StepTwoGenCont} >
             Step two rotating keyframe logo <br></br>
             fotos de gente con plantitas en mano <br></br>
+            <RegistrationDetails />
             User details:
             Alias,
             profile pic upload link,
             userType,
             ownedProducts,
 
+                </div>
             </>
         )
     }
-
-
 
     return(
         <>
@@ -141,17 +142,16 @@ export default function Signup(){
             :
             <> {processStatus==="void"&&
             <> 
-            <div className={styles.generalSignpCont} >
-            {profileStep==="one"&&
-            <>{UserStepOne()}</>}
-            {profileStep==="two"&&
-            <>{UserStepTwo()}</>}
+                <div className={styles.generalSignpCont} >
+                    {profileStep==="one"&&
+                    <>{UserStepOne()}</>}
+                    {profileStep==="two"&&
+                    <>{UserStepTwo()}</>}
 
-
-            </div>
+                </div>
             </>}
             {processStatus==="process"&&
-            <> <CircularProgress/> </>} 
+                <> <CircularProgress/> </>} 
             </>}
         </>
     )
