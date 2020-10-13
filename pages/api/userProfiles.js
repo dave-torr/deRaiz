@@ -15,17 +15,17 @@ handler.post(async (req, res) => {
   const { name, password } = req.body;
   const email = normalizeEmail(req.body.email); 
   if (!isEmail(email)) {
-    res.status(400).send('The email you entered is invalid.');
+    res.status(400).send('Correo Electronico Invalido');
     return;
   }
   if (!password || !name) {
-    res.status(400).send('Missing field(s)');
+    res.status(400).send('Campo(s) faltantes');
     return;
   }
   // check if email existed
   if ((await req.db.collection('users')
     .countDocuments({ email })) > 0) {
-    res.status(403).send('The email has already been used.');
+    res.status(403).send('Correo Electronico previamente utilizado');
     return
   }
   const hashedPassword = await bcrypt.hash(password, 10);

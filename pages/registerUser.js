@@ -7,7 +7,7 @@ import styles from "../styles/registerUser.module.css"
 
 
 export default function Signup(){
-
+    const [profileStep, setProfileStep] = useState("one")
     const [user, { mutate }] = useUser();
     const [errorMsg, setErrorMsg] = useState('');
     const [processStatus, setProsStat ]=useState("void")
@@ -42,7 +42,7 @@ export default function Signup(){
         // writing our user object to the state
         mutate(userObj);
         setProsStat("registered")
-
+        setProfileStep("two")
             } else {
         setErrorMsg(await res.text());
         setProsStat("void")
@@ -60,7 +60,7 @@ export default function Signup(){
     const UserStepOne=()=>{
         return(
         <>
-        <div>
+        <div >
             <img 
                 className={styles.logoGreen}
                 src="./assets/logoAndVar/fontfaceExt-lghtGrn.png"
@@ -70,7 +70,8 @@ export default function Signup(){
                 Bienvenido a la comunidad digital D´Raiz!</h2>
             <div className={styles.signupIntroText} > 
                 Primero, registramos tu nombre <br></br> y correo electronico </div>
-            <form onSubmit={(e)=>handleSubmit(e)}>
+            <div style={{display: "flex"}} >
+            <form onSubmit={(e)=>handleSubmit(e)} className={styles.FormGen}>
                 {errorMsg ? <p style={{ color: 'red' }}>{errorMsg}</p> : null}
             <div className={styles.formElement} >
                 <label className={styles.formLabels} htmlFor="name"> Nombre </label>
@@ -79,7 +80,7 @@ export default function Signup(){
                 id="name"
                 name="name"
                 type="text"
-                placeholder="Tu Nombre"
+                placeholder="Tu nombre completo"
                 />
                 </div>
             <div className={styles.formElement} >
@@ -103,14 +104,33 @@ export default function Signup(){
                 placeholder="Clave"
                 />
                 </div>
-            <button className={styles.submitBTN} type="submit">Sign up</button>
+            <button className={styles.submitBTN} type="submit">Siguiente Paso!</button>
             </form>
+            <img 
+                className={styles.imageFiller}
+                src="./assets/farmPics/earlySprouts.jpg"
+                alt="Early sprouting plants"
+                />
+            </div>
         </div>
         </>             
         )
     }
 
+    const UserStepTwo=()=>{
+        return(
+            <>
+            Step two rotating keyframe logo <br></br>
+            fotos de gente con plantitas en mano <br></br>
+            User details:
+            Alias,
+            profile pic upload link,
+            userType,
+            ownedProducts,
 
+            </>
+        )
+    }
 
 
 
@@ -122,9 +142,12 @@ export default function Signup(){
             <> {processStatus==="void"&&
             <> 
             <div className={styles.generalSignpCont} >
-            {UserStepOne()} 
+            {profileStep==="one"&&
+            <>{UserStepOne()}</>}
+            {profileStep==="two"&&
+            <>{UserStepTwo()}</>}
 
-            
+
             </div>
             </>}
             {processStatus==="process"&&

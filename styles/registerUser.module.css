@@ -5,6 +5,9 @@
     width: 200px;
     font-size: 1.1em;
 }
+.FormGen{
+    width: fit-content;
+}
 
 .formElement{
     display: flex;
@@ -17,13 +20,20 @@
 }
 
 .submitBTN{
-    width: 120px;
+    width: 210px;
     border: solid 2px olive;
     margin-top: 21px;
     background-color: whitesmoke;
-    height: 30px;
+    min-height: 30px;
     font-size: 1.2em;
+    transition: all ease 1s;
 }
+
+.submitBTN:hover{
+    background-color: olive;
+    color: white;
+}
+
 
 .generalSignpCont{
     min-height: 100vh;
@@ -34,6 +44,11 @@
 .logoGreen{
     width: 220px;
 }
+.imageFiller{
+    width: 220px;
+    translate: ;
+}
+
 
 .signupIntro{
     text-align: end;
