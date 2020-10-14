@@ -18,6 +18,7 @@
     width: 200px;
     font-size: 1.1em;
 }
+
 .FormGen{
     width: fit-content;
 }
@@ -75,21 +76,106 @@
 }
 
 .StepTwoGenCont{
-    background-color: lightcoral;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.rotatingLogoCont{
+    position: absolute;
+    width: 100vw;
+    top: 33px;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.plantIcon{
+    width: 150px;
+}
+
+.iconSpinner{
+    width: 210px;
+    position: absolute;
+    margin-top: 12px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .iconSpinner {
+        animation: App-icon-spin infinite 18s linear;
+        animation-direction: normal; /* or: normal */
+    }
+}  
+
+@keyframes App-icon-spin {
+    from {
+    transform: rotate(0deg);
+    }
+    to {
+    transform: rotate(360deg);
+    }
+}
+
+.introSupra{
+    margin-top: 33vh;
+    margin-bottom: 35px;
+    font-size: 1.2em;
+    padding-right: 21%;    
+    padding-left: 21px;    
+    text-align: justify;
+}
+
+.introTitle{
+    text-align: end;
+    font-size: 2em;
+    padding-right: 21px;
+    padding-left: 33%;
+    font-weight: 600;
+    letter-spacing: 2px;
 }
 
 .additionalUserDetailsGenCont{
+    padding: 12px;
+}
+
+.stepTwoForm{
     display: flex;
     flex-direction: column;
 }
 
+.inputBotton{
+    font-size: 1.5em;
+    font-weight: 600;
+    letter-spacing: 3px;
+    width: 200px;
+}
+
+.aliasLabel{
+    font-size: 1.5em;
+}
+.userTypeLabel{
+    margin-top: 21px;
+    margin-bottom: 21px;
+    font-size: 1.5em;
+}
+.productLabel{
+    margin-top: 21px;
+    margin-bottom: 21px;
+    font-size: 1.5em;
+}
 
 @media screen and (max-width: 940px){
-
-
+    .imgfillerTwo{
+        width: 100vw;
+    }
 }
 @media screen and (max-width: 600px){
 
+    .introSupra{
+        margin-top: 36vh;
+    }
     .StepOneGenCont{
         display: flex;
         flex-direction: column;

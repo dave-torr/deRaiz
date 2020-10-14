@@ -8,7 +8,7 @@ import {RegistrationDetails} from "./../components/userAuth/userRegDetails"
 import {Nav2} from "./../components/navBar"
 
 export default function Signup(){
-    const [profileStep, setProfileStep] = useState("one")
+    const [profileStep, setProfileStep] = useState("two")
     const [user, { mutate }] = useUser();
     const [errorMsg, setErrorMsg] = useState('');
     const [processStatus, setProsStat ]=useState("void")
@@ -123,14 +123,31 @@ export default function Signup(){
         return(
             <>
                 <div className={styles.StepTwoGenCont} >
-                    Step two rotating keyframe logo <br></br>
-                    fotos de gente con plantitas en mano <br></br>
+                    <div className={styles.stepTwoIntro} >
+                        <div className={styles.rotatingLogoCont} >
+                        <img 
+                            className={styles.plantIcon}
+                            alt="Sprout Icono with surrounding spinning arrows"
+                            src="./assets/logoAndVar/sproutIcon-LghtGreen.png"
+                            />
+                        <img 
+                            className={styles.iconSpinner}
+                            alt="Spinning Arrows"
+                            src="./assets/logoAndVar/rotationDeco-blk.png"
+                            />
+                        </div>
+                    </div>
+                        <div className={styles.introSupra} > Nuestra comunidad digital esta diseñada para que puedas compartir, aprender y explorar todo sobre tu huerto en casa!  </div>
+                        <div className={styles.introTitle}> Solo nos falta un par de detalles:
+                        </div>
+                    <div>
+                    </div>
                     <RegistrationDetails />
-                    User details:
-                    Alias,
-                    profile pic upload link,
-                    userType,
-                    ownedProducts,
+                        <img
+                            className={styles.imgfillerTwo} 
+                            alt="Rucola spouts in a farm"
+                            src="./assets/fillerImgs/babySprout.jpg"
+                            />
                 </div>
             </>
         )

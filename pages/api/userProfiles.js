@@ -56,4 +56,23 @@ handler.post(async (req, res) => {
   });
 });
 
+handler.patch(async (req, res) =>{
+    if (!req.user) {
+    req.status(401).end();
+    return;
+  }
+  const { alias, userType, ownedProducts, profilePic} = req.body;
+  await req.db.collection("users").updateOne(
+    { _id: req.user._id },
+    { $set: 
+      { 
+        alias: alias, 
+        userType: userType,
+        ownedProducts:ownedProducts,
+        profilePic: profilePic
+        } 
+    }
+  )
+});
+
 export default handler;
