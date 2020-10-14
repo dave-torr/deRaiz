@@ -15,7 +15,7 @@
     border: none;
     border-left: solid 1px black;
     border-bottom: solid 1px black;
-    width: 200px;
+    width: 240px;
     font-size: 1.1em;
 }
 
@@ -121,8 +121,8 @@
 .introSupra{
     margin-top: 33vh;
     margin-bottom: 35px;
-    font-size: 1.2em;
-    padding-right: 21%;    
+    font-size: 1.3em;
+    padding-right: 15%;    
     padding-left: 21px;    
     text-align: justify;
 }
@@ -149,11 +149,13 @@
     font-size: 1.5em;
     font-weight: 600;
     letter-spacing: 3px;
-    width: 200px;
+    width: 240px;
 }
 
 .aliasLabel{
+    margin-top: 21px;
     font-size: 1.5em;
+    margin-bottom: 21px;
 }
 .userTypeLabel{
     margin-top: 21px;
@@ -165,6 +167,20 @@
     margin-bottom: 21px;
     font-size: 1.5em;
 }
+.avatarLabel{
+    margin-top: 41px;
+    margin-bottom: 21px;
+    font-size: 1.5em;
+}
+
+.imageUploader{
+    padding: 6px 21px;
+    font-size: 1.5em;
+    border: solid 2px black;
+}
+.imageUploader:hover{ cursor: pointer;
+}
+
 
 @media screen and (max-width: 940px){
     .imgfillerTwo{

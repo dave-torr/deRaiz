@@ -12,6 +12,7 @@ export default function Signup(){
     const [user, { mutate }] = useUser();
     const [errorMsg, setErrorMsg] = useState('');
     const [processStatus, setProsStat ]=useState("void")
+    const [isUpdating, setIsUpdating ]=useState(false)
 
     // useEffect(() => {
     // // redirect to home if user is authenticated
@@ -118,6 +119,8 @@ export default function Signup(){
         </>             
         )
     }
+
+console.log(user)
 
     const UserStepTwo=()=>{
         return(
