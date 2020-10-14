@@ -8,7 +8,7 @@ function LogInOut(){
     const [errorMsg, setErrorMsg] = useState('');
     const [user, { mutate }] = useUser();
     const [logginIn, setLogginIn] = useState(false);  
-    const [messUpCount, setmessUpCount]= useState(6);
+    const [messUpCount, setmessUpCount]= useState(0);
 
 
     const onSubmit = async (e)=>{

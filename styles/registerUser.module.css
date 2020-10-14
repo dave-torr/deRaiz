@@ -6,6 +6,11 @@
     box-shadow: 6px 7px 10px rgba(0, 0, 0, 0.328);
 }
 
+.cardContent{
+    display: flex;
+    flex-direction: row;
+}
+
 .inputElement{
     border: none;
     border-left: solid 1px black;
@@ -33,7 +38,7 @@
     margin-top: 21px;
     background-color: whitesmoke;
     min-height: 30px;
-    font-size: 1.2em;
+    font-size: 1.3em;
     transition: all ease 1s;
 }
 
@@ -52,6 +57,7 @@
 .logoGreen{
     width: 220px;
 }
+
 .imageFiller{
     width: 220px;
     transform: translate(65px, 53px) ;
@@ -61,15 +67,50 @@
 .signupIntro{
     text-align: end;
 }
+
 .signupIntroText{
     font-size: 1.2em;
     margin-top: 21px;
     text-align: end;
 }
 
-.StepTwoGenCont{}
+.StepTwoGenCont{
+    background-color: lightcoral;
+}
 
 .additionalUserDetailsGenCont{
     display: flex;
     flex-direction: column;
+}
+
+
+@media screen and (max-width: 940px){
+
+
+}
+@media screen and (max-width: 600px){
+
+    .StepOneGenCont{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cardContent{
+        flex-direction: column;
+    }
+    .imageFiller{
+        display: none ;
+    }
+
+    .signupIntroText{
+        text-align: start;
+    }
+
+    .submitBTN{
+        margin-top: 35px;
+        margin-bottom: 50px;
+        font-size: 2em;
+    }
+
 }

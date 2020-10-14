@@ -5,9 +5,10 @@ import { useUser } from "../utils/userHook"
 import { CircularProgress, Fab } from '@material-ui/core';
 import styles from "../styles/registerUser.module.css"
 import {RegistrationDetails} from "./../components/userAuth/userRegDetails"
+import {Nav2} from "./../components/navBar"
 
 export default function Signup(){
-    const [profileStep, setProfileStep] = useState("two")
+    const [profileStep, setProfileStep] = useState("one")
     const [user, { mutate }] = useUser();
     const [errorMsg, setErrorMsg] = useState('');
     const [processStatus, setProsStat ]=useState("void")
@@ -52,6 +53,7 @@ export default function Signup(){
     const userDisplay=()=>{
         return(
             <>
+            <Nav2/>
                 Hello {user.name}
             </>
         )
@@ -70,7 +72,7 @@ export default function Signup(){
                 Bienvenido a la comunidad digital D´Raiz!</h2>
             <div className={styles.signupIntroText} > 
                 Primero, registramos tu nombre <br></br> y correo electronico </div>
-            <div style={{display: "flex"}} >
+            <div className={styles.cardContent}>
             <form onSubmit={(e)=>handleSubmit(e)} className={styles.FormGen}>
                 {errorMsg ? <p style={{ color: 'red' }}>{errorMsg}</p> : null}
             <div className={styles.formElement} >
@@ -121,15 +123,14 @@ export default function Signup(){
         return(
             <>
                 <div className={styles.StepTwoGenCont} >
-            Step two rotating keyframe logo <br></br>
-            fotos de gente con plantitas en mano <br></br>
-            <RegistrationDetails />
-            User details:
-            Alias,
-            profile pic upload link,
-            userType,
-            ownedProducts,
-
+                    Step two rotating keyframe logo <br></br>
+                    fotos de gente con plantitas en mano <br></br>
+                    <RegistrationDetails />
+                    User details:
+                    Alias,
+                    profile pic upload link,
+                    userType,
+                    ownedProducts,
                 </div>
             </>
         )
