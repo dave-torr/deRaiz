@@ -50,7 +50,7 @@
 
     .anchor{
         align-items: center;
-        font-size: 2em;
+        font-size: 1.5em;
         margin: 10px 33px;
     }
     .anchor:hover{
@@ -59,7 +59,7 @@
     }
     .anchor:hover > .anchorDeco{
         cursor: pointer;
-        width: 100px;
+        width: 80px;
         background-color: red;
         transition: all ease-in 0.5s;
     }
