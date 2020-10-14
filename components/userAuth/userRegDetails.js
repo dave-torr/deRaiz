@@ -1,6 +1,7 @@
 import { useRef, useState } from "react"
 import styles from "./../../styles/registerUser.module.css"
 import { useUser } from "../../utils/userHook"
+import { useRouter } from "next/router"
 
 
 function RegistrationDetails(){
@@ -13,17 +14,23 @@ const userTypeRef = useRef();
 const ownedProductsRef = useRef();
 const [user, { mutate }] = useUser();
 const [msg, setMsg] = useState({ message: '', isError: false });
+const [isUpdating, setIsUpdating] = useState(false);
+const router = useRouter()
+
 
     const updateUserProfile = async (e)=>{
         e.preventDefault();
-        if (isUpdating) return;
         setIsUpdating(true);
-        const formData = new FormData();
+        let formData = new FormData();
         if (profilePictureRef.current.files[0]) { 
-            formData.append('profilePicture', profilePictureRef.current.files[0]); }
+            formData.append('profilePicture', profilePictureRef.current.files[0]); 
+            }
             formData.append('alias', aliasRef.current.value);
             formData.append('userType', userTypeRef.current.value);
-        const res = await fetch('/api/user', {
+        if(isOwner){
+            formData.append('ownedProducts', ownedProductsRef.current.value);
+        }    
+        const res = await fetch('/api/profileUpdate', {
                 method: 'PATCH',
                 body: formData,
             });
@@ -36,39 +43,14 @@ const [msg, setMsg] = useState({ message: '', isError: false });
                 },
             });
         setMsg({ message: 'Profile updated' });
+            router.push('/perfil')
             } else {
         setMsg({ message: await res.text(), isError: true });
         }
     }
 
-    const profilePicUploader=()=>{
-        return(
-            <>
-            <div>
-            <br></br>
-            <br></br>
-                <label htmlFor="avatar"  className={styles.imageUploader}>
-                    <input
-                        type="file"
-                        id="avatar"
-                        name="avatar"
-                        accept="image/png, image/jpeg"    
-                        ref={profilePictureRef}
-                        />
-                    Elije tu imagen de Perfil!
-                    </label>
-                <style jsx>{`
-                input[type="file"] {
-                    display: none;
-                }
-            `}</style>
-            <br></br>
-            <br></br>
-            </div>
-            </>
-        )
-    }
-
+    console.log(msg.message)
+    console.log(user)
     return(
         <>
         <div className={styles.additionalUserDetailsGenCont}>
@@ -76,7 +58,7 @@ const [msg, setMsg] = useState({ message: '', isError: false });
                 <label htmlFor="userType" className={styles.userTypeLabel} > Experto en Hidroponia? Curiosa por aprender sobre huertos en casa? Cuentanos que tipo de usuario te consideras: 
                 </label>
                     <select ref={userTypeRef} required className={styles.inputElement} >
-                        <option> Afisionada / Afisionado  </option>
+                        <option defaultValue > Afisionada / Afisionado  </option>
                         <option> Profesional en Agricultura  </option>
                         <option> Docente  </option>
                     </select>
@@ -113,7 +95,26 @@ const [msg, setMsg] = useState({ message: '', isError: false });
                 <div className={styles.profPicCont}>
                     {profilePicTrig? 
                     <>
-                    {profilePicUploader()}
+                    <div>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <label htmlFor="avatar"  className={styles.imageUploader}>
+                    Elije tu imagen de Perfil!*
+                        </label>
+                    <input
+                        type="file"
+                        id="avatar"
+                        name="avatar"
+                        accept="image/png, image/jpeg"    
+                        ref={profilePictureRef}
+                        />
+                    <br></br>
+                    <br></br>
+                        <div className={styles.imageFormat}> *Formato .jpg o .png solamente 
+                        </div>
+                    </div>
                     </> : <>
                     <div className={styles.profileIconPicker} >
                         <div className={styles.productLabel} >
@@ -133,6 +134,15 @@ const [msg, setMsg] = useState({ message: '', isError: false });
                         />
                     </>}
                 </div>
+
+            {isUpdating? 
+            <>
+                <h2> Procesando... </h2>
+            </>:
+            <> 
+            <button className={styles.submitBTN} type="submit"> Siguiente Paso!</button>
+            </>}
+            
             </form>
         </div>
         </>

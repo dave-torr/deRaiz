@@ -20,8 +20,15 @@
 
 .profilePicCont{
     width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.profilePic{
+    width: 90%;
+
+}
 .ProfileHeadTexts{
     display: flex;
     flex-direction: column;

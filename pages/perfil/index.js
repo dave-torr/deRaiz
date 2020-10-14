@@ -28,7 +28,8 @@ const profileHeader=()=>{
       <div className={styles.profileHeader}> 
       <div  className={styles.profilePicCont} >
         <img 
-
+          src={user.profilePic}
+          className={styles.profilePic}
           />
           </div>
         <div className={styles.ProfileHeadTexts} > 

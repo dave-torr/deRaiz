@@ -50,6 +50,7 @@
 
 
 .generalSignpCont{
+    overflow-x: hidden;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -76,15 +77,19 @@
 }
 
 .StepTwoGenCont{
+    overflow-x: hidden;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 800px;
+    box-shadow: 6px 7px 10px rgba(0, 0, 0, 0.328);
+
 }
 
 .rotatingLogoCont{
     position: absolute;
-    width: 100vw;
+    width: 100%;
     top: 33px;
     left: 0;
     display: flex;
@@ -176,18 +181,24 @@
 .imageUploader{
     padding: 6px 21px;
     font-size: 1.5em;
-    border: solid 2px black;
 }
-.imageUploader:hover{ cursor: pointer;
-}
+
 
 
 @media screen and (max-width: 940px){
     .imgfillerTwo{
-        width: 100vw;
+        width: 100%;
+    }
+
+    .StepTwoGenCont{
+        width: 90%;
     }
 }
 @media screen and (max-width: 600px){
+
+    .StepTwoGenCont{
+        width: 100%;
+    }
 
     .introSupra{
         margin-top: 36vh;

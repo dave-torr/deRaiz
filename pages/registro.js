@@ -1,23 +1,26 @@
 //user sign up form, photoupload, and functionality to store recipies, and apply for "verification" as thought leader, 
+import { useRouter } from 'next/router'
 
 import React, { useState, useEffect } from 'react';
 import { useUser } from "../utils/userHook"
 import { CircularProgress, Fab } from '@material-ui/core';
 import styles from "../styles/registerUser.module.css"
-import {RegistrationDetails} from "./../components/userAuth/userRegDetails"
-import {Nav2} from "./../components/navBar"
+import {RegistrationDetails} from "../components/userAuth/userRegDetails"
+import {Nav2} from "../components/navBar"
 
 export default function Signup(){
-    const [profileStep, setProfileStep] = useState("two")
+    const router = useRouter()
+    const [profileStep, setProfileStep] = useState("one")
     const [user, { mutate }] = useUser();
     const [errorMsg, setErrorMsg] = useState('');
     const [processStatus, setProsStat ]=useState("void")
     const [isUpdating, setIsUpdating ]=useState(false)
 
-    // useEffect(() => {
-    // // redirect to home if user is authenticated
-    //     if (user) Router.replace('/');
-    // }, [user]);
+    useEffect(() => {
+        if (user){
+            if(user.userType) router.push('/perfil')
+        } ;
+    }, [user]);
 
 //USER STATE API is continually called and when signed in, sent to home. will this alwas happen when using the userHook?  
     const handleSubmit = async (e) => {
@@ -120,11 +123,9 @@ export default function Signup(){
         )
     }
 
-console.log(user)
-
     const UserStepTwo=()=>{
         return(
-            <>
+            <><div style={{display: "flex", justifyContent:"center",}}>
                 <div className={styles.StepTwoGenCont} >
                     <div className={styles.stepTwoIntro} >
                         <div className={styles.rotatingLogoCont} >
@@ -152,6 +153,7 @@ console.log(user)
                             src="./assets/fillerImgs/babySprout.jpg"
                             />
                 </div>
+            </div>
             </>
         )
     }
@@ -159,15 +161,17 @@ console.log(user)
     return(
         <>
             {user?
-            <> {userDisplay()} </>
+            <>
+            {userDisplay()} 
+            {profileStep==="two"&&
+                <>{UserStepTwo()}</>}
+            </>
             :
             <> {processStatus==="void"&&
             <> 
                 <div className={styles.generalSignpCont} >
                     {profileStep==="one"&&
                     <>{UserStepOne()}</>}
-                    {profileStep==="two"&&
-                    <>{UserStepTwo()}</>}
 
                 </div>
             </>}
