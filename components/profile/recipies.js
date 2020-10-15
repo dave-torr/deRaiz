@@ -36,6 +36,8 @@ export default function Recipies(props){
         )
     }
 
+    //specializedPost sommary for each card. Where is the problem with db on deployment. something with the middleware??
+
     const postSummary=()=>{
         let threePosts=props.recipieArray.splice(3)
 
@@ -47,7 +49,7 @@ export default function Recipies(props){
         return(
             <>
             <div className={styles.thePosts} >
-                {postSum}
+                {postSum} 
             </div>
             </>
         )
