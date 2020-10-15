@@ -146,7 +146,10 @@ export default function Signup(){
                         </div>
                     <div>
                     </div>
-                    <RegistrationDetails />
+                    <RegistrationDetails 
+                        progress={<CircularProgress/>} 
+                        setProfileStep={setProfileStep}
+                    />
                         <img
                             className={styles.imgfillerTwo} 
                             alt="Rucola spouts in a farm"
@@ -158,23 +161,24 @@ export default function Signup(){
         )
     }
 
+
     return(
         <>
             {user?
-            <>
-            {userDisplay()} 
-            {profileStep==="two"&&
-                <>{UserStepTwo()}</>}
-            </>
+                <>
+                    {userDisplay()} 
+                    {profileStep==="two"&&
+                        <>{UserStepTwo()}</>}
+                </>
             :
             <> {processStatus==="void"&&
-            <> 
-                <div className={styles.generalSignpCont} >
-                    {profileStep==="one"&&
-                    <>{UserStepOne()}</>}
+                <> 
+                    <div className={styles.generalSignpCont} >
+                        {profileStep==="one"&&
+                        <>{UserStepOne()}</>}
 
-                </div>
-            </>}
+                    </div>
+                </>}
             {processStatus==="process"&&
                 <> <CircularProgress/> </>} 
             </>}

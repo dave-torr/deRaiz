@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Link from "next/link"
 import { useUser } from "../../utils/userHook"
 import { CircularProgress } from '@material-ui/core';
 
@@ -82,7 +83,11 @@ function LogInOut(){
                 {/* add a few options: profile link, editar opciones, logout */}
                 <div className={styles.userDisplayer} >
                 <div className={styles.alias} > {user.name} </div>
-                <div className={styles.popoverBtn} > Mi perfil </div>
+                <div className={styles.popoverBtn} > 
+                    <Link href="/perfil" >
+                        Mi perfil 
+                    </Link>
+                </div>
                 <div className={styles.popoverBtn} > Opciones de Usuario </div>
                 <div className={styles.popoverBtn} > Reporta un problema </div>
                 {LogOut()}

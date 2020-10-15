@@ -45,6 +45,7 @@ handler.post(async (req, res) => {
       alias: null,
       subscription: null,
       forumPosts: [],
+      userDetailUpdate: false,
        })
     .then(({ ops }) => ops[0]);
   req.logIn(user, (err) => {

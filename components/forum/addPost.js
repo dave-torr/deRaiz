@@ -19,11 +19,9 @@ function AddForumPost(props){
             <img 
                 src="./assets/logoAndVar/fontface-blk.png"
                 className={styles.logoBlk}
-            />
+                />
             </div>
-
-            {props.themeDisplayer()}
-
+                {props.themeDisplayer()}
             </div>
         </Dialog>
         </>

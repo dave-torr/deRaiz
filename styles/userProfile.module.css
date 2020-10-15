@@ -3,10 +3,12 @@
     flex-direction: column;
     min-height: 100vh;
     align-items: center;
+    background-color: rgba(143, 182, 3, 0.631);
 }
 
 .profileGenCont{
     width: 940px;
+    background-color: whitesmoke;
 }
 
 .profileHeader{
@@ -15,7 +17,6 @@
     flex-direction: row;
     min-height: 350px;
     box-shadow: 6px 7px 10px rgba(0, 0, 0, 0.328);
-
 }
 
 .profilePicCont{
@@ -23,19 +24,39 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 5px;
 }
 
 .profilePic{
     width: 90%;
-
+    border-radius: 50%;
 }
 .ProfileHeadTexts{
     display: flex;
     flex-direction: column;
     border-left: dashed 1px black;
-    justify-content: center;
+    justify-content: space-around;
     width: 50%;
+}
+
+.dRAizLogo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.userLogo{
+    width: 80px;
+}
+
+.userIntro{
     padding: 12px;
+    flex-direction: column;
+    display: flex;
+}
+.prfileOptions{
+    justify-content: space-around;
+    flex-direction: row;
+    display: flex;
 }
 
 .profTextAlias{
@@ -55,6 +76,11 @@
     text-align: end;
 }
 
+.profLink:hover{
+    font-weight: 600;
+    cursor: pointer;
+}
+
 @media screen and (max-width: 940px){
     .profileGenCont{
         width: 100vw;
@@ -62,4 +88,42 @@
 }
 
 @media screen and (max-width: 600px){
+    .profileHeader{
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        min-height: 350px;
+        box-shadow: none;
+    }
+
+    .profilePicCont{
+        margin-left: 25%;
+    }
+
+    .profTextAlias{
+        text-transform: uppercase;
+        font-size: 1.5em;
+    }
+
+    .profTextName{
+        font-size: 1.8em;
+    }
+
+    .profTextUserType{
+        font-size: 1.3em;
+        text-align: end;
+    }
+
+    .ProfileHeadTexts{
+        padding-top: 21px;
+        display: flex;
+        flex-direction: column;
+        border-top: dashed 1px black;
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    .profLink{
+        font-size: 0.8em;
+    }
 }

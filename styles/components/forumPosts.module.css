@@ -18,8 +18,6 @@
     background-color: whitesmoke;
 }
 .postContent:hover{
-    padding: 12px;
-    width: 80%;
     background-color: rgb(255, 255, 255);
 }
 .postContent:hover > .postHead{
@@ -32,8 +30,6 @@
     padding: 9px;
     box-shadow: 6px 7px 10px rgba(0, 0, 0, 0.328);
 }
-
-
 
 .postName{
     font-size: 2em;
@@ -161,30 +157,22 @@
 }
 
 
-@media screen and (max-width: 1200px){
-    .postGenCont{
-        width: 80vw;
-    }
-}
+
 
 @media screen and (max-width: 700px){
     .postGenCont{
         flex-direction: column-reverse;
         width: 90vw;
     }
-
-    .postContent{
-        width: 100%;
-        padding: 0;
-    }
-    .postContent:hover{
-        width: 99%;
-    }
-
     .postUtils{
-        border: dashed 1px black;
+        border-bottom: dashed 1px black;
+        border-left: none;
         flex-direction: row;
         padding: 0px;
         width: 100%;
     }
+    .postContent{
+        width: 95%;
+    }
+
 }

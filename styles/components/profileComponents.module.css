@@ -1,0 +1,45 @@
+.generalForumCont{
+    width: 960px;
+    box-shadow: 6px 7px 10px rgba(0, 0, 0, 0.328);
+    min-height: 200px;
+
+}
+
+.forumTitle{
+    font-size: 2.3em;
+    padding: 12px;
+}
+.thePostsPlaceholder{
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-top: dashed 1px black;
+}
+.postsPlaceholder{
+    text-align: center;
+    width: 200px;
+}
+.forumLinkIntro{
+    text-align: center;
+    width: 200px;
+}
+.forumLink{
+    text-align: center;
+    width: 120px;
+    border: solid 2px black;
+}
+
+@media screen and (max-width: 600px){
+    .generalForumCont{
+        margin: 12px 5%;
+        width: 90%;
+        background-color: whitesmoke;
+    }
+    .forumTitle{
+        font-size: 1.8em;
+    }
+
+
+}

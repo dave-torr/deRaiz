@@ -45,7 +45,8 @@
 
     .anchorContainer{
         border-bottom: solid 2px green;
-
+        display: flex;
+        flex-direction: row;
     }
 
     .anchor{
@@ -157,6 +158,10 @@
         margin: 40px 18px 35px 18px;
         text-align: center;
         font-size: 1.5em;
+    }
+
+    .anchorContainer{
+        flex-direction: column;
     }
 
     .anchor{

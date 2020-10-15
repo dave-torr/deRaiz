@@ -4,7 +4,7 @@ import { useUser } from "../../utils/userHook"
 import { useRouter } from "next/router"
 
 
-function RegistrationDetails(){
+function RegistrationDetails(props){
 
 const [isOwner, setIsOwner] = useState()
 const [profilePicTrig, setprofilePicTrig] = useState()
@@ -23,10 +23,10 @@ const router = useRouter()
         setIsUpdating(true);
         let formData = new FormData();
         if (profilePictureRef.current.files[0]) { 
-            formData.append('profilePicture', profilePictureRef.current.files[0]); 
-            }
+            formData.append('profilePicture', profilePictureRef.current.files[0]);             }
             formData.append('alias', aliasRef.current.value);
             formData.append('userType', userTypeRef.current.value);
+            formData.append('userDetailUpdate', true);
         if(isOwner){
             formData.append('ownedProducts', ownedProductsRef.current.value);
         }    
@@ -43,14 +43,12 @@ const router = useRouter()
                 },
             });
         setMsg({ message: 'Profile updated' });
-            router.push('/perfil')
+        router.push('/perfil')
             } else {
         setMsg({ message: await res.text(), isError: true });
         }
     }
 
-    console.log(msg.message)
-    console.log(user)
     return(
         <>
         <div className={styles.additionalUserDetailsGenCont}>
@@ -136,8 +134,11 @@ const router = useRouter()
                 </div>
 
             {isUpdating? 
-            <>
-                <h2> Procesando... </h2>
+            <>  
+            <div style={{textAlign:"center"}} >
+                <h2> Procesando tu imagen y datos!... </h2>
+                {props.progress}
+            </div>
             </>:
             <> 
             <button className={styles.submitBTN} type="submit"> Siguiente Paso!</button>
