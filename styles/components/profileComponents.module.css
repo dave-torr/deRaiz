@@ -1,7 +1,10 @@
 .generalForumCont{
-    width: 960px;
+    width: 380px;
     box-shadow: 6px 7px 10px rgba(0, 0, 0, 0.328);
     min-height: 200px;
+    background-color: whitesmoke;
+    margin-top: 45px;
+    margin-left: 45px;
 
 }
 
@@ -35,7 +38,6 @@
     .generalForumCont{
         margin: 12px 5%;
         width: 90%;
-        background-color: whitesmoke;
     }
     .forumTitle{
         font-size: 1.8em;

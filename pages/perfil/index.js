@@ -2,6 +2,8 @@ import Head from "next/head";
 import { useUser } from "../../utils/userHook"
 import {Nav2} from "../../components/navBar"
 import ForumPosts from "./../../components/profile/forumPosts"
+import Recipies from "./../../components/profile/recipies"
+import ProductsAndSub from "./../../components/profile/productos"
 
 import styles from "./../../styles/userProfile.module.css"
 import { useEffect } from "react";
@@ -66,7 +68,9 @@ const profileHeader=()=>{
   )
 }
 
-
+const profileFooter=()=>{
+  
+}
 
   if (!user) {
     return (<> {SignInSplash()} </>);
@@ -78,11 +82,16 @@ const profileHeader=()=>{
         </Head>
         <div className={styles.profilePageGen} >
           <div className={styles.profileGenCont}>
-          {profileHeader()}
-          </div>
-          <ForumPosts 
-            SavedPosts={savedPublications}
-          />
+            {profileHeader()}
+            </div>
+          <div className={styles.userCards}>
+            <ForumPosts 
+              SavedPosts={savedPublications}
+            />
+            <Recipies />
+            <ProductsAndSub />
+
+            </div>
         </div>
         </>
     )
