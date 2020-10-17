@@ -25,7 +25,7 @@ export default function CociliberVerTwo(props){
             <>
             <div className={styles.CociLiberIntroCont} >
                 <img className={styles.IconOne} alt="icon green" src="./assets/logoAndVar/icon-lightGrn.png" />
-                    <div className={styles.cLIntroTitle} > Coci <p style={{fontSize:"0.5em"}} > &#9752; </p> Liber </div>
+                    <div className={styles.cLIntroTitle} > Coci <p style={{fontSize:"0.5em"}} > &#9753; </p> Liber </div>
                     <div className={styles.cLIntroSubtitle} > Deliciosos sabores <br></br> preparados con tus plantas <br></br> criadas en casa. <br></br> 
                     <p className={styles.arrowDeco}>
                     &#8609; 

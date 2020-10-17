@@ -14,7 +14,10 @@ export default function Recipies(props){
         return(
             <>
             <div className={styles.generalForumCont} style={{borderTop:"solid 3px orange", borderLeft:"solid 3px orange"}}>
-                <div className={styles.forumTitle} > Recetas Favoritas
+                <div className={styles.profileSecTitle} >   
+                &#9753; 
+                <br></br>Recetas 
+                <br></br>Favoritas
                 </div>
                 {props.SavedPosts>0? 
                     <> 
@@ -23,12 +26,12 @@ export default function Recipies(props){
                         <div className={styles.thePostsPlaceholder} >
                             <div className={styles.postsPlaceholder} > No has guardado ninguna receta hasta ahora!
                             </div>
+                            <iframe src="https://giphy.com/embed/fAQN9WLg46TtCQ0CFb" width="280" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/eat-cook-maja-sfstrm-fAQN9WLg46TtCQ0CFb">via</a></p>
                             <div className={styles.forumLinkIntro} > 
                             Visita nuestro recetario para explorar deliciosos sabores!
                             </div>
                             <div className={styles.forumLink} > <Link href="/cociTwo" > 
                             COCI LIBER</Link> </div>
-
                         </div>
                     </>}
             </div>

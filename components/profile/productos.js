@@ -14,7 +14,12 @@ export default function ProductsAndSub(props){
         return(
             <>
             <div className={styles.generalForumCont} style={{borderTop:"solid 4px yellow", borderLeft:"solid 4px yellow"}} >
-                <div className={styles.forumTitle} > Productos & Subscripciones!
+                <div className={styles.profileSecTitle} > 
+                &#10055; 
+                <br></br>
+                Productos & 
+                <br></br>
+                Subscripciones!
                 </div>
                 {props.SavedPosts>0? 
                     <> 
@@ -26,9 +31,8 @@ export default function ProductsAndSub(props){
                             <div className={styles.forumLinkIntro} > 
                             Mira nuestro catalogo aqui:
                             </div>
-                            <div className={styles.forumLink} > <Link href="/cociTwo" > 
+                            <div className={styles.forumLink} > <Link href="/" > 
                             PRODUCTOS</Link> </div>
-
                         </div>
                     </>}
             </div>

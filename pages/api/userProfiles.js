@@ -36,7 +36,7 @@ handler.post(async (req, res) => {
       password: hashedPassword, 
       name,
       savedRecipies: [],
-      ownedProducts: [],
+      ownedProducts: null,
       savedPublications: [],
       likedPublications: [],
       userType: null,

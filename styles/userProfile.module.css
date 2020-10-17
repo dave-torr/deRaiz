@@ -4,6 +4,7 @@
     min-height: 100vh;
     align-items: center;
     background-color: rgba(143, 182, 3, 0.631);
+    padding-bottom: 35px;
 }
 
 .profileGenCont{

@@ -14,14 +14,19 @@ export default function ForumPosts(props){
         return(
             <>
             <div className={styles.generalForumCont} style={{borderTop:"solid 2px teal", borderLeft:"solid 2px teal"}}>
-                <div className={styles.forumTitle} > Publicaciones Guadadas
+                <div className={styles.profileSecTitle} >
+                    &#9752; 
+                    <br></br>
+                    Publicaciones 
+                    <br></br>
+                    Guadadas
                 </div>
                 {props.SavedPosts>0? 
                     <> 
                         {postSummary()}
                     </> : <>
                         <div className={styles.thePostsPlaceholder} >
-                            <div className={styles.postsPlaceholder} > No has guardado ninguna ublicacion hasta ahora!
+                            <div className={styles.postsPlaceholder} > No has guardado ninguna publicación hasta ahora!
                             </div>
                             <div className={styles.forumLinkIntro} > 
                             Visita nuestro Foro para conocer más!
