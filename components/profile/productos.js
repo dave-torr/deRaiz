@@ -28,6 +28,7 @@ export default function ProductsAndSub(props){
                         <div className={styles.thePostsPlaceholder} >
                             <div className={styles.postsPlaceholder} > no has registrado tus productos o subscripciones!
                             </div>
+
                             <div className={styles.forumLinkIntro} > 
                             Mira nuestro catalogo aqui:
                             </div>

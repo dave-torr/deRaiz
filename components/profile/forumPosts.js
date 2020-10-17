@@ -28,12 +28,12 @@ export default function ForumPosts(props){
                         <div className={styles.thePostsPlaceholder} >
                             <div className={styles.postsPlaceholder} > No has guardado ninguna publicación hasta ahora!
                             </div>
+                            <iframe src="https://giphy.com/embed/54Y3bemAMQTpWzozrX" width="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/motion-graphics-design-54Y3bemAMQTpWzozrX">via GIPHY</a></p>
                             <div className={styles.forumLinkIntro} > 
                             Visita nuestro Foro para conocer más!
                             </div>
                             <div className={styles.forumLink} > <Link href="/foroVivo" > 
                             FORO VIVO</Link> </div>
-
                         </div>
                     </>}
             </div>
