@@ -26,13 +26,13 @@ export default function ProductsAndSub(props){
                         {postSummary()}
                     </> : <>
                         <div className={styles.thePostsPlaceholder} >
-                            <div className={styles.postsPlaceholder} > no has registrado tus productos o subscripciones!
+                            <div className={styles.postsPlaceholder} > No has registrado tus productos o subscripciones!
                             </div>
-
+                            <iframe src="https://giphy.com/embed/26ufhUp00gyiOwdig" width="280"  frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/illustration-friday-icon-26ufhUp00gyiOwdig">via </a></p>
                             <div className={styles.forumLinkIntro} > 
                             Mira nuestro catalogo aqui:
                             </div>
-                            <div className={styles.forumLink} > <Link href="/" > 
+                            <div className={styles.forumLink}> <Link href="/" > 
                             PRODUCTOS</Link> </div>
                         </div>
                     </>}

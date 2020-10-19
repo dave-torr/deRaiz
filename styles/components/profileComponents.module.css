@@ -40,6 +40,7 @@
     min-width: 120px;
     border: solid 2px black;
     transition: all ease 1s;
+    margin: 21px;
 }
 
 .forumLink:hover{
@@ -54,14 +55,14 @@
         width: 450px;
         box-shadow: 6px 7px 10px rgba(0, 0, 0, 0.328);
         min-height: 200px;
-        background-color: whitesmoke;
         margin: 35px 25px;
     }
 }
 
 @media screen and (max-width: 600px){
     .generalForumCont{
-        margin: 12px 5%;
+        width: 350px;
+        margin: 12px 0%;
         width: 90%;
     }
     .forumTitle{

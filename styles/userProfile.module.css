@@ -86,6 +86,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    overflow-x: hidden;
 }
 
 @media screen and (max-width: 980px){
@@ -101,6 +102,9 @@
         flex-direction: column;
         min-height: 350px;
         box-shadow: none;
+    }
+    .userCards{
+        width: 95%;
     }
 
     .profilePicCont{
