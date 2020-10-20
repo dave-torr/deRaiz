@@ -2,7 +2,7 @@ import {LogInOut} from "./userAuth/signIn"
 import styles from "./../styles/components/navBar.module.css"
 import { Popover } from '@material-ui/core';
 import { useUser } from "../utils/userHook"
-
+import Link from "next/link"
 
 const Navbar =()=> {
   return(
@@ -64,19 +64,23 @@ function Nav2(){
   const [anchorEl, setAnchorEl] = React.useState(null);
   const handleClick = (event) => {setAnchorEl(event.currentTarget)};
   const handleClose = () => {setAnchorEl(null)};
-
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popover' : undefined;
 
   return(
     <>
       <div className={styles.NaviTwoGenCont} >
-        <div className={styles.AuthBtn}
-          onClick={handleClick}>
-          {user?
+        {user?
           <> Hola {user.alias} </>
-          : <> Iniciar Sesión </> }
-        </div>
+          : <> 
+          <div className={styles.AuthBtn}
+            onClick={handleClick}>
+            Iniciar Sesión 
+          </div>
+          <div className={styles.RegUserBtnBtn}>
+          <Link href="/registro" ><a>Registra Nuevo Usuario!</a></Link>
+          </div>
+        </> }
       <Popover
           id={id}
           open={open}

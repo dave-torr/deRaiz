@@ -28,7 +28,7 @@ export default function ProductsAndSub(props){
                         <div className={styles.thePostsPlaceholder} >
                             <div className={styles.postsPlaceholder} > No has registrado tus productos o subscripciones!
                             </div>
-                            <iframe src="https://giphy.com/embed/26ufhUp00gyiOwdig" width="280"  frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/illustration-friday-icon-26ufhUp00gyiOwdig">via </a></p>
+                            <iframe src="https://giphy.com/embed/26ufhUp00gyiOwdig" width="280"  frameBorder="0" class="giphy-embed" target="_blank" sandbox ></iframe><p><a href="https://giphy.com/gifs/illustration-friday-icon-26ufhUp00gyiOwdig">via </a></p>
                             <div className={styles.forumLinkIntro} > 
                             Mira nuestro catalogo aqui:
                             </div>

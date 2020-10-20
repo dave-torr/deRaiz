@@ -21,15 +21,17 @@ handler.patch( upload.single('profilePicture'), async (req, res) =>{
         crop: 'fill',
       });
       profilePictureRes = image.secure_url;
+    } else {
+      profilePictureRes = null;
     }
-  const { alias, userType, ownedProducts, profilePic} = req.body;
+  const { alias, userType, ownedProducts} = req.body;
   await req.db.collection("users").updateOne(
     { _id: req.user._id },
     { $set: 
       { 
         alias: alias, 
         userType: userType,
-        ownedProducts:ownedProducts,
+        ownedProducts: ownedProducts,
         profilePic: profilePictureRes
         }, 
     },

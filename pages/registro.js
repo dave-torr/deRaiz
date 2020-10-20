@@ -35,7 +35,6 @@ export default function Signup(){
             userType:  null,
             profilePic:  null,
             signUpStream: "website",
-
             };
         const res = await fetch('/api/userProfiles', {
             method: 'POST',
@@ -69,7 +68,7 @@ export default function Signup(){
         <div className={styles.StepOneGenCont}>
             <img 
                 className={styles.logoGreen}
-                src="./assets/logoAndVar/fontfaceExt-lghtGrn.png"
+                src="../assets/logoAndVar/fontfaceExt-lghtGrn.png"
                 alt="D´Raiz Icon"
                 />
             <h2 className={styles.signupIntro} >
@@ -114,7 +113,7 @@ export default function Signup(){
             </form>
             <img 
                 className={styles.imageFiller}
-                src="./assets/farmPics/earlySprouts.jpg"
+                src="../assets/farmPics/earlySprouts.jpg"
                 alt="Early sprouting plants"
                 />
             </div>

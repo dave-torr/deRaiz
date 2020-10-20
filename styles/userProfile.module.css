@@ -100,9 +100,10 @@
         width: 99%;
         display: flex;
         flex-direction: column;
-        min-height: 350px;
+        min-height: 280px;
         box-shadow: none;
     }
+    
     .userCards{
         width: 95%;
     }

@@ -1,4 +1,9 @@
 import Head from "next/head";
+import { useEffect } from "react";
+import { useRouter } from 'next/router'
+import Link from 'next/link'
+
+
 import { useUser } from "../../utils/userHook"
 import {Nav2} from "../../components/navBar"
 import Footer from "../../components/footer"
@@ -7,8 +12,6 @@ import Recipies from "./../../components/profile/recipies"
 import ProductsAndSub from "./../../components/profile/productos"
 
 import styles from "./../../styles/userProfile.module.css"
-import { useEffect } from "react";
-import { useRouter } from 'next/router'
 
 
 export default function Perfil(){
@@ -59,7 +62,11 @@ export default function Perfil(){
               <div className={styles.profTextUserType}> {userType} </div>
             </div>
             <div className={styles.prfileOptions} >
-              <div className={styles.profLink} > Opciones de perfil </div>
+              <div className={styles.profLink} > 
+              <Link href="/perfil/opciones">
+              <a> Opciones de perfil</a> 
+              </Link>
+              </div>
               <div className={styles.profLink} > <a href="mailto:draiz.info@gmail.com" > Reporta un Inconveniente </a> </div>
             </div>
           </div>

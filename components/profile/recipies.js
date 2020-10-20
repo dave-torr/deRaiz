@@ -26,7 +26,7 @@ export default function Recipies(props){
                         <div className={styles.thePostsPlaceholder} >
                             <div className={styles.postsPlaceholder} > No has guardado ninguna receta hasta ahora!
                             </div>
-                            <iframe src="https://giphy.com/embed/fAQN9WLg46TtCQ0CFb" width="280" frameBorder="0" class="giphy-embed" sandbox></iframe><p><a href="https://giphy.com/gifs/eat-cook-maja-sfstrm-fAQN9WLg46TtCQ0CFb">via</a></p>
+                            <iframe src="https://giphy.com/embed/fAQN9WLg46TtCQ0CFb" width="280" frameBorder="0" class="giphy-embed" target="_blank" sandbox></iframe><p><a href="https://giphy.com/gifs/eat-cook-maja-sfstrm-fAQN9WLg46TtCQ0CFb">via</a></p>
                             <div className={styles.forumLinkIntro} > 
                             Visita nuestro recetario para explorar deliciosos sabores!
                             </div>
