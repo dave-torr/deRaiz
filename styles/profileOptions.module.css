@@ -42,9 +42,90 @@
     min-height: 60%;
 }
 
+.optionSectionTitle{
+    font-size: 2em;
+    margin-top: 33px;
+    padding-bottom: 6px;
+    border-bottom: dotted 2px grey;
+}
+
+.formOptionContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: solid 1px rgba(128, 128, 128, 0.535);
+    border-left: solid 1px rgba(128, 128, 128, 0.535);
+    margin-left: 18px;
+}
+
+.formOptionLabel{
+    font-size: 1.5em;
+    margin: 21px 0px 6px 10px;
+}
+.formOptionAction{
+    font-size: 1.5em;
+    margin: 21px 33px 6px 0px;
+}
+.formDelete{
+    color: white;
+    text-transform: uppercase;
+    background-color: tomato;
+    padding: 6px 12px;
+    font-size: 1.5em;
+    margin: 7px 33px 6px 0px;
+}
+.formDelete{
+    color: white;
+    background-color: rgba(255, 99, 71, 0.426);
+    text-transform: uppercase;
+    padding: 6px 12px;
+    font-size: 1.5em;
+    margin: 7px 33px 6px 0px;
+    transition: all ease-in 1s;
+}
+.formDelete:hover{
+    background-color: tomato;
+    cursor: pointer;
+}
+.formDeleteCancel{
+    text-transform: uppercase;
+    border: solid 3px tomato;
+    padding: 6px 12px;
+    font-size: 1.5em;
+    margin: 7px 33px 6px 0px;
+    transition: all ease-in 1s;
+}
+.formDeleteCancel:hover{
+    cursor: pointer;
+}
+
+.formOptionAction{
+    color: white;
+    background-color:rgba(128, 128, 0, 0.679);
+    text-transform: uppercase;
+    padding: 6px 12px;
+    font-size: 1.5em;
+    margin: 7px 33px 6px 0px;
+    transition: all ease-in 1s;
+}
+.formOptionAction:hover{
+    cursor: pointer;
+    background-color: olive;
+}
  
 @media screen and (max-width: 600px){
     .opcionesPage{
         width: 100%;
     }
+    .formOptionLabel{
+        width: 40%;
+        font-size: 1.2em;
+    }
+    .formOptionAction{
+        width: 40%;
+        font-size: 1.2em;
+            padding: 17px 12px;
+
+    }
+
 }    

@@ -23,7 +23,7 @@ const router = useRouter()
         setIsUpdating(true);
         let formData = new FormData();
         if (profilePictureRef.current.files[0]) { 
-            formData.append('profilePicture', profilePictureRef.current.files[0]);             }
+            formData.append('profilePicture', profilePictureRef.current.files[0])};
             formData.append('alias', aliasRef.current.value);
             formData.append('userType', userTypeRef.current.value);
             formData.append('userDetailUpdate', true);
