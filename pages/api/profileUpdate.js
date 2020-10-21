@@ -24,11 +24,12 @@ handler.patch( upload.single('profilePicture'), async (req, res) =>{
     } else {
       profilePictureRes = null;
     }
-  const { alias, userType, ownedProducts} = req.body;
+  const { alias, userType, ownedProducts, name} = req.body;
   await req.db.collection("users").updateOne(
     { _id: req.user._id },
     { $set: 
       { 
+        name: name,
         alias: alias, 
         userType: userType,
         ownedProducts: ownedProducts,

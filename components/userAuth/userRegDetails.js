@@ -27,6 +27,7 @@ const router = useRouter()
             formData.append('alias', aliasRef.current.value);
             formData.append('userType', userTypeRef.current.value);
             formData.append('userDetailUpdate', true);
+            formData.append('name', user.name);
         if(isOwner){
             formData.append('ownedProducts', ownedProductsRef.current.value);
         }    
@@ -114,14 +115,14 @@ const router = useRouter()
                         </div>
                     </div>
                     </> : <>
-                    <div className={styles.profileIconPicker} >
+                    {/* <div className={styles.profileIconPicker} >
                         <div className={styles.productLabel} >
                             Puedes elejir uno de los siguientes iconos para tu perfil, o subir una imagen personalizada (abajo):
                             </div>
                         <div>
                         IconPicker sets url to specific icon, facilitating it for everyone.
                         </div>
-                    </div>
+                    </div> */}
                     <div className={styles.productLabel} >
                         Te gustaria subir una imagen personalizada de perfil?
                         </div>
@@ -134,16 +135,14 @@ const router = useRouter()
                 </div>
 
             {isUpdating? 
-            <>  
-            <div style={{textAlign:"center"}} >
-                <h2> Procesando tu imagen y datos!... </h2>
-                {props.progress}
-            </div>
-            </>:
-            <> 
-            <button className={styles.submitBTN} type="submit"> Siguiente Paso!</button>
+                <>  
+                    <div style={{textAlign:"center"}} >
+                        <h2> Procesando tu imagen y datos!... </h2>
+                        {props.progress}
+                    </div>
+                </>:<> 
+                <button className={styles.submitBTN} type="submit"> Siguiente Paso!</button>
             </>}
-            
             </form>
         </div>
         </>

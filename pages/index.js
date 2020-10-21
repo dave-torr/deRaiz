@@ -148,13 +148,14 @@ export default function Home(){
             id={eachProduct.name} > 
             <div className={styles.prodImgCont} > 
             {prodImg&&
-            <img src={prodImg} className={styles.eachProdPic} />
-            }
+                <img src={prodImg} className={styles.eachProdPic} />
+                }
             </div>
 
             <div className={styles.prodDetailCont} >  
                 <h3 className={styles.eachProdName} > {eachProduct.name} </h3>
                 <div className={styles.featureList} > {eachProdFeatures} </div>
+                <div className={styles.prodMeasurements} > Medidas: <br></br> {eachProduct.measurements} </div>
                 <div className={styles.prodPrice} > {eachProduct.price} .- USD </div>
                 <div className={styles.eachProdCallToAction} 
                 style={{fontSize:"1.5em", textAlign: "center", borderTop: "dashed 1px green", marginTop: "9px", paddingTop: "3px" }} > Me interesa!  

@@ -130,6 +130,12 @@
         padding-left: 12px;
     }
 
+    .prodMeasurements{
+        margin-top: 21px;
+        font-size: 1.5em;
+        text-align: center;
+    }
+
     .CTA1{
         background-color: rgb(51, 102, 51);
         color: white;
