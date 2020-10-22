@@ -22,9 +22,10 @@ handler.patch( upload.single('profilePicture'), async (req, res) =>{
       });
       profilePictureRes = image.secure_url;
     } else {
-      profilePictureRes = null;
+      profilePictureRes = req.body.profilePic;
     }
-  const { alias, userType, ownedProducts, name} = req.body;
+    console.log("req.body", req.body)
+  const {alias, userType, ownedProducts, name} = req.body;
   await req.db.collection("users").updateOne(
     { _id: req.user._id },
     { $set: 

@@ -252,20 +252,20 @@ export default function Home(){
                         <div className={styles.anchorDeco} > </div>
                         </div>
                     <div className={styles.anchor} onClick={()=>{
-                        let AnchorTerra = document.getElementById("hangAnchor");
-                        AnchorTerra.scrollIntoView({behavior: "smooth"});
+                        let AnchorHanging = document.getElementById("hangAnchor");
+                        AnchorHanging.scrollIntoView({behavior: "smooth"});
                     }}> Huertos Colgantes <br></br> En Tierra  
                         <div className={styles.anchorDeco} > </div>
                         </div>
                     <div className={styles.anchor} onClick={()=>{
-                        let AnchorTerra = document.getElementById("terraTwoAnchor");
+                        let AnchorTerra = document.getElementById("terraAnchor");
                         AnchorTerra.scrollIntoView({behavior: "smooth"});
                     }}> Huertos de Mesón <br></br> Y Piso En Tierra  
                         <div className={styles.anchorDeco} > </div>
                         </div>
                     <div className={styles.anchor} onClick={()=>{
-                        let AnchorTerra = document.getElementById("kiddiAnchor");
-                        AnchorTerra.scrollIntoView({behavior: "smooth"});
+                        let kiddiAnchor = document.getElementById("kiddiAnchor");
+                        kiddiAnchor.scrollIntoView({behavior: "smooth"});
                     }}>Huertos <br></br> Infantiles 
                         <div className={styles.anchorDeco} > </div>
                         </div>

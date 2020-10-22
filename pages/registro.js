@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 
 import React, { useState, useEffect } from 'react';
 import { useUser } from "../utils/userHook"
-import { CircularProgress, Fab } from '@material-ui/core';
+import { CircularProgress } from '@material-ui/core';
 import styles from "../styles/registerUser.module.css"
 import {RegistrationDetails} from "../components/userAuth/userRegDetails"
 import {Nav2} from "../components/navBar"
@@ -81,33 +81,33 @@ export default function Signup(){
             <div className={styles.formElement} >
                 <label className={styles.formLabels} htmlFor="name"> Nombre </label>
                 <input
-                className={styles.inputElement}
-                id="name"
-                name="name"
-                type="text"
-                placeholder="Tu nombre completo"
-                />
+                    className={styles.inputElement}
+                    id="name"
+                    name="name"
+                    type="text"
+                    placeholder="Tu nombre completo"
+                    />
                 </div>
             <div className={styles.formElement} >
                 <label className={styles.formLabels} htmlFor="email"> Correo Electronico </label>
                 <input
-                className={styles.inputElement}
-                id="email"
-                name="email"
-                type="email"
-                placeholder="Email"
-                />
+                    className={styles.inputElement}
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="Email"
+                    />
                 </div>
             <div className={styles.formElement} >
             <label className={styles.formLabels} htmlFor="password"> Genera Tu Clave Secreta
             </label>
                 <input
-                className={styles.inputElement}
-                id="password"
-                name="password"
-                type="password"
-                placeholder="Clave"
-                />
+                    className={styles.inputElement}
+                    id="password"
+                    name="password"
+                    type="password"
+                    placeholder="Clave"
+                    />
                 </div>
             <button className={styles.submitBTN} type="submit">Siguiente Paso!</button>
             </form>

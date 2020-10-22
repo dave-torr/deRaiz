@@ -112,6 +112,13 @@
     cursor: pointer;
     background-color: olive;
 }
+
+.dialogueCont{
+    display: flex;
+    flex-direction: column;
+    font-size: 2em;
+    align-items: center;
+}
  
 @media screen and (max-width: 600px){
     .opcionesPage{
